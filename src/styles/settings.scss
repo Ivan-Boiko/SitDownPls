@@ -69,6 +69,7 @@ p{
   padding: 0;
   margin: 0;
 }
+
 input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
 input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
 input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
@@ -100,26 +101,195 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s eas
   border: 2px #ff4019 solid !important; // stylelint-disable-line declaration-no-important
 }
 
-.btn-reset {
+.hrefs{
+  transition: all 0.3s ease-in;
+&--first{
+  &:hover{
+    color: var(--color-fiol);
+    transition: all 0.3s ease-in;
+  }
+  :focus{
+    background-color: var(--color-fiol-pink);
+    color: var(--color-fiol-dark);
+    transition: all 0.3s ease-in;
+  }
+  :active{
+    background-color: inherit;
+    color: var(--color-fiol-dark);
+    transition: all 0.3s ease-in;
+  }
+
+}
+&--second{
+  &:hover{
+    color: var(--color-fiol);
+    transition: all 0.3s ease-in;
+  }
+  :focus{
+    background-color: var(--color-fiol-pink);
+    color: var(--color-black);
+    transition: all 0.3s ease-in;
+  }
+  :active{
+    background-color: inherit;
+    color: var(--color-fiol-dark);
+    transition: all 0.3s ease-in;
+  }
+}
+// &--svg{
+
+// }
+// &--social{
+
+// }
+}
+
+.btn{
   border: none;
   padding: 0;
+  outline: 2px solid transparent;
   background: transparent;
   cursor: pointer;
   overflow: none;
-}
-.btn-two{
-  border: 2px solid var(--color-fiol);
-  font: var(--prehigh-regular);
-  color: var(--color-fiol);
-  padding: 19px 35px;
-  border-radius: 10px;
-  max-width: 128px;
-  background-color: var(--color-white);
+  transition: all 0.3s ease-in-out;
+  &--first {
+    font: var(--middle-bold);
+    color: var(--color-white);
+    background-color: var(--color-fiol);
+    border-radius: 10px;
+      &:hover{
+        background-color: var(--color-fiol-light);
+        transition: all 0.3s ease-in-out;
+      }
+      &:focus{
+        background-color: var(--color-fiol-light);
+        outline: 2px solid var(--color-fiol-dark);
+        transition: all 0.3s ease-in-out;
+      }
+      &:active{
+        outline: 2px solid var(--color-fiol-dark);
+        background-color: var(--color-fiol-dark);
+        transition: all 0.3s ease-in-out;
+      }
+  }
+  &--second {
+    border: 2px solid var(--color-fiol);
+    font: var(--prehigh-regular);
+    color: var(--color-fiol);
+    padding: 19px 35px;
+    border-radius: 10px;
+    max-width: 128px;
+    background-color: var(--color-white);
+    &:hover{
+      background-color: var(--color-fiol);
+      color: var(--color-white);
+      transition: all 0.3s ease-in-out;
+    }
+    &:focus{
+      background-color: var(--color-fiol-light);
+      border: 2px solid var(--color-fiol-dark);
+      transition: all 0.3s ease-in-out;
+    }
+    &:active{
+      border: 2px solid var(--color-fiol-dark);
+      background-color: var(--color-fiol-dark);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &--svg {
+    &:hover{
+      svg{
+        circle{
+          fill: var(--color-fiol);
+          transition: all 0.4s ease-in-out;
+        }
+        path{
+          stroke: var(--color-white);
+          transition: all 0.4s ease-in-out;
+        }
+      }
+    }
+    &:focus{
+      svg{
+        circle{
+          fill: var(--color-fiol-light);
+          transition: all 0.4s ease-in-out;
+        }
+        path{
+          stroke: var(--color-white);
+          transition: all 0.4s ease-in-out;
+        }
+      }
+    }
+    &:active{
+      svg{
+        circle{
+          fill: var(--color-fiol-dark);
+          stroke: inherit;
+          transition: all 0.4s ease-in-out;
+        }
+
+      }
+    }
+  }
+  &--person {
+    width: 32px;
+    height: 32px;
+    svg{
+      vertical-align: middle;
+    }
+    &:hover {
+      svg{
+        fill: var(--color-fiol-light);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    &:focus {
+      background-color: var(--color-fiol-light);
+      transition: all 0.4s ease-in-out;
+      svg{
+        fill: var(--color-white);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    &:active {
+      background-color: inherit;
+      svg{
+        fill: var(--color-fiol-dark);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+  }
+  &--disabled {
+    cursor: auto;
+    pointer-events: none;
+    svg{
+      circle, path {
+        stroke: var(--color-gray);
+        opacity: 0.6;
+        transition: all 0.5s ease-in;
+      }
+    }
+  }
 }
 
-
-.js-focus-visible :focus:not(.focus-visible) {
-  outline: none;
+.tel{
+  transition: all 0.3s ease-in-out;
+  &:hover{
+    color: var(--color-orange-light);
+    transition: all 0.3s ease-in-out;
+  }
+  &:focus{
+    color: var(--color-orange);
+    background-color: var(--color-orange-extra-light);
+    transition: all 0.3s ease-in-out;
+  }
+  &:active{
+    color: var(--color-orange-dark);
+    background-color: inherit;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .visually-hidden{
@@ -140,17 +310,6 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s eas
   gap:var(--main-offset);
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0)
-}
-
 input,
 textarea{
   padding: 0;
@@ -160,6 +319,8 @@ textarea{
     color: transparent;
   }
 }
+
+// choices settings
 .choices{
   margin-bottom: 0!important;
 }
