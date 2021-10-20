@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded',  function(){
   const swiperHero = new Swiper('.hero__swiper', {
     speed: 800,
     loop: true,
-    autoplay:{
-      delay: 5000,
-    }
+    // autoplay:{
+    //   delay: 5000,
+    // }
   });
   const swiperSpecial = new Swiper('.special__swiper', {
     speed: 800,

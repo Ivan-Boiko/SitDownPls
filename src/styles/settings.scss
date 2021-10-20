@@ -103,11 +103,14 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s eas
 
 .hrefs{
   transition: all 0.3s ease-in;
+	&--link{
+		color: transparent;
+		&:hover{
+			color: var(--color-fiol);
+			transition: all 0.3s ease-in;
+		}
+	}
 &--first{
-  &:hover{
-    color: var(--color-fiol);
-    transition: all 0.3s ease-in;
-  }
   :focus{
     background-color: var(--color-fiol-pink);
     color: var(--color-fiol-dark);
@@ -121,27 +124,55 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s eas
 
 }
 &--second{
-  &:hover{
-    color: var(--color-fiol);
-    transition: all 0.3s ease-in;
-  }
-  :focus{
+  &--link{
+		color: inherit;
+		&:hover {
+			color: var(--color-fiol);
+			transition: all 0.3s ease-in;
+		}
+	}
+  :focus {
     background-color: var(--color-fiol-pink);
     color: var(--color-black);
     transition: all 0.3s ease-in;
   }
-  :active{
+  :active {
     background-color: inherit;
     color: var(--color-fiol-dark);
     transition: all 0.3s ease-in;
   }
 }
-// &--svg{
+&--social {
+	cursor: pointer;
+	transition: all 0.3s ease-in;
+		&:hover {
+			svg{
+				path:nth-child(1n){
+					fill: var(--color-fiol);
+					transition: all 0.3s ease-in;
+				}
+			}
+		}
+		&:focus {
+			background-color: var(--color-fiol-light);
+			svg{
+				path:nth-child(1n){
+					fill: var(--color-white);
+					transition: all 0.3s ease-in;
+				}
+			}
+		}
+		&:active {
+			background-color: transparent;
+			svg{
+				path:nth-child(1n){
+					fill: var(--color-fiol-dark);
+					transition: all 0.3s ease-in;
+				}
+			}
+		}
+}
 
-// }
-// &--social{
-
-// }
 }
 
 .btn{
@@ -228,10 +259,10 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s eas
           stroke: inherit;
           transition: all 0.4s ease-in-out;
         }
-
       }
     }
   }
+
   &--person {
     width: 32px;
     height: 32px;
@@ -323,6 +354,7 @@ textarea{
 // choices settings
 .choices{
   margin-bottom: 0!important;
+	overflow: visible !important;
 }
 .choices[data-type*=select-one]:after{
   display: none;
@@ -344,3 +376,88 @@ textarea{
   border-radius: 0px 10px 10px 0px !important;
 }
 
+// category-hover
+.category__hrefs{
+	transition: all 0.3s ease-in;
+	&:active{
+		color: var(--color-fiol-dark);
+		transition: all 0.3s ease-in;
+	}
+	&::after{
+		position: absolute;
+		content: "";
+		border-bottom: 2px solid var(--color-fiol);
+		bottom: -5px;
+		left: 0;
+		width: 100%;
+		opacity: 0;
+		transition: all 0.3s ease-in;
+	}
+	&:hover::after{
+		opacity: 1;
+		transition: all 0.3s ease-in;
+	}
+	&:focus::after{
+		opacity: 1;
+		transition: all 0.3s ease-in;
+	}
+	&:active::after{
+		opacity: 1;
+		border-color: var(--color-fiol-dark);
+		transition: all 0.3s ease-in;
+	}
+}
+.category__hrefs:hover + svg{
+		circle{
+			fill: var(--color-fiol);
+			transition: all 0.4s ease-in-out;
+		}
+		path{
+			stroke: var(--color-white);
+			transition: all 0.4s ease-in-out;
+		}
+}
+.category__hrefs:focus + svg{
+		circle{
+			fill: var(--color-fiol-light);
+			transition: all 0.4s ease-in-out;
+		}
+		path{
+			stroke: var(--color-white);
+			transition: all 0.4s ease-in-out;
+		}
+
+}
+.category__hrefs:active + svg{
+		circle{
+			fill: var(--color-fiol-dark);
+			stroke: inherit;
+			transition: all 0.4s ease-in-out;
+		}
+}
+
+// select arrow
+.header__town-select{
+	&::before{
+		position: absolute;
+		content: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='%23A65CF0' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.65674 9.80521L10.5593 4.90261L11.3136 5.65685L5.65674 11.3137L-0.000115871 5.65685L0.754131 4.90261L5.65674 9.80521Z' /%3E%3C/svg%3E");
+		right: -17px;
+		z-index: 100;
+		}
+}
+.header__catalog-select{
+	&::before{
+		position: absolute;
+		content: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.65674 9.80521L10.5593 4.90261L11.3136 5.65685L5.65674 11.3137L-0.000115871 5.65685L0.754131 4.90261L5.65674 9.80521Z' fill='%23A65CF0'/%3E%3C/svg%3E");
+		right: 11%;
+		top: 50%;
+		transform: translate(0, -50%);
+		z-index: 100;
+	}
+}
+.is-open{
+	&::before{
+		position: absolute;
+		content: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.65674 2.19479L10.5593 7.09739L11.3136 6.34315L5.65674 0.686292L-0.000115871 6.34315L0.754131 7.09739L5.65674 2.19479Z' fill='%23A65CF0'/%3E%3C/svg%3E%0A");
+		}
+}
