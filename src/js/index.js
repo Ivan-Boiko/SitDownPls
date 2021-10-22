@@ -42,6 +42,33 @@ document.addEventListener('DOMContentLoaded',  function(){
       containerOuter: 'choices header__catalog-select',
     }
   })
+
+	const validate =	new JustValidate('.feedback__form', {
+		colorWrong: '#ff3300',
+		rules: {
+			name: {
+				required: true,
+				minLength:2,
+				maxLength:10,
+
+			},
+			mail: {
+				required: true,
+				email: true
+			},
+		},
+
+		messages: {
+			name: {
+				required: 'Недопустимый формат',
+				minLength: 'My custom message about only minLength rule'
+			},
+			mail: {
+				required: 'Неведопустимый формат',
+			}
+		}
+});
+
 });
 
 

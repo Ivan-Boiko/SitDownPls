@@ -19,8 +19,8 @@
 						<option value="">Уфа</option>
 						<option value="">Пермь</option>
 					</select>
-					<a href="tel:+7 495 885 45 47" class="header__tel tel">
-						<svg class="header--tel-svg" width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<a href="tel:+74958854547" class="header__tel tel">
+						<svg class="header__tel-svg" width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 							<path d="M18.3425 14.0983C17.215 14.0983 16.1242 13.915 15.1067 13.585C14.7858 13.475 14.4283 13.5575 14.1808 13.805L12.7417 15.6108C10.1475 14.3733 7.71833 12.0358 6.42583 9.35L8.21333 7.82833C8.46083 7.57167 8.53417 7.21417 8.43333 6.89333C8.09417 5.87583 7.92 4.785 7.92 3.6575C7.92 3.1625 7.5075 2.75 7.0125 2.75H3.84083C3.34583 2.75 2.75 2.97 2.75 3.6575C2.75 12.1733 9.83583 19.25 18.3425 19.25C18.9933 19.25 19.25 18.6725 19.25 18.1683V15.0058C19.25 14.5108 18.8375 14.0983 18.3425 14.0983Z" />
 						</svg>
 						+7 (495) 885-45-47
@@ -67,6 +67,9 @@
 				<div class="header__form-bg">
 					<form class="header__form">
 						<input type="search" class="header__search" placeholder="Я хочу купить.."/>
+						<svg width="16" height="16" viewBox="0 0 16 16" class="header__lens-svg" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path class=" header__lens-path " d="M15.8187 14.0625L12.607 11.3156C13.5516 10.0945 14.0625 8.60156 14.0625 7.03125C14.0625 5.15156 13.3289 3.38906 12.0023 2.06016C10.6758 0.73125 8.90859 0 7.03125 0C5.15391 0 3.38672 0.733594 2.06016 2.06016C0.73125 3.38672 0 5.15156 0 7.03125C0 8.90859 0.733594 10.6758 2.06016 12.0023C3.38672 13.3312 5.15156 14.0625 7.03125 14.0625C8.60156 14.0625 10.0922 13.5516 11.3133 12.6094L14.5249 15.3539C14.5428 15.3718 14.564 15.3859 14.5873 15.3956C14.6106 15.4053 14.6356 15.4102 14.6609 15.4102C14.6861 15.4102 14.7111 15.4053 14.7344 15.3956C14.7578 15.3859 14.7789 15.3718 14.7968 15.3539L15.8187 14.3344C15.8365 14.3165 15.8507 14.2953 15.8604 14.272C15.87 14.2487 15.875 14.2237 15.875 14.1984C15.875 14.1732 15.87 14.1482 15.8604 14.1249C15.8507 14.1015 15.8365 14.0803 15.8187 14.0625ZM10.7438 10.7438C9.75 11.7352 8.43281 12.2812 7.03125 12.2812C5.62969 12.2812 4.3125 11.7352 3.31875 10.7438C2.32734 9.75 1.78125 8.43281 1.78125 7.03125C1.78125 5.62969 2.32734 4.31016 3.31875 3.31875C4.3125 2.32734 5.62969 1.78125 7.03125 1.78125C8.43281 1.78125 9.75234 2.325 10.7438 3.31875C11.7352 4.3125 12.2812 5.62969 12.2812 7.03125C12.2812 8.43281 11.7352 9.75234 10.7438 10.7438Z" fill="currentColor"/>
+							</svg>
 						<button class="header__form-btn btn btn--svg">
 							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
@@ -75,7 +78,7 @@
 						</button>
 					</form>
 					<select class="header__catalog-select catalog-select" name="select">
-						<option value="value1" selected>Категория</option>
+						<option value selected disabled>Категория</option>
 						<option value="value2">Диваны</option>
 						<option value="value3">Кресла</option>
 						<option value="value4">Пуфы</option>
@@ -107,7 +110,7 @@
 			<section class="hero">
 				<div class="swiper hero__swiper">
 					<div class="swiper-wrapper hero__swiper-wripper">
-						<div class="swiper-slide hero__swiper-slide hero--slide1">
+						<div class="swiper-slide hero__swiper-slide hero__swiper-slide--slide1">
 							<div class="container hero__container">
 								<div class="hero__content-container">
 									<h2 class="hero__title title-reset">
@@ -117,7 +120,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="swiper-slide hero__swiper-slide hero--slide2">
+						<div class="swiper-slide hero__swiper-slide hero__swiper-slide--slide2">
 							<div class="container hero__container">
 								<div class="hero__content-container">
 									<h2 class="hero__title title-reset">
@@ -127,10 +130,10 @@
 								</div>
 							</div>
 						</div>
-						<div class="swiper-slide hero__swiper-slide hero--slide3">
+						<div class="swiper-slide hero__swiper-slide hero__swiper-slide--slide3">
 							<div class="container hero__container">
 								<div class="hero__content-container">
-									<h2 class="hero__title title-reset hero--white">
+									<h2 class="hero__title title-reset hero__title--white">
 										Коллекция стильного и яркого текстиля
 									</h2>
 									<button class="hero__btn btn btn--first">Получить!</button>
@@ -144,49 +147,16 @@
 				<div class="container special__container">
 					<h2 class="special__title title-reset">Специальные предложения</h2>
 					<div class="special__btn-container">
-						<button class="special__btn-slide special--prew btn btn--svg">
-							<svg width="32"
-								height="32"
-								viewBox="0 0 32 32"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<circle
-									r="15"
-									transform="matrix(-1 0 0 1 16 16)"
-									stroke="#A65CF0"
-									stroke-width="2"
-								/>
-								<path
-									d="M18 11L13 16L18 21"
-									stroke="#A65CF0"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
+						<button class="special__btn-slide special__btn-slide--prew btn btn--svg">
+							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle r="15" transform="matrix(-1 0 0 1 16 16)" stroke="#A65CF0" stroke-width="2"/>
+								<path d="M18 11L13 16L18 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
 						</button>
-						<button class="special__btn-slide special--next btn btn--svg">
-							<svg width="32"
-								height="32"
-								viewBox="0 0 32 32"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<circle
-									cx="16"
-									cy="16"
-									r="15"
-									stroke="#A65CF0"
-									stroke-width="2"
-								/>
-								<path
-									d="M14 11L19 16L14 21"
-									stroke="#A65CF0"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
+						<button class="special__btn-slide special__btn-slide--next btn btn--svg">
+							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
+								<path d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
 						</button>
 					</div>
@@ -196,19 +166,15 @@
 								<ul class="special__list list-reset">
 									<li class="special__items">
 										<div class="special__sale">-9000</div>
-										<img
-											src="img/special-img1.png"
-											alt="Кресло"
-											class="special__img special--img-card_1"
-										/>
+										<img src="img/special-img1.png" alt="Кресло" class="special__img special__img--card_1"/>
 										<div class="special__content-container">
 											<h3 class="special__product title-reset">
 												Кресло велюровое
 											</h3>
 											<div class="special__model">"X-24"</div>
 											<div class="special__price-container">
-												<span class="special__price">15990 руб</span>
-												<span class="special__old-price">24900 руб</span>
+												<span class="special__price">15 990 руб</span>
+												<span class="special__old-price">24 900 руб</span>
 											</div>
 											<button class="special__btn-buy btn--second btn">
 												Купить
@@ -217,11 +183,7 @@
 									</li>
 									<li class="special__items">
 										<div class="special__sale">-10000</div>
-										<img
-											src="img/special-img2.png"
-											alt="Диван"
-											class="special__img special--big-img special--img-card_2"
-										/>
+										<img src="img/special-img2.png" alt="Диван" class="special__img special__img--big special__img--card_2"/>
 										<div class="special__content-container">
 											<h3 class="special__product title-reset">
 												Диван тканевый
@@ -234,19 +196,12 @@
 											<button class="special__btn-buy btn--second btn">
 												Купить
 											</button>
-											<img
-												src="img/special-img2-1.png"
-												alt="Диван в разобранном виде"
-												class="special__img-project"
-											/>
+											<img src="img/special-img2-1.png" alt="Диван в разобранном виде" class="special__img-project"/>
 										</div>
 									</li>
 									<li class="special__items">
 										<div class="special__sale">-600</div>
-										<img
-											src="img/special-img3.png"
-											alt=""
-											class="special__img special--img-card_3"
+										<img src="img/special-img3.png" alt="" class="special__img special__img--card_3"
 										/>
 										<div class="special__content-container">
 											<h3 class="special__product title-reset">Будильник</h3>
@@ -267,11 +222,7 @@
 								<ul class="special__list list-reset">
 									<li class="special__items">
 										<div class="special__sale">-300</div>
-										<img
-											src="img/special-img4.png"
-											alt="Кресло"
-											class="special__img special--img-card_1"
-										/>
+										<img src="img/special-img4.png" alt="Кресло" class="special__img"/>
 										<div class="special__content-container">
 											<h3 class="special__product title-reset">
 												Мини-скульптура
@@ -288,11 +239,7 @@
 									</li>
 									<li class="special__items">
 										<div class="special__sale">-10000</div>
-										<img
-											src="img/special-img5.png"
-											alt="Диван"
-											class="special__img special--big-img special--img-card_2"
-										/>
+										<img src="img/special-img5.png" alt="Диван" class="special__img special__img--big special__img--card_2"/>
 										<div class="special__content-container">
 											<h3 class="special__product title-reset">
 												Диван вел-флок
@@ -305,20 +252,12 @@
 											<button class="special__btn-buy btn--second btn">
 												Купить
 											</button>
-											<img
-												src="img/special-img2-2.png"
-												alt="Диван в разобранном виде"
-												class="special__img-project"
-											/>
+											<img src="img/special-img2-2.png" alt="Диван в разобранном виде" class="special__img-project"/>
 										</div>
 									</li>
 									<li class="special__items">
 										<div class="special__sale">-700</div>
-										<img
-											src="img/special-img6.png"
-											alt=""
-											class="special__img special--img-card_3"
-										/>
+										<img src="img/special-img6.png" alt="" class="special__img special__img--card_3"/>
 										<div class="special__content-container">
 											<h3 class="special__product title-reset">Термометр +</h3>
 											<div class="special__model">гидрометр “H-18”</div>
@@ -484,7 +423,7 @@
 										<span class="category__sort">Модульные</span>
 									</div>
 									<h3 class="category__subtitle title-reset">Диваны</h3>
-									<img src="img/category-img1.png" alt="Мебель" class="category__img category--big-img"/>
+									<img src="img/category-img1.png" alt="Мебель" class="category__img category__img--big"/>
 									<div class="category__hrefs-container">
 										<a href="#" class="category__hrefs btn btn--svg">В каталог</a>
 										<svg  width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -501,7 +440,7 @@
 										<span class="category__sort">Кресла-кровати</span>
 									</div>
 									<h3 class="category__subtitle title-reset">Кресла</h3>
-									<img src="img/category-img2.png" alt="Мебель" class="category__img category--big-img"/>
+									<img src="img/category-img2.png" alt="Мебель" class="category__img category__img--big"/>
 									<div class="category__hrefs-container">
 										<a href="#" class="category__hrefs btn btn--svg">В каталог</a>
 										<svg  width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -518,7 +457,7 @@
 										<span class="category__sort">Двуспальные</span>
 									</div>
 									<h3 class="category__subtitle title-reset">Кровати</h3>
-									<img src="img/category-img3.png" alt="Мебель" class="category__img category--small-img category--sofa"/>
+									<img src="img/category-img3.png" alt="Мебель" class="category__img category__img--small category__img--sofa"/>
 									<div class="category__hrefs-container">
 										<a href="#" class="category__hrefs btn btn--svg">В каталог</a>
 										<svg  width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -535,7 +474,7 @@
 										<span class="category__sort">Комоды</span>
 									</div>
 									<h3 class="category__subtitle title-reset">Тумбы и комоды</h3>
-									<img src="img/category-img4.png" alt="Мебель" class="category__img category--small-img category--commode"/>
+									<img src="img/category-img4.png" alt="Мебель" class="category__img category__img--small category__img--commode"/>
 									<div class="category__hrefs-container">
 										<a href="#" class="category__hrefs btn btn--svg">В каталог</a>
 										<svg  width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -552,7 +491,7 @@
 										<span class="category__sort">Металлокаркас</span>
 									</div>
 									<h3 class="category__subtitle title-reset">Стулья</h3>
-									<img src="img/category-img5.png" alt="Мебель" class="category__img category--small-img category--chair"/>
+									<img src="img/category-img5.png" alt="Мебель" class="category__img category__img--small category__img--chair"/>
 									<div class="category__hrefs-container">
 										<a href="#" class="category__hrefs btn btn--svg">В каталог</a>
 										<svg  width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -701,61 +640,22 @@
 							значительной степени обусловливает важность распределения
 							внутренних резервов и ресурсов.
 							<span class="feedback__tooltip tooltip">
-								<svg width="14"
-									height="14"
-									viewBox="0 0 14 14"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fill-rule="evenodd"
-										clip-rule="evenodd"
-										d="M7 1.27273C3.83691 1.27273 1.27273 3.83691 1.27273 7C1.27273 10.1631 3.83691 12.7273 7 12.7273C10.1631 12.7273 12.7273 10.1631 12.7273 7C12.7273 3.83691 10.1631 1.27273 7 1.27273ZM0 7C0 3.13401 3.13401 0 7 0C10.866 0 14 3.13401 14 7C14 10.866 10.866 14 7 14C3.13401 14 0 10.866 0 7ZM7.16433 4.47002C6.86809 4.4192 6.56343 4.47487 6.3043 4.62716C6.04517 4.77946 5.8483 5.01854 5.74856 5.30208C5.63193 5.63362 5.26862 5.80784 4.93708 5.69121C4.60554 5.57458 4.43132 5.21127 4.54795 4.87973C4.74743 4.31266 5.14117 3.83449 5.65943 3.52991C6.17769 3.22532 6.78701 3.11398 7.3795 3.21561C7.97198 3.31723 8.50937 3.62527 8.8965 4.08515C9.28355 4.54494 9.49543 5.12685 9.49462 5.72785C9.49433 6.70171 8.77231 7.34484 8.2567 7.68857C7.97948 7.87339 7.70679 8.00928 7.50591 8.09856C7.40457 8.1436 7.31923 8.17778 7.25774 8.2012C7.22694 8.21294 7.20197 8.22203 7.18379 8.22849L7.16169 8.23623L7.15465 8.23864L7.15217 8.23947L7.1512 8.2398C7.15101 8.23986 7.1504 8.24007 6.94916 7.63636L7.1504 8.24007C6.81698 8.35121 6.4566 8.17101 6.34546 7.8376C6.23439 7.5044 6.41427 7.14427 6.74726 7.03287L6.75742 7.02931C6.76721 7.02583 6.78325 7.02001 6.80465 7.01186C6.84756 6.99551 6.91137 6.97003 6.98901 6.93552C7.14608 6.86571 7.35067 6.76297 7.55072 6.6296C7.98956 6.33704 8.22189 6.02581 8.22189 5.72727L8.22189 5.72632C8.22234 5.42575 8.1164 5.13473 7.92283 4.90479C7.72927 4.67485 7.46057 4.52083 7.16433 4.47002ZM7.63642 10.1818C7.63642 10.5333 7.35151 10.8182 7.00005 10.8182C6.6486 10.8182 6.36369 10.5333 6.36369 10.1818C6.36369 9.83036 6.6486 9.54545 7.00005 9.54545C7.35151 9.54545 7.63642 9.83036 7.63642 10.1818Z"
-										fill="#FF862F"
-									/>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M7 1.27273C3.83691 1.27273 1.27273 3.83691 1.27273 7C1.27273 10.1631 3.83691 12.7273 7 12.7273C10.1631 12.7273 12.7273 10.1631 12.7273 7C12.7273 3.83691 10.1631 1.27273 7 1.27273ZM0 7C0 3.13401 3.13401 0 7 0C10.866 0 14 3.13401 14 7C14 10.866 10.866 14 7 14C3.13401 14 0 10.866 0 7ZM7.16433 4.47002C6.86809 4.4192 6.56343 4.47487 6.3043 4.62716C6.04517 4.77946 5.8483 5.01854 5.74856 5.30208C5.63193 5.63362 5.26862 5.80784 4.93708 5.69121C4.60554 5.57458 4.43132 5.21127 4.54795 4.87973C4.74743 4.31266 5.14117 3.83449 5.65943 3.52991C6.17769 3.22532 6.78701 3.11398 7.3795 3.21561C7.97198 3.31723 8.50937 3.62527 8.8965 4.08515C9.28355 4.54494 9.49543 5.12685 9.49462 5.72785C9.49433 6.70171 8.77231 7.34484 8.2567 7.68857C7.97948 7.87339 7.70679 8.00928 7.50591 8.09856C7.40457 8.1436 7.31923 8.17778 7.25774 8.2012C7.22694 8.21294 7.20197 8.22203 7.18379 8.22849L7.16169 8.23623L7.15465 8.23864L7.15217 8.23947L7.1512 8.2398C7.15101 8.23986 7.1504 8.24007 6.94916 7.63636L7.1504 8.24007C6.81698 8.35121 6.4566 8.17101 6.34546 7.8376C6.23439 7.5044 6.41427 7.14427 6.74726 7.03287L6.75742 7.02931C6.76721 7.02583 6.78325 7.02001 6.80465 7.01186C6.84756 6.99551 6.91137 6.97003 6.98901 6.93552C7.14608 6.86571 7.35067 6.76297 7.55072 6.6296C7.98956 6.33704 8.22189 6.02581 8.22189 5.72727L8.22189 5.72632C8.22234 5.42575 8.1164 5.13473 7.92283 4.90479C7.72927 4.67485 7.46057 4.52083 7.16433 4.47002ZM7.63642 10.1818C7.63642 10.5333 7.35151 10.8182 7.00005 10.8182C6.6486 10.8182 6.36369 10.5333 6.36369 10.1818C6.36369 9.83036 6.6486 9.54545 7.00005 9.54545C7.35151 9.54545 7.63642 9.83036 7.63642 10.1818Z" fill="#FF862F"/>
 								</svg>
 							</span>
 						</p>
 						<form class="feedback__form">
-							<label for="#name" class="feedback__label visually-hidden"
-								>Имя</label
-							>
-							<input
-								type="name"
-								class="feedback__input"
-								id="name"
-								placeholder="Как вас зовут?"
-							/>
-							<label for="#tel" class="feedback__label visually-hidden"
-								>Телефон</label
-							>
-							<input
-								placeholder="Ваш телефон"
-								type="tel"
-								class="feedback__input"
-								id="tel"
-							/>
-							<label for="#email" class="feedback__label visually-hidden"
-								>Email</label
-							>
-							<input
-								placeholder="Ваш e-mail"
-								type="email"
-								class="feedback__input"
-								id="email"
-							/>
-							<buttom class="feedback__btn btn btn--first">Отправить</buttom>
+							<label for="name" class="feedback__label visually-hidden">Имя</label>
+							<input type="text" class="feedback__input" id="name" placeholder="Как вас зовут?" data-validate-field="name"/>
+							<label for="tel" class="feedback__label visually-hidden">Телефон</label>
+							<input type="tel" class="feedback__input" id="tel" placeholder="Ваш телефон" data-validate-field="tel"/>
+							<label for="email" class="feedback__label visually-hidden">Email</label>
+							<input  type="email" class="feedback__input" id="email" placeholder="Ваш e-mail" data-validate-field="mail"/>
+							<button class="feedback__btn btn btn--first">Отправить</button>
 							<label class="feedback__label" for="checkbox">
-								<input
-									type="checkbox"
-									class="feedback__checkbox"
-									id="checkbox"
-								/>
-								<span class="feedback__span-accept"
-									>Принимаю<a href="#" class="feedback__deal-hrefs"
-										>пользовательское соглашение</a
-									></span
-								>
+								<input type="checkbox" class="feedback__checkbox" id="checkbox"/>
+								<span class="feedback__span-accept">Принимаю<a href="#" class="feedback__deal-hrefs" >пользовательское соглашение</a></span>
 							</label>
 						</form>
 					</div>
@@ -768,7 +668,7 @@
 					<div class="footer__list-container">
 						<ul class="footer__list about-us-list list-reset">
 							<li class="footer__items hrefs hrefs--second">
-								<span href="#" class="footer__hrefs footer--first-elem">О нас</span>
+								<span class="footer__hrefs footer__hrefs--first-elem">О нас</span>
 							</li>
 							<li class="footer__items hrefs hrefs--second">
 								<a href="#" class="footer__hrefs hrefs hrefs--link">О компании</a>
@@ -779,7 +679,7 @@
 						</ul>
 						<ul class="footer__list services-list list-reset">
 							<li class="footer__items hrefs hrefs--second">
-								<span href="#" class="footer__hrefs footer--first-elem">Услуги</span>
+								<span class="footer__hrefs footer__hrefs--first-elem">Услуги</span>
 							</li>
 							<li class="footer__items hrefs hrefs--second">
 								<a href="#" class="footer__hrefs hrefs hrefs--link">Доставка</a>
@@ -793,10 +693,10 @@
 						</ul>
 						<ul class="footer__list connection-list list-reset">
 							<li class="footer__items hrefs hrefs--second">
-								<span href="#" class="footer__hrefs footer--first-elem">Связь с нами</span>
+								<span class="footer__hrefs footer__hrefs--first-elem">Связь с нами</span>
 							</li>
 							<li class="footer__items hrefs hrefs--second">
-								<a href="#" class="footer__hrefs hrefs hrefs--link footer--first-href">Обратная связь</a>
+								<a href="#" class="footer__hrefs hrefs hrefs--link ">Обратная связь</a>
 							</li>
 							<li class="footer__items hrefs hrefs--second">
 								<a href="#" class="footer__hrefs hrefs hrefs--link">Контакты</a>
@@ -804,7 +704,7 @@
 						</ul>
 						<ul class="footer__list cooperation-list list-reset">
 							<li class="footer__items hrefs hrefs--second">
-								<span href="#" class="footer__hrefs footer--first-elem">Сотрудничество</span>
+								<span class="footer__hrefs footer__hrefs--first-elem">Сотрудничество</span>
 							</li>
 							<li class="footer__items hrefs hrefs--second ">
 								<a href="#" class="footer__hrefs hrefs hrefs--link">Поставщикам</a>
@@ -819,20 +719,20 @@
 					</div>
 					<ul class="footer__social-list social-list list-reset">
 						<li class="social-list__items">
-							<a href="#" class="social-list__hrefs social-list--facebook hrefs hrefs--social">
+							<a href="#" class="social-list__hrefs social-list__facebook hrefs hrefs--social">
 								<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M15 0C6.74999 0 0 6.76205 0 15.0904C0 22.6205 5.48999 28.8705 12.66 30V19.4578H8.84999V15.0904H12.66V11.762C12.66 7.98193 14.895 5.90361 18.33 5.90361C19.965 5.90361 21.675 6.18976 21.675 6.18976V9.90964H19.785C17.925 9.90964 17.34 11.0693 17.34 12.259V15.0904H21.51L20.835 19.4578H17.34V30C20.8746 29.4395 24.0933 27.6288 26.4149 24.8947C28.7364 22.1606 30.008 18.6832 30 15.0904C30 6.76205 23.25 0 15 0Z" fill="#999999"/></svg>
 								</a>
 						</li>
 						<li class="social-list__items">
-							<a href="#" class="social-list__hrefs social-list--vk  hrefs hrefs--social">
+							<a href="#" class="social-list__hrefs social-list__vk  hrefs hrefs--social">
 								<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M15 0C6.71601 0 0 6.7157 0 15C0 23.2843 6.71601 30 15 30C23.284 30 30 23.2843 30 15C30 6.7157 23.284 0 15 0ZM22.6088 16.6223C23.3079 17.3052 24.0476 17.9478 24.6752 18.7013C24.9532 19.0346 25.2153 19.3792 25.4148 19.7669C25.6996 20.3196 25.4425 20.9257 24.9477 20.9586L21.8747 20.958C21.081 21.0236 20.4494 20.7035 19.9169 20.1609C19.4919 19.7285 19.0975 19.2666 18.6881 18.8194C18.5208 18.6359 18.3447 18.4631 18.1347 18.3272C17.7158 18.0546 17.3518 18.1381 17.1118 18.5758C16.8672 19.0211 16.8114 19.5146 16.788 20.0102C16.7546 20.7348 16.5361 20.9242 15.809 20.9583C14.2554 21.031 12.7814 20.7953 11.4114 20.0121C10.2028 19.3212 9.26731 18.3462 8.45217 17.2423C6.86486 15.0902 5.64921 12.7283 4.55693 10.2985C4.3111 9.7513 4.49095 9.45852 5.09463 9.44716C6.0976 9.42783 7.10056 9.43028 8.10353 9.44624C8.51171 9.45268 8.78179 9.68624 8.93862 10.0714C9.48061 11.4049 10.1451 12.6737 10.9777 13.8503C11.1996 14.1637 11.4261 14.4761 11.7486 14.6974C12.1047 14.9417 12.376 14.861 12.5438 14.4635C12.6513 14.2109 12.6976 13.9409 12.7209 13.6702C12.8007 12.743 12.8102 11.8162 12.6721 10.8927C12.5862 10.3148 12.2612 9.94158 11.6851 9.83233C11.3917 9.77678 11.4347 9.66813 11.5774 9.50056C11.8251 9.21084 12.0571 9.03161 12.5208 9.03161L15.9928 9.031C16.5401 9.13841 16.6628 9.38394 16.7371 9.93514L16.7402 13.7936C16.7337 14.0069 16.8473 14.6391 17.2303 14.7787C17.5372 14.88 17.7397 14.6339 17.9233 14.4396C18.7559 13.556 19.3492 12.5131 19.8804 11.4338C20.1149 10.9577 20.3171 10.4652 20.5136 9.97166C20.6596 9.60675 20.8868 9.42721 21.2986 9.43335L24.642 9.43734C24.7406 9.43734 24.8406 9.43826 24.9382 9.45514C25.5017 9.55151 25.6561 9.79396 25.4817 10.3436C25.2074 11.2073 24.6743 11.9266 24.1531 12.6479C23.5946 13.4201 22.9989 14.1652 22.4458 14.9408C21.9376 15.6497 21.9778 16.0066 22.6088 16.6223Z" fill="#999999"/>
 									</svg>
 								</a>
 						</li>
 						<li class="social-list__items">
-							<a href="#" class="social-list__hrefs social-list--insta hrefs hrefs--social">
+							<a href="#" class="social-list__hrefs social-list__insta hrefs hrefs--social">
 								<svg width="30" height="30" viewBox="0 0 30 30" fill="#999999" xmlns="http://www.w3.org/2000/svg" >
 									<path d="M15 0C23.283 0 30 6.717 30 15C30 23.283 23.283 30 15 30C6.717 30 0 23.283 0 15C0 6.717 6.717 0 15 0ZM6.43867 18.5511C6.48033 19.468 6.62613 20.094 6.83899 20.6419C7.28645 21.7989 8.20107 22.7135 9.35806 23.161C9.90578 23.3739 10.532 23.5194 11.4487 23.5613C12.3672 23.6032 12.6606 23.6133 14.9998 23.6133C17.3392 23.6133 17.6324 23.6032 18.5511 23.5613C19.4678 23.5194 20.094 23.3739 20.6417 23.161C21.2167 22.9447 21.7371 22.6057 22.1674 22.1674C22.6055 21.7374 22.9445 21.2167 23.1608 20.6419C23.3736 20.0942 23.5194 19.468 23.5611 18.5513C23.6034 17.6326 23.6133 17.3392 23.6133 15C23.6133 12.6608 23.6034 12.3674 23.5613 11.4489C23.5197 10.532 23.3741 9.90601 23.1612 9.35806C22.9449 8.78334 22.6057 8.26263 22.1674 7.83257C21.7374 7.39426 21.2167 7.05528 20.6419 6.83899C20.094 6.62613 19.468 6.48056 18.5511 6.43867C17.6326 6.39679 17.3392 6.38672 15 6.38672C12.6608 6.38672 12.3674 6.39679 11.4489 6.4389C10.532 6.48056 9.90601 6.62613 9.35806 6.83876C8.78334 7.05505 8.26263 7.39426 7.83234 7.83257C7.39426 8.26286 7.05505 8.78334 6.83899 9.35806C6.6259 9.90601 6.48033 10.532 6.43845 11.4489C6.39656 12.3674 6.38672 12.6608 6.38672 15C6.38672 17.3392 6.39656 17.6326 6.43867 18.5511Z" fill="#999999"/>
 									<path d="M12.1289 15C12.1289 16.5857 13.4143 17.8711 15 17.8711C16.5857 17.8711 17.8711 16.5857 17.8711 15C17.8711 13.4143 16.5857 12.1289 15 12.1289C13.4143 12.1289 12.1289 13.4143 12.1289 15Z" fill="#999999"/>
