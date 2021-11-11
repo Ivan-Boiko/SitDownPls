@@ -1,0 +1,47 @@
+@mixin title {
+  font: var(--prehigh-high-book);
+  color: var(--color-black);
+  margin-bottom: 26px;
+}
+@mixin title-product {
+  font: var(--prehigh-book);
+  color: var(--color-black);
+}
+@mixin title-filter {
+  font: var(--prehigh-regular);
+  color: var(--color-grey-shade);
+}
+@mixin filter-content {
+	font: var(--middle-book);
+  color: var(--color-grey-shade);
+	max-width: max-content;
+}
+
+@mixin btn-container {
+	display: flex;
+    position: absolute;
+    right: 15px;
+    top: 0;
+}
+
+@mixin href-container {
+	display: flex;
+	align-items: center;
+	svg{
+		vertical-align: middle;
+	}
+}
+
+@mixin input-style {
+	background-color: var(--color-light-grey);
+	width: 100%;
+	border-radius: 10px 0px 0px 10px;
+	min-height: 60px;
+	padding-left: 59px;
+	color: var(--color-grey);
+	transition: all 0.3s ease-in;
+	border: 2px solid transparent;
+	&::placeholder {
+		color: var(--color-grey);
+}
+}

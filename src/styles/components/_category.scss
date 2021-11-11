@@ -1,0 +1,68 @@
+.category {
+  padding-bottom: 70px;
+  &__title {
+    @include title;
+  }
+  &__items {
+    background-color: var(--color-light-grey);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+
+    &:nth-child(-n + 5) {
+      min-height: 405px;
+      grid-column: 4 span;
+    }
+    &:nth-child(-n + 2) {
+      min-height: 511px;
+      grid-column: 6 span;
+    }
+  }
+  &__sort-container{
+    margin-bottom: 14px;
+  }
+  &__sort {
+    font: var(--small-book);
+    color:var(--color-grey);
+    &:not(:last-child){
+      margin-right: 27px;
+    }
+  }
+  &__content-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+  }
+  &__subtitle {
+    margin-bottom: auto;
+    @include title-product;
+  }
+  &__img {
+    position: absolute;
+    left: -30px;
+    top: 56%;
+    transform: translate(0,-50%);
+  }
+	&__hrefs-container{
+		@include href-container;
+	}
+
+  &__img--big{
+		top: 55%;
+		max-width: 515px;
+    max-height: 308px;
+  }
+  &__img--small{
+    max-height: 202px;
+  }
+	&__img--sofa{
+		max-width: 305px;
+	}
+	&__img--commode{
+		max-width: 330px;
+	}
+	&__img--chair{
+		max-width: 258px;
+	}
+}

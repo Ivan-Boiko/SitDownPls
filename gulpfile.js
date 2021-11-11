@@ -18,7 +18,6 @@ const sass = require('gulp-sass')(require('sass'))
 const buildStyles = () => {
     return src([
       'src/styles/**/*.scss',
-      'src/styles/**/*.css',
     ]
     )
     .pipe(sass().on('error', notify.onError()))
@@ -31,9 +30,9 @@ const buildStyles = () => {
       .pipe(concat('style.css'))
       .pipe(dest('./dist/css'))
       .pipe(browserSync.stream())
-  };
+}
 
-  const buildResources = () => {
+const buildResources = () => {
     return src(
     'src/styles/vendor/**/*.css'
     )
@@ -44,9 +43,9 @@ const buildStyles = () => {
       .pipe(concat('vendor.css'))
       .pipe(dest('./dist/css'))
       .pipe(browserSync.stream())
-  };
+}
 
-const clean = () =>{
+const clean = () => {
     return del(['dist'])
 }
 
@@ -100,7 +99,7 @@ const sourcemapsDev = () =>{
 const scripts = () => {
     return src([
         'src/js/**/*.js',
-        'src/js/resources/**/**.js'
+        'src/js/vendor/**/**.js'
     ])
     .pipe(babel({
         presets: ['@babel/env']
@@ -120,11 +119,11 @@ const watchFiles = () => {
     })
 }
 
-const images = () =>{
+const images = () => {
     return src([
         'src/img/**/*.jpg',
         'src/img/**/*.png',
-        'src/img/**/*.svg',
+        'src/img/*.svg',
         'src/img/**/*.jpeg',
         'src/img/**/*.webp',
     ])
@@ -132,10 +131,11 @@ const images = () =>{
     .pipe(dest('dist/img'))
     .pipe(browserSync.stream())
 }
+
 watch('src/fonts/**/*', fonts)
-watch('src/img/**/*.svg', svgSprites)
+watch('src/img/svg/**/*.svg', svgSprites)
 watch('src/js/**/*.js', scripts)
-watch('src/**', defaultExport)
+watch('src/**.html', defaultExport)
 watch('src/**/*.scss', buildStyles)
 watch('src/styles/vendor/**/*.css', buildResources)
 watch('src/img/**/*', images)
@@ -151,6 +151,7 @@ exports.buildResources = buildResources
 exports.fonts = fonts
 exports.images = images
 
-exports.build = series  (clean, defaultExport,  htmlMinify, buildResources , buildStyles, scripts,  images, svgSprites, watchFiles)
-exports.default = series(clean, fonts, scripts , defaultExport , buildStyles , images, svgSprites, sourcemapsDev, watchFiles)
+
+
+exports.default = series(clean, fonts, scripts , defaultExport , buildStyles , buildResources, images, svgSprites, sourcemapsDev, watchFiles)
 

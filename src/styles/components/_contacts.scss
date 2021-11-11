@@ -1,0 +1,52 @@
+.contacts{
+	&__container{
+		gap: 0;
+	}
+	&__adress-container{
+		display: flex;
+		margin-bottom: var(--main-offset);
+		grid-column: 12 span;
+	}
+	&__addres-hrefs{
+		color: var(--color-grey);
+	}
+	&__addres-hrefs--active{
+		color: var(--color-fiol-dark);
+	}
+	&__adress-items:not(:last-child){
+		margin-right: 5px;
+	}
+	&__title{
+		@include title;
+		font-weight: bold;
+
+		grid-column: 4 span;
+	}
+	&__form{
+		grid-column: 12 span;
+		max-width: 720px;
+		display: flex;
+		margin-bottom: var(--main-offset);
+	}
+	&__input{
+		@include input-style;
+		padding-left: 25px;
+		border-radius: 10px;
+		margin-right: 32px;
+		::placeholder{
+			color: wheat;
+		}
+	}
+	&__btn{
+		padding: 19px 35px;
+		max-width: max-content;
+	}
+	&__map{
+		grid-column: 12 span;
+		width: 100%;
+		max-width: 1920px;
+		height: 510px;
+		max-height: max-content;
+		margin-bottom: 70px;
+	}
+}

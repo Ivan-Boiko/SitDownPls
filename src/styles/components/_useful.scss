@@ -1,0 +1,40 @@
+.useful {
+  padding-bottom: 70px;
+  &__container{
+    position: relative;
+  }
+  &__title {
+    @include title;
+  }
+  &__btn-prev{
+    margin-right: 10px;
+  }
+  &__btn-container{
+		@include btn-container;
+  }
+  &__swiper-slide{
+    background-color: var(--color-light-grey);
+    min-height: 676px;
+    padding-bottom: 30px;
+  }
+  &__img{
+    max-height: 426px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  &__content-container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    min-height: 187px;
+  }
+  &__subtitile{
+    max-width: 570px;
+    font: var(--prehigh-book);
+    color: var(--color-black);
+    margin-bottom: auto;
+  }
+  &__btn{
+    background-color: transparent;
+  }
+}

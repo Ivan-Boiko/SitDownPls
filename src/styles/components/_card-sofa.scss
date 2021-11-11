@@ -1,0 +1,56 @@
+.sofa-list{
+	&__items{
+    grid-column: 3 span;
+    background-color: var(--color-light-grey);
+		max-width: 100%;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__content-container{
+    padding-left: 30px;
+    padding-bottom: 30px;
+  }
+  &__rating{
+ 	 max-width: 75px;
+   padding-top: 32px;
+   padding-left: 31px;
+	 margin-bottom: auto;
+	 font: var(--middle-book);
+  }
+	&__star-svg{
+		margin-right: 5px;
+		vertical-align: middle
+
+	}
+  &__product{
+    @include title-product;
+  }
+  &__model{
+    @include title-product;
+    margin-bottom: 22px;
+  }
+  &__img{
+		max-width: 260px;
+		object-fit: cover;
+		align-self: center;
+		margin-bottom: 13px;
+  }
+	&__img--width{
+		max-width: 216px;
+	}
+  &__price{
+    font: var(--middle-book);
+    color: var(--color-grey);
+    margin-bottom: 24px;
+  }
+  &__btn-buy{
+    background-color: transparent;
+  }
+  &__btn-more{
+    padding: 22px 36px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+}

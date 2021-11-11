@@ -1,0 +1,114 @@
+.cooperation{
+
+	&__adress-page{
+		color:var(--color-grey);
+		margin-bottom: var(--main-offset);
+		display: inline-block;
+		font: var(--small-book);
+	}
+	&__adress-page--color{
+		color: var(--color-fiol-dark);
+	}
+	&__title{
+		font: var(--prehigh-high-book);
+		color: var(--color-black);
+		margin-bottom: var(--main-offset);
+	}
+	&__subtitle{
+		font: var(--prehigh-book);
+		color: var(--color-black);
+		margin-bottom: 12px;
+
+	}
+	&__content{
+		max-width: 840px;
+		margin-bottom: var(--main-offset);
+		font: var(--middle-book);
+		line-height: 28px;
+		color: var(--color-grey-shade);
+	}
+	&__timing{
+		display: flex;
+		align-items: center;
+		margin-bottom: 70px;
+	}
+	&__img{
+		width: 77px;
+		height: 116px;
+		margin-right: var(--main-offset);
+	}
+	&__text{
+		font: var(--prehigh-book);
+		color: var(--color-black);
+		max-width: 515px;
+	}
+}
+.list-get{
+margin-bottom: var(--main-offset);
+	&__items{
+		display: flex;
+		max-width: 630px;
+		position: relative;
+		justify-content: space-between;
+		&:not(:last-child){
+			margin-bottom: 12px;
+		}
+	}
+	&__svg{
+		position: absolute;
+		width: 25px;
+		height: 25px;
+
+	}
+	&__text{
+		padding-left: 36px;
+		font: var(--middle-book);
+		color: var(--color-grey-shade);
+	}
+}
+.list-cooperation{
+	margin-bottom: var(--main-offset);
+
+	&__items{
+		&:not(:last-child){
+			margin-bottom: 12px;
+		}
+	}
+	&__title{
+		font: var(--prehigh-regular);
+		color: var(--color-orange);
+		margin-bottom: 12px;
+	}
+	&__information{
+		font: var(--middle-book);
+		color: var(--color-grey-shade);
+		line-height: 28px;
+		max-width: 850px;
+	}
+}
+.list-guarantee{
+	margin-bottom: var(--main-offset);
+
+	&__items{
+		max-width: 815px;
+		position: relative;
+		&:not(:last-child){
+			margin-bottom: 12px;
+		}
+	}
+	&__text{
+		font: var(--middle-book);
+		color: var(--color-grey-shade);
+		line-height: 28px;
+		padding-left: 26px;
+	}
+	&__number{
+		position: absolute;
+		left: 0;
+		top: 6px;
+		color:var(--color-orange);
+		font: var(--prehigh-regular);
+	}
+}
+
+

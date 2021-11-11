@@ -1,19 +1,28 @@
 document.addEventListener('DOMContentLoaded',  function(){
 
+
   const swiperHero = new Swiper('.hero__swiper', {
     speed: 800,
     loop: true,
-    // autoplay:{
-    //   delay: 5000,
-    // }
+		effect: 'fade',
+    autoplay:{
+      delay: 5000,
+    },
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+			bulletClass:"swiper-pagination-bullet hero__bulets",
+			clickable:true,
+			clickableClass:"hero__bullets-click"
+		},
   });
   const swiperSpecial = new Swiper('.special__swiper', {
     speed: 800,
     loop: false,
     slidesPerView: 1,
     navigation: {
-      nextEl: '.special--next',
-      prevEl: '.special--prew',
+      nextEl: '.special__btn-slide--next',
+      prevEl: '.special__btn-slide--prew',
       disabledClass : 'btn--disabled',
     },
   });
@@ -28,6 +37,65 @@ document.addEventListener('DOMContentLoaded',  function(){
       disabledClass : 'btn--disabled',
     },
   });
+
+	const swiperCatalog = new Swiper('.catalog__swiper', {
+    speed: 800,
+    loop: false,
+		slidesPerView: 1,
+    navigation: {
+      nextEl: '.catalog__btn--next',
+      prevEl: '.catalog__btn--prev',
+      disabledClass : 'btn--disabled , catalog__btn--active',
+    },
+  });
+	const swiperCard = new Swiper('.card__swiper', {
+    speed: 800,
+		loop: true,
+		loopedSlides: 4,
+		navigation: {
+			nextEl: '.card__swiper-thumb-btn--next',
+			prevEl: '.card__swiper-thumb-btn--prev',
+		},
+		thumbs: {
+			swiper: swiperThumb,
+		},
+		controller: {
+			control: swiperThumb,
+		},
+
+  });
+	const swiperThumb = new Swiper('.card__swiper-thumb ', {
+    speed: 400,
+		direction: 'horizontal',
+		freeMode : true,
+		spaceBetween:40,
+		loop: true,
+		loopedSlides: 4,
+		slidesPerView: 'auto',
+		slideToClickedSlide: true,
+		touchRatio: 0.2,
+		controller: {
+			control: swiperCard,
+		},
+		navigation: {
+			nextEl: '.card__swiper-thumb-btn--next',
+			prevEl: '.card__swiper-thumb-btn--prev',
+		},
+  });
+
+
+
+	const swiperSimilar = new Swiper(".similar__swiper",{
+		speed: 800,
+    loop: false,
+		slidesPerView: 1,
+    navigation: {
+      nextEl: '.similar__btn-slide--next',
+      prevEl: '.similar__btn-slide--prew',
+      disabledClass : 'btn--disabled',
+    },
+	})
+
   const choicesTown = new Choices('.choices-select-town',{
     searchEnabled: false,
     itemSelectText: '',
@@ -43,31 +111,111 @@ document.addEventListener('DOMContentLoaded',  function(){
     }
   })
 
+	var range = document.querySelector('#range');
+	if (range){
+
+		noUiSlider.create(range, {
+		start: [2000, 150000],
+		connect: true,
+		range: {
+		'min': [0],
+		'max': [210000]
+		}
+	});
+	const inputMin = document.querySelector('#min');
+	const inputMax = document.querySelector('#max');
+	const inputs = [inputMin, inputMax ];
+
+	range.noUiSlider.on ('update', function (values, handle){
+		inputs[handle].value = Math.round(values[handle]);
+	})
+	const setRange = (i, value) => {
+		let arr =[null , null];
+		arr[i] = value;
+		range.noUiSlider.set(arr);
+	}
+
+	inputs.forEach((el, index) => {
+		el.addEventListener('change', (e) => {
+			setRange(index, e.currentTarget.value)
+		})
+	})
+	}
+
+
+	var selector = document.querySelector("input[type='tel']");
+	var im = new Inputmask("+7(999)999-99-99")
+	im.mask(selector);
+
 	const validate =	new JustValidate('.feedback__form', {
 		colorWrong: '#ff3300',
 		rules: {
 			name: {
 				required: true,
-				minLength:2,
-				maxLength:10,
+				strength: {
+					custom:'^[a-zA-Zа-яёА-ЯЁ]',
+				},
+				minLength:4,
+				maxLength:15,
 
 			},
 			mail: {
 				required: true,
-				email: true
+				email: true,
+			},
+			tel: {
+					required:true,
+					function: (name, value) => {
+						const phone = selector.inputmask.unmaskedvalue()
+						return Number(phone) && phone.length === 10
+					}
 			},
 		},
-
 		messages: {
 			name: {
 				required: 'Недопустимый формат',
-				minLength: 'My custom message about only minLength rule'
+				strength: 'Недопустимый формат',
+				minLength: 'Минимум 4 символа',
 			},
 			mail: {
 				required: 'Неведопустимый формат',
+				email : 'Введите корректный адресс электронной почты'
+			},
+			tel: {
+				required: 'Недопустимый формат',
+				function: 'Недопустимый формат',
 			}
 		}
 });
+
+function inputValid (){
+	const input = document.querySelectorAll('.feedback__input')
+	const btn = document.querySelector('.feedback__btn')
+	btn.addEventListener('click', function(){
+		input.forEach(function(i){
+			if(!i.classList.contains('js-validate-error-field')){
+				i.classList.add('js-validate-valid-label')
+			}
+		})
+	})
+}
+inputValid();
+
+function checkboxOn () {
+	const checkbox = document.querySelector('.feedback__checkbox');
+	const btn = document.querySelector('.feedback__btn');
+	btn.setAttribute("disabled", "disabled")
+	checkbox.addEventListener('click', function() {
+		if (checkbox.checked) {
+			btn.removeAttribute("disabled", "disabled");
+		}
+		else  {
+			btn.setAttribute("disabled", "disabled");
+		}
+	})
+};
+
+checkboxOn();
 
 });
 

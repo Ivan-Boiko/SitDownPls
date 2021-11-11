@@ -1,0 +1,128 @@
+.special {
+  padding-bottom: var(--section-padding);
+	&__swiper{
+		height: 510px;
+	}
+  &__container {
+    position: relative;
+  }
+  &__title {
+    @include title;
+		font-weight: bo;
+  }
+  &__img--big {
+		padding-top: 40px;
+		padding-left: 60px;
+		max-height: 294px;
+		max-width: 510px;
+  }
+  &__img--card_1 {
+    max-width: 214px;
+		max-height: 280px;
+		padding-top: 73px;
+		padding-left: 22px;
+  }
+  &__img--card_3 {
+		max-width: 195px;
+		max-height: 280px;
+		padding-top: 64px;
+		padding-left: 45px;
+  }
+  &__btn-slide--prew{
+    margin-right: 10px;
+  }
+  &__btn-container{
+		@include btn-container;
+  }
+  &__sale{
+    position: absolute;
+    top: 31px;
+    left: 0;
+    max-width: 92px;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    padding: 7px 0;
+    padding-left: 19px;
+    padding-right: 25px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    &::after{
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 18px 17px 17px 10px;
+      border-color: transparent transparent transparent #ff862f;
+      right: -25px;
+      top: 50%;
+      transform: translate(0,-50%);
+    }
+  }
+  &__list{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: var(--main-offset);
+  }
+  &__items{
+    position: relative;
+    min-height: 511px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-light-grey);
+		width: 100%;
+    &:nth-child(1){
+      grid-column: 3 span;
+      justify-self: center;
+    }
+    &:nth-child(2){
+      grid-column: 6 span;
+      justify-self: center;
+      max-width: 624px;
+    }
+    &:nth-child(3){
+      grid-column: 3 span;
+      justify-self: center;
+    }
+  }
+  &__img{
+    margin-bottom: auto;
+  }
+  &__img-project{
+    position: absolute;
+    right:  30px;
+    bottom: 30px;
+    max-width: 230px;
+    object-fit: cover;
+  }
+  &__content-container {
+    display: flex;
+    flex-direction: column;
+
+  }
+  &__product{
+    @include title-product;
+
+  }
+  &__model{
+    @include title-product;
+    margin-bottom: 20px;
+  }
+  &__price-container{
+    margin-bottom: 20px;
+  }
+  &__old-price {
+    font: var(--middle-book);
+    color: var(--color-grey);
+    text-decoration: line-through;
+  }
+  &__price{
+    font: var(--prehigh-middle-book);
+    color: var(--color-orange);
+    margin-right: 25px;
+		line-height: 27px;
+  }
+
+}

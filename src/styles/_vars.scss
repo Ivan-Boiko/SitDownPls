@@ -1,0 +1,39 @@
+:root {
+  --color-white: #ffffff;
+  --color-black:#333333;
+  --color-grey:#999999;
+  --color-light-grey:#F7F7F7;
+  --color-grey-shade:#666666;
+  --color-md-grey:#EAEAEA;
+  --color-fiol:#A65CF0;
+	--color-fiol-extraLigth:#F8EFFF;
+  --color-fiol-pink:#EBD1FF;
+  --color-fiol-light:#C998FB;
+  --color-fiol-dark:#7033AC;
+  --color-orange:#FF862F;
+  --color-orange-light:#FFBD59;
+	--color-orange-sun:#FF862F;
+  --color-orange-extra-light:#FFF5D1;
+  --color-orange-dark:#BB370E;
+  --color-gold:#D5B986;
+	--color-lime:#DAFFD1;
+	--color-bone:#FFF5D1;
+	--color-pink:#EBD1FF;
+
+  --main-offset:32px;
+  --section-padding:70px;
+
+  --font-family-regular: "OpenSansRegular", sans-serif;
+  --font-playfair-black: "PlayfairBlack", sans-serif;
+  --font-family-bold: "OpenSansBold", sans-serif;
+  --font-family-semiBold: "OpenSansSemiBold", sans-serif;
+  --middle-high-bold: 700 48px / 65px var(--font-family-bold);
+  --middle-bold: 700 16px / 16px var(--font-family-bold);
+  --prehigh-regular: 600 16px / 16px var(--font-family-semiBold);
+	--prehigh-max-book: 400 36px / 36px var(--font-family-regular);
+  --prehigh-high-book: 400 32px / 32px var(--font-family-regular);
+  --prehigh-book: 400 24px / 31px var(--font-family-regular);
+  --prehigh-middle-book: 400 18px / 23px var(--font-family-regular);
+  --middle-book: 400 16px / 21px var(--font-family-regular);
+  --small-book: 400 14px / 14px var(--font-family-regular);
+}

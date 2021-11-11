@@ -1,0 +1,18 @@
+.similar{
+	margin-bottom: 70px;
+	&__container{
+		position: relative;
+	}
+	&__title{
+		@include title;
+	}
+	&__btn-container{
+		@include btn-container;
+	}
+	&__btn-slide--prew{
+		margin-right: 10px;
+	}
+	&__img{
+		max-width: 230px;
+	}
+}
