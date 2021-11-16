@@ -11,10 +11,22 @@
 		position: relative;
 	}
   &__list{
-    margin-bottom: 32px;
+    margin-bottom: 30px;
+
   }
 	&__items{
+		display: flex;
+		flex-direction: column;
 		position: relative;
+		animation: slideIn;
+ 		animation-duration: 2s;
+ 		height: 100%;
+
+	}
+	&__items--hidden{
+		display: none;
+  	visibility: hidden;
+  	opacity: 0;
 	}
 	&__hrefs--D31{
 		position: absolute;
@@ -53,5 +65,23 @@
     max-width: 300px;
     margin: 0 auto;
   }
+	&__btn-more--hidden{
+		transform: translateY(100px);
+		padding: 0;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.5s ease-in;
+	}
 }
-@import "components/card-sofa";
+@import "components/sofa-card";
+
+@keyframes slideIn{
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}

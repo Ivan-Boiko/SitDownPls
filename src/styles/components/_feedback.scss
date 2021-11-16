@@ -89,3 +89,47 @@
 .js-validate-valid-label{
 	border: 2px solid #B8EC64;
 }
+.feedback__tooltip {
+	position: relative;
+	display: inline-block;
+	font: var(--font-family-regular);
+	font-size: 6px;
+	line-height: 12px;
+	cursor: pointer;
+}
+.feedback__tooltip-text{
+	transition: all 0.3s ease-in;
+}
+.feedback__tooltip .feedback__tooltip-text {
+	opacity: 0;
+	visibility: hidden;
+	width: 120px;
+	background-color: var(--color-black);
+	color: var(--color-white);
+	text-align: center;
+	border-radius: 6px;
+	padding: 7px;
+	position: absolute;
+	z-index: 1;
+	bottom: 150%;
+	left: 50%;
+	transform: translate(-50%, 0);
+
+}
+
+.feedback__tooltip .feedback__tooltip-text::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: var(--color-black) transparent transparent transparent;
+}
+
+.feedback__tooltip:hover .feedback__tooltip-text {
+	opacity: 1;
+	visibility: visible;
+}
+

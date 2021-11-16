@@ -7,10 +7,11 @@
     height: 400px;
     position: absolute;
 		& > .swiper-pagination {
-			left: 156px;
-			bottom: 18px;
+			left: 50%;
+			bottom: 20px;
+			transform: translate(-50%, 0);
 			& > .swiper-pagination-bullet{
-				background-color: var(--color-white);
+				background-color: var(--color-black);
 				width: 15px;
 				height: 15px;
 				margin-right: 10px;
@@ -24,8 +25,6 @@
 	}
   &__swiper-slide{
     background-repeat: no-repeat;
-    background-size: 120%;
-		background-position: left;
   }
   &__swiper-slide--slide1{
     background-image: url('../img/hero-img1.jpg');
@@ -45,15 +44,14 @@
   }
   &__content-container{
     position: absolute;
-		left: 13%;
-		top:  20%;;
-
+		top: 20%;
+		left: 18px;
   }
   &__title{
     font: var(--middle-high-bold);
     color: var(--color-grey);
     max-width: 560px;
-    margin-bottom: 50px;
+    margin-bottom: 46px;
   }
   &__btn{
     padding:22px 50px;
@@ -62,4 +60,7 @@
   &__title--white{
     color: var(--color-white);
   }
+	&__bullets-click{
+		max-width: max-content;
+	}
 }

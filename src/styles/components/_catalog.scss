@@ -142,7 +142,6 @@
 	}
 
 	&__baner-container{
-
 		background-color: var(--color-black);
 		border-radius: 10px;
 	}
@@ -163,7 +162,10 @@
 		margin-bottom: 15px;
 	}
 	&__hrefs-container{
-		@include href-container
+		@include href-container;
+	}
+	&__hrefs{
+		margin-right: 5px;
 	}
 	&__baner-content{
 		padding-top: 26px;
@@ -222,8 +224,16 @@
 		max-width: 100%;
 		margin-bottom: var(--main-offset);
 	}
-	&__slide{
+	&__swiper-slide{
 		max-width: 100%;
+		height: 420px;
+	}
+	&__items{
+		display: flex;
+		flex-direction: column;
+	}
+	&__product-title--size{
+		max-width: 260px;
 	}
 	&__btn-contaner{
 		align-self: center;

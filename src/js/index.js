@@ -19,7 +19,9 @@ document.addEventListener('DOMContentLoaded',  function(){
   const swiperSpecial = new Swiper('.special__swiper', {
     speed: 800,
     loop: false,
-    slidesPerView: 1,
+    slidesPerView: "auto",
+		slidesPerGroup:3,
+		spaceBetween:32,
     navigation: {
       nextEl: '.special__btn-slide--next',
       prevEl: '.special__btn-slide--prew',
@@ -41,7 +43,13 @@ document.addEventListener('DOMContentLoaded',  function(){
 	const swiperCatalog = new Swiper('.catalog__swiper', {
     speed: 800,
     loop: false,
-		slidesPerView: 1,
+		slidesPerView: 3,
+		slidesPerGroup:3,
+		spaceBetween:32,
+		grid: {
+			fill: 'row',
+			rows: 3,
+		},
     navigation: {
       nextEl: '.catalog__btn--next',
       prevEl: '.catalog__btn--prev',
@@ -88,7 +96,9 @@ document.addEventListener('DOMContentLoaded',  function(){
 	const swiperSimilar = new Swiper(".similar__swiper",{
 		speed: 800,
     loop: false,
-		slidesPerView: 1,
+		slidesPerView: 4,
+		slidesPerGroup:4,
+		spaceBetween:32,
     navigation: {
       nextEl: '.similar__btn-slide--next',
       prevEl: '.similar__btn-slide--prew',
@@ -217,6 +227,26 @@ function checkboxOn () {
 
 checkboxOn();
 
+function showMore (){
+	const btn = document.querySelector('.premium__btn-more');
+	const ulitems = document.querySelectorAll('.premium__items');
+  let arrList = Array.from(ulitems);
+  let listItems = 8;
+    for (let i = listItems; i < arrList.length; i++) {
+      const el = arrList[i];
+      el.classList.add('premium__items--hidden')
+      btn.addEventListener('click', function(){
+       el.classList.toggle('premium__items--hidden')
+       if(!el.classList.contains('premium__items--hidden')){
+				 setInterval(function(){
+					btn.classList.add('premium__btn-more--hidden')
+				 }, 1500)
+       }
+      })
+    }
+}
+
+showMore ();
 });
 
 

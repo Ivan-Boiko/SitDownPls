@@ -10,8 +10,8 @@
 	</head>
 	<body>
 	<header class="header">
-		<div class="header__bg"></div>
 		<div class="container header__container grid">
+			<h1 class="main-title visually-hidden">Магазин мебели SitDownPls</h1>
 			<div class="header__region-container">
 					<span class="header__region-text">Ваш регион:</span>
 					<select class="header__town-selects choices-select-town" name="select">
@@ -41,9 +41,12 @@
 						<a href="#" class="information-list__hrefs hrefs hrefs--link">Дизайн-решение</a>
 					</li>
 				</ul>
-				<svg class="header__logo">
-						<use xlink:href="img/svg/sprite.svg#logo"></use>
-				</svg>
+				<a href="index.html" class="header__logo-hrefs">
+					<svg class="header__logo-img">
+					<use xlink:href="img/svg/sprite.svg#logo">
+					</use>
+			</svg>
+					</a>
 				<nav class="header__nav">
 					<ul class="header__menu menu-header list-reset">
 						<li class="menu-header__items hrefs hrefs--second">
@@ -167,115 +170,123 @@
 					<div class="swiper special__swiper">
 						<div class="swiper-wrapper special__swiper-wrapper">
 							<div class="swiper-slide special__swiper-slide">
-								<ul class="special__list list-reset">
-									<li class="special__items">
-										<div class="special__sale">-9000</div>
-										<img src="img/special-img1.png" alt="Кресло" class="special__img special__img--card_1"/>
-										<div class="special__content-container">
-											<h3 class="special__product title-reset">
-												Кресло велюровое
+									<article class="product product--special">
+										<div class="product__container">
+										<div class="product__sale">-9000</div>
+										<img src="img/special-img1.png" alt="Кресло" class="product__img product__img--card_1"/>
+										<div class="product__content-container">
+											<h3 class="product__item title-reset">
+												Кресло велюровое "X-24"
 											</h3>
-											<div class="special__model">"X-24"</div>
-											<div class="special__price-container">
-												<span class="special__price">15 990 руб</span>
-												<span class="special__old-price">24 900 руб</span>
+											<div class="product__price-container">
+												<span class="product__price">15 990 руб</span>
+												<span class="product__old-price">24 900 руб</span>
 											</div>
-											<button class="special__btn-buy btn--second btn">
+											<button class="product__btn-buy btn--second btn">
 												Купить
 											</button>
 										</div>
-									</li>
-									<li class="special__items">
-										<div class="special__sale">-10000</div>
-										<img src="img/special-img2.png" alt="Диван" class="special__img special__img--big special__img--card_2"/>
-										<div class="special__content-container">
-											<h3 class="special__product title-reset">
-												Диван тканевый
-											</h3>
-											<div class="special__model">“Z-44”</div>
-											<div class="special__price-container">
-												<span class="special__price">22 990 руб</span>
-												<span class="special__old-price">32 990 руб</span>
-											</div>
-											<button class="special__btn-buy btn--second btn">
-												Купить
-											</button>
-											<img src="img/special-img2-1.png" alt="Диван в разобранном виде" class="special__img-project"/>
-										</div>
-									</li>
-									<li class="special__items">
-										<div class="special__sale">-600</div>
-										<img src="img/special-img3.png" alt="" class="special__img special__img--card_3"
-										/>
-										<div class="special__content-container">
-											<h3 class="special__product title-reset">Будильник</h3>
-											<div class="special__model">“Quartz-23”</div>
-											<div class="special__price-container">
-												<span class="special__price">1 290 руб</span>
-												<span class="special__old-price">1 890 руб</span>
-											</div>
-											<button class="special__btn-buy btn--second btn">
-												Купить
-											</button>
-										</div>
-									</li>
-								</ul>
+									</div>
+									</article>
 							</div>
-
+							<div class="swiper-slide special__swiper-slide special__swiper-slide--big">
+									<article class="product">
+										<div class="product__container">
+										<div class="product__sale">-10000</div>
+										<img src="img/special-img2.png" alt="Диван" class="product__img product__img--big product__img--card_2"/>
+										<div class="product__content-container">
+											<h3 class="product__item title-reset">
+												Диван тканевый “Z-44”
+											</h3>
+											<div class="product__price-container">
+												<span class="product__price">22 990 руб</span>
+												<span class="product__old-price">32 990 руб</span>
+											</div>
+											<button class="product__btn-buy btn--second btn">
+												Купить
+											</button>
+											<img src="img/special-img2-1.png" alt="Диван в разобранном виде" class="product__img-project"/>
+										</div>
+									</div>
+									</article>
+							</div>
 							<div class="swiper-slide special__swiper-slide">
-								<ul class="special__list list-reset">
-									<li class="special__items">
-										<div class="special__sale">-300</div>
-										<img src="img/special-img4.png" alt="Кресло" class="special__img special__img--card_3"/>
-										<div class="special__content-container">
-											<h3 class="special__product title-reset">
-												Мини-скульптура
-											</h3>
-											<div class="special__model">“Oh my deer”</div>
-											<div class="special__price-container">
-												<span class="special__price">690 руб</span>
-												<span class="special__old-price">990 руб</span>
-											</div>
-											<button class="special__btn-buy btn--second btn">
-												Купить
-											</button>
+								<article class="product">
+									<div class="product__container">
+									<div class="product__sale">-700</div>
+									<img src="img/special-img3.png" alt="" class="product__img product__img--card_3"/>
+									<div class="product__content-container">
+										<h3 class="product__item title-reset">Будильник  “Quartz-23”</h3>
+										<div class="product__price-container">
+											<span class="product__price">1 290 руб</span>
+											<span class="product__old-price">1 890 руб</span>
 										</div>
-									</li>
-									<li class="special__items">
-										<div class="special__sale">-10000</div>
-										<img src="img/special-img5.png" alt="Диван" class="special__img special__img--big special__img--card_2"/>
-										<div class="special__content-container">
-											<h3 class="special__product title-reset">
-												Диван вел-флок
-											</h3>
-											<div class="special__model">“Z-85”</div>
-											<div class="special__price-container">
-												<span class="special__price">22 990 руб</span>
-												<span class="special__old-price">32 990 руб</span>
-											</div>
-											<button class="special__btn-buy btn--second btn">
-												Купить
-											</button>
-											<img src="img/special-img2-2.png" alt="Диван в разобранном виде" class="special__img-project"/>
-										</div>
-									</li>
-									<li class="special__items">
-										<div class="special__sale">-700</div>
-										<img src="img/special-img6.png" alt="" class="special__img special__img--card_3"/>
-										<div class="special__content-container">
-											<h3 class="special__product title-reset">Термометр +</h3>
-											<div class="special__model">гидрометр “H-18”</div>
-											<div class="special__price-container">
-												<span class="special__price">1 390 руб</span>
-												<span class="special__old-price">2090 руб</span>
-											</div>
-											<button class="special__btn-buy btn--second btn">
-												Купить
-											</button>
-										</div>
-									</li>
-								</ul>
+										<button class="product__btn-buy btn--second btn">
+											Купить
+										</button>
+									</div>
+								</div>
+								</article>
 							</div>
+							<div class="swiper-slide special__swiper-slide ">
+							<article class="product">
+								<div class="product__container">
+								<div class="product__sale">-300</div>
+								<img src="img/special-img4.png" alt="Кресло" class="product__img product__img--card_3"/>
+								<div class="product__content-container">
+									<h3 class="product__item title-reset">
+										Мини-скульптура “Oh my deer”
+									</h3>
+									<div class="product__price-container">
+										<span class="product__price">690 руб</span>
+										<span class="product__old-price">990 руб</span>
+									</div>
+									<button class="product__btn-buy btn--second btn">
+										Купить
+									</button>
+								</div>
+							</div>
+							</article>
+							</div>
+							<div class="swiper-slide special__swiper-slide special__swiper-slide--big">
+								<article class="product">
+									<div class="product__container">
+									<div class="product__sale">-10000</div>
+									<img src="img/special-img5.png" alt="Диван" class="product__img product__img--big product__img--card_5"/>
+									<div class="product__content-container">
+										<h3 class="product__item title-reset">
+											Диван вел-флок “Z-85”
+										</h3>
+										<div class="product__price-container">
+											<span class="product__price">22 990 руб</span>
+											<span class="product__old-price">32 990 руб</span>
+										</div>
+										<button class="product__btn-buy btn--second btn">
+											Купить
+										</button>
+										<img src="img/special-img2-2.png" alt="Диван в разобранном виде" class="product__img-project"/>
+									</div>
+								</div>
+								</article>
+							</div>
+							<div class="swiper-slide special__swiper-slide">
+								<article class="product">
+									<div class="product__container">
+						<div class="product__sale">-700</div>
+						<img src="img/special-img6.png" alt="" class="product__img product__img--card_3"/>
+						<div class="product__content-container">
+							<h3 class="product__item title-reset">Термометр + гидрометр “H-18”</h3>
+							<div class="product__price-container">
+								<span class="product__price">1 390 руб</span>
+								<span class="product__old-price">2090 руб</span>
+							</div>
+							<button class="product__btn-buy btn--second btn">
+								Купить
+							</button>
+						</div>
+									</div>
+								</article>
+						</div>
 						</div>
 					</div>
 				</div>
@@ -283,122 +294,167 @@
 			<section class="premium">
 				<div class="container premium__container">
 					<h2 class="premium__title title-reset">Высокий рейтинг</h2>
-					<ul class="premium__list grid list-reset sofa-list">
-						<li class="premium__items sofa-list__items">
-							<div class="premium__rating sofa-list__rating">
-								<svg class="premium__star-svg sofa-list__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
-								</svg>5,0
-							</div>
-							<img src="img/premium-img1.png" alt="Диван" class="premium__img sofa-list__img"/>
-							<div class="premium__content-container sofa-list__content-container">
-								<h3 class="premium__product sofa-list__product title-reset">Диван кожаный</h3>
-								<div class="premium__model sofa-list__model">“R-94”</div>
-								<div class="premium__price sofa-list__price">94 990 руб</div>
-								<button class="premium__btn-buy sofa-list__btn btn btn--second">Купить</button>
-							</div>
-						</li>
-						<li class="premium__items sofa-list__items">
-							<div class="premium__rating sofa-list__rating">
-								<svg class="premium__star-svg sofa-list__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<ul class="premium__list grid list-reset">
+						<article class="premium__items sofa">
+								<div class="premium__rating sofa__rating">
+									<svg class="premium__star-svg sofa__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+									</svg>5,0
+								</div>
+								<img src="img/premium-img1.png" alt="Диван" class="premium__img sofa__img"/>
+								<div class="premium__content-container sofa__content-container">
+									<h3 class="premium__product sofa__product-title  title-reset"> <a href="#" class="sofa__hrefs ">Диван кожаный “R-94”</a></h3>
+									<div class="premium__price sofa__price">94 990 руб</div>
+									<button class="premium__btn-buy sofa__btn btn btn--second">Купить</button>
+								</div>
+						</article>
+						<article class="premium__items sofa">
+							<div class="premium__rating sofa__rating">
+								<svg class="premium__star-svg sofa__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
 										</svg>4,9
 							</div>
-							<img src="img/premium-img2.png" alt="Диван" class="premium__img sofa-list__img"/>
-								<div class="premium__content-container sofa-list__content-container">
-								<h3 class="premium__product sofa-list__product title-reset">Диван апартековый</h3>
-								<div class="premium__model sofa-list__model">“T-75”</div>
-								<div class="premium__price sofa-list__price">69 990 руб</div>
-								<button class="premium__btn-buy sofa-list__btn btn btn--second">Купить</button>
-								<img src="#" alt="" class="premium__img-project sofa-list__img-project" />
+							<img src="img/premium-img2.png" alt="Диван" class="premium__img sofa__img"/>
+								<div class="premium__content-container sofa__content-container">
+								<h3 class="premium__product sofa__product-title sofa__product-title--size  title-reset"> <a href="#" class="sofa__hrefs ">Диван апартековый “T-75”</a></h3>
+								<div class="premium__price sofa__price">69 990 руб</div>
+								<button class="premium__btn-buy sofa__btn btn btn--second">Купить</button>
+								<img src="#" alt="" class="premium__img-project sofa__img-project" />
 							</div>
-						</li>
-						<li class="premium__items sofa-list__items">
-							<div class="premium__rating sofa-list__rating">
-								<svg class="premium__star-svg sofa-list__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+						</article>
+						<article class="premium__items sofa">
+							<div class="premium__rating sofa__rating">
+								<svg class="premium__star-svg sofa__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
 									</svg>4,8
 							</div>
-							<img src="img/premium-img3.png" alt="Диван" class="premium__img sofa-list__img" />
-								<div class="premium__content-container sofa-list__content-container">
-								<h3 class="premium__product sofa-list__product title-reset ">Диван тканевый</h3>
-								<div class="premium__model sofa-list__model">“D-31”</div>
-								<div class="premium__price sofa-list__price">28 490 руб</div>
-								<button class="premium__btn-buy premium__btn-buy--D31 sofa-list__btn btn btn--second">Купить</button>
+							<img src="img/premium-img3.png" alt="Диван" class="premium__img sofa__img"/>
+								<div class="premium__content-container sofa__content-container">
+								<h3 class="premium__product sofa__product-title  title-reset "> <a href="#" class="sofa__hrefs ">Диван тканевый “D-31”</a></h3>
+								<div class="premium__price sofa__price">28 490 руб</div>
+								<button class="premium__btn-buy premium__btn-buy--D31 sofa__btn btn btn--second">Купить</button>
 							</div>
 							<a href="card.html" class="premium__hrefs premium__hrefs--D31" tabindex="0"></a>
-						</li>
-						<li class="premium__items sofa-list__items">
-							<div class="premium__rating sofa-list__rating">
-								<svg class="premium__star-svg sofa-list__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+						</article>
+						<article class="premium__items sofa">
+							<div class="premium__rating sofa__rating">
+								<svg class="premium__star-svg sofa__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
 									</svg>4,8
 							</div>
-							<img src="img/premium-img4.png" alt="Диван" class="premium__img sofa-list__img"/>
-							<div class="premium__content-container sofa-list__content-container">
-								<h3 class="premium__product sofa-list__product title-reset">Диван велюровый</h3>
-								<div class="premium__model sofa-list__model">“Y-68”</div>
-								<div class="premium__price sofa-list__price">22 990 руб</div>
-								<button class="premium__btn-buy sofa-list__btn btn btn--second">Купить</button>
+							<img src="img/premium-img4.png" alt="Диван" class="premium__img sofa__img"/>
+							<div class="premium__content-container sofa__content-container">
+								<h3 class="premium__product sofa__product-title  title-reset"> <a href="#" class="sofa__hrefs ">Диван велюровый “Y-68”</a></h3>
+								<div class="premium__price sofa__price">22 990 руб</div>
+								<button class="premium__btn-buy sofa__btn btn btn--second">Купить</button>
 							</div>
-						</li>
-						<li class="premium__items sofa-list__items">
-							<div class="premium__rating sofa-list__rating">
-								<svg class="premium__star-svg sofa-list__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+						</article>
+						<article class="premium__items sofa">
+							<div class="premium__rating sofa__rating">
+								<svg class="premium__star-svg sofa__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
 									</svg>4,8
 							</div>
-							<img src="img/premium-img5.png" alt="Диван" class="premium__img sofa-list__img"/>
-							<div class="premium__content-container sofa-list__content-container">
-								<h3 class="premium__product sofa-list__product title-reset">Диван из шинила</h3>
-								<div class="premium__model sofa-list__model">“W-95”</div>
-								<div class="premium__price sofa-list__price">22 990 руб</div>
-								<button class="premium__btn-buy sofa-list__btn btn btn--second">Купить</button>
+							<img src="img/premium-img5.png" alt="Диван" class="premium__img sofa__img"/>
+							<div class="premium__content-container sofa__content-container">
+								<h3 class="premium__product sofa__product-title  title-reset"> <a href="#" class="sofa__hrefs ">Диван из шинила “W-95”</a></h3>
+								<div class="premium__price sofa__price">22 990 руб</div>
+								<button class="premium__btn-buy sofa__btn btn btn--second">Купить</button>
 							</div>
-						</li>
-						<li class="premium__items sofa-list__items">
-							<div class="premium__rating sofa-list__rating">
-								<svg class="premium__star-svg sofa-list__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+						</article>
+						<article class="premium__items sofa">
+							<div class="premium__rating sofa__rating">
+								<svg class="premium__star-svg sofa__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
 									</svg>4,8
 							</div>
-							<img src="img/premium-img6.png" alt="Диван" class="premium__img sofa-list__img"/>
-							<div class="premium__content-container sofa-list__content-container">
-								<h3 class="premium__product sofa-list__product title-reset">Диван флоковый</h3>
-								<div class="premium__model sofa-list__model">“G-41”</div>
-								<div class="premium__price sofa-list__price">17 990 руб</div>
-								<button class="premium__btn-buy sofa-list__btn btn btn--second">Купить</button>
-								<img src="#" alt="" class="premium__img-project sofa-list__img-project" />
+							<img src="img/premium-img6.png" alt="Диван" class="premium__img sofa__img"/>
+							<div class="premium__content-container sofa__content-container">
+								<h3 class="premium__product sofa__product-title  title-reset"> <a href="#" class="sofa__hrefs ">Диван флоковый “G-41”</a></h3>
+								<div class="premium__price sofa__price">17 990 руб</div>
+								<button class="premium__btn-buy sofa__btn btn btn--second">Купить</button>
+								<img src="#" alt="" class="premium__img-project sofa__img-project" />
 							</div>
-						</li>
-						<li class="premium__items sofa-list__items">
-							<div class="premium__rating sofa-list__rating">
-								<svg class="premium__star-svg sofa-list__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+						</article>
+						<article class="premium__items sofa">
+							<div class="premium__rating sofa__rating">
+								<svg class="premium__star-svg sofa__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
 									</svg>4,8
 							</div>
-							<img src="img/premium-img7.png" alt="Диван" class="premium__img sofa-list__img"/>
-							<div class="premium__content-container sofa-list__content-container">
-								<h3 class="premium__product sofa-list__product title-reset">Диван шиниловый</h3>
-								<div class="premium__model sofa-list__model">“V-43”</div>
-								<div class="premium__price sofa-list__price">19 990 руб</div>
-								<button class="premium__btn-buy sofa-list__btn btn btn--second">Купить</button>
+							<img src="img/premium-img7.png" alt="Диван" class="premium__img sofa__img"/>
+							<div class="premium__content-container sofa__content-container">
+								<h3 class="premium__product sofa__product-title  title-reset"> <a href="#" class="sofa__hrefs ">Диван шиниловый “V-43”</a></h3>
+
+								<div class="premium__price sofa__price">19 990 руб</div>
+								<button class="premium__btn-buy sofa__btn btn btn--second">Купить</button>
 							</div>
-						</li>
-						<li class="premium__items sofa-list__items">
-							<div class="premium__rating sofa-list__rating">
-								<svg class="premium__star-svg sofa-list__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+						</article>
+						<article class="premium__items sofa">
+							<div class="premium__rating sofa__rating">
+								<svg class="premium__star-svg sofa__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
 									</svg>4,7
 							</div>
-							<img src="img/premium-img8.png" alt="Диван" class="premium__img  premium__img--width sofa-list__img sofa-list__img--width"/>
-							<div class="premium__content-container sofa-list__content-container">
-								<h3 class="premium__product sofa-list__product title-reset">Диван велюровый</h3>
-								<div class="premium__model sofa-list__model">“S-99”</div>
-								<div class="premium__price sofa-list__price">19 990 руб</div>
-								<button class="premium__btn-buy sofa-list__btn btn btn--second">Купить</button>
+							<img src="img/premium-img8.png" alt="Диван" class="premium__img  premium__img--width sofa__img sofa__img--width"/>
+							<div class="premium__content-container sofa__content-container">
+								<h3 class="premium__product sofa__product-title  title-reset"> <a href="#" class="sofa__hrefs ">Диван велюровый “S-99”</a></h3>
+								<div class="premium__price sofa__price">19 990 руб</div>
+								<button class="premium__btn-buy sofa__btn btn btn--second">Купить</button>
 							</div>
-						</li>
+						</article>
+						<article class="premium__items sofa">
+							<div class="premium__rating sofa__rating">
+								<svg class="premium__star-svg sofa__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+									</svg>4,7
+							</div>
+							<img src="img/premium-img8.png" alt="Диван" class="premium__img  premium__img--width sofa__img sofa__img--width"/>
+							<div class="premium__content-container sofa__content-container">
+								<h3 class="premium__product sofa__product-title  title-reset"> <a href="#" class="sofa__hrefs ">Диван велюровый “S-99”</a></h3>
+								<div class="premium__price sofa__price">19 990 руб</div>
+								<button class="premium__btn-buy sofa__btn btn btn--second">Купить</button>
+							</div>
+						</article>
+						<article class="premium__items sofa">
+							<div class="premium__rating sofa__rating">
+								<svg class="premium__star-svg sofa__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+									</svg>4,7
+							</div>
+							<img src="img/premium-img8.png" alt="Диван" class="premium__img  premium__img--width sofa__img sofa__img--width"/>
+							<div class="premium__content-container sofa__content-container">
+								<h3 class="premium__product sofa__product-title  title-reset"> <a href="#" class="sofa__hrefs ">Диван велюровый “S-99”</a></h3>
+								<div class="premium__price sofa__price">19 990 руб</div>
+								<button class="premium__btn-buy sofa__btn btn btn--second">Купить</button>
+							</div>
+						</article>
+						<article class="premium__items sofa">
+							<div class="premium__rating sofa__rating">
+								<svg class="premium__star-svg sofa__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+									</svg>4,7
+							</div>
+							<img src="img/premium-img8.png" alt="Диван" class="premium__img  premium__img--width sofa__img sofa__img--width"/>
+							<div class="premium__content-container sofa__content-container">
+								<h3 class="premium__product sofa__product-title  title-reset"> <a href="#" class="sofa__hrefs ">Диван велюровый “S-99”</a></h3>
+								<div class="premium__price sofa__price">19 990 руб</div>
+								<button class="premium__btn-buy sofa__btn btn btn--second">Купить</button>
+							</div>
+						</article>
+						<article class="premium__items sofa">
+							<div class="premium__rating sofa__rating">
+								<svg class="premium__star-svg sofa__star-svg" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+									</svg>4,7
+							</div>
+							<img src="img/premium-img8.png" alt="Диван" class="premium__img  premium__img--width sofa__img sofa__img--width"/>
+							<div class="premium__content-container sofa__content-container">
+								<h3 class="premium__product sofa__product-title  title-reset"> <a href="#" class="sofa__hrefs ">Диван велюровый “S-99”</a></h3>
+								<div class="premium__price sofa__price">19 990 руб</div>
+								<button class="premium__btn-buy sofa__btn btn btn--second">Купить</button>
+							</div>
+						</article>
 					</ul>
 					<button class="premium__btn-more btn btn--first">
 						Смотреть больше товаров
@@ -644,10 +700,11 @@
 							Безусловно, новая модель организационной деятельности в
 							значительной степени обусловливает важность распределения
 							внутренних резервов и ресурсов.
-							<span class="feedback__tooltip tooltip">
-								<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<span  class="feedback__tooltip tooltip">
+								<svg  class="feedback__tooltip-svg" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd" d="M7 1.27273C3.83691 1.27273 1.27273 3.83691 1.27273 7C1.27273 10.1631 3.83691 12.7273 7 12.7273C10.1631 12.7273 12.7273 10.1631 12.7273 7C12.7273 3.83691 10.1631 1.27273 7 1.27273ZM0 7C0 3.13401 3.13401 0 7 0C10.866 0 14 3.13401 14 7C14 10.866 10.866 14 7 14C3.13401 14 0 10.866 0 7ZM7.16433 4.47002C6.86809 4.4192 6.56343 4.47487 6.3043 4.62716C6.04517 4.77946 5.8483 5.01854 5.74856 5.30208C5.63193 5.63362 5.26862 5.80784 4.93708 5.69121C4.60554 5.57458 4.43132 5.21127 4.54795 4.87973C4.74743 4.31266 5.14117 3.83449 5.65943 3.52991C6.17769 3.22532 6.78701 3.11398 7.3795 3.21561C7.97198 3.31723 8.50937 3.62527 8.8965 4.08515C9.28355 4.54494 9.49543 5.12685 9.49462 5.72785C9.49433 6.70171 8.77231 7.34484 8.2567 7.68857C7.97948 7.87339 7.70679 8.00928 7.50591 8.09856C7.40457 8.1436 7.31923 8.17778 7.25774 8.2012C7.22694 8.21294 7.20197 8.22203 7.18379 8.22849L7.16169 8.23623L7.15465 8.23864L7.15217 8.23947L7.1512 8.2398C7.15101 8.23986 7.1504 8.24007 6.94916 7.63636L7.1504 8.24007C6.81698 8.35121 6.4566 8.17101 6.34546 7.8376C6.23439 7.5044 6.41427 7.14427 6.74726 7.03287L6.75742 7.02931C6.76721 7.02583 6.78325 7.02001 6.80465 7.01186C6.84756 6.99551 6.91137 6.97003 6.98901 6.93552C7.14608 6.86571 7.35067 6.76297 7.55072 6.6296C7.98956 6.33704 8.22189 6.02581 8.22189 5.72727L8.22189 5.72632C8.22234 5.42575 8.1164 5.13473 7.92283 4.90479C7.72927 4.67485 7.46057 4.52083 7.16433 4.47002ZM7.63642 10.1818C7.63642 10.5333 7.35151 10.8182 7.00005 10.8182C6.6486 10.8182 6.36369 10.5333 6.36369 10.1818C6.36369 9.83036 6.6486 9.54545 7.00005 9.54545C7.35151 9.54545 7.63642 9.83036 7.63642 10.1818Z" fill="#FF862F"/>
 								</svg>
+								<span class="feedback__tooltip-text ">Реплицированные с&nbsp;зарубежных источников, исследования формируют глобальную сеть.</span>
 							</span>
 						</p>
 						<form class="feedback__form" id="feedback-form">

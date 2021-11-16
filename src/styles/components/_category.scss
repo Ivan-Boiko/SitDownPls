@@ -48,6 +48,9 @@
 		@include href-container;
 	}
 
+	&__hrefs{
+		margin-right: 5px;
+	}
   &__img--big{
 		top: 55%;
 		max-width: 515px;

@@ -1,0 +1,99 @@
+.product{
+	position: relative;
+  min-height: 511px;
+  background-color: var(--color-light-grey);
+
+	&--special{
+		max-width: 296px;
+	}
+	&__container{
+	width: 100%;
+	display: flex;
+  flex-direction: column;
+	padding-left: 30px;
+	padding-bottom: 30px;
+	min-height: 511px;
+	}
+	&__img--big {
+		padding-top: 40px;
+		padding-left: 60px;
+		max-height: 294px;
+		max-width: 510px;
+  }
+  &__img--card_1 {
+    max-width: 214px;
+		max-height: 280px;
+		padding-top: 73px;
+		padding-left: 22px;
+  }
+  &__img--card_3 {
+		max-width: 195px;
+		max-height: 280px;
+		padding-top: 64px;
+		padding-left: 45px;
+  }
+
+  &__sale{
+    position: absolute;
+    top: 31px;
+    left: 0;
+    max-width: 92px;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    padding: 7px 0;
+    padding-left: 19px;
+    padding-right: 25px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    &::after{
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 18px 17px 17px 10px;
+      border-color: transparent transparent transparent #ff862f;
+      right: -25px;
+      top: 50%;
+      transform: translate(0,-50%);
+    }
+  }
+  &__img{
+    margin-bottom: 15px;
+  }
+  &__img-project{
+    position: absolute;
+    right:  30px;
+    bottom: 30px;
+    max-width: 230px;
+    object-fit: cover;
+  }
+	&__img--card_5{
+		max-width: 560px;
+	}
+  &__content-container {
+    display: flex;
+    flex-direction: column;
+
+  }
+  &__item{
+    @include title-product;
+		max-width: 222px;
+		margin-bottom: 20px;
+  }
+  &__price-container{
+    margin-bottom: 20px;
+  }
+  &__old-price {
+    font: var(--middle-book);
+    color: var(--color-grey);
+    text-decoration: line-through;
+  }
+  &__price{
+    font: var(--prehigh-middle-book);
+    color: var(--color-orange);
+    margin-right: 25px;
+		line-height: 27px;
+  }
+
+}

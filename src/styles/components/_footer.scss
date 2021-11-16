@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--color-md-grey);
   &__container{
-    padding-top: 18px;
+    padding-top: 23px;
     padding-bottom: 20px;
     gap: 13px 32px;
     grid-auto-flow: dense;
@@ -55,6 +55,7 @@
   display: flex;
 	grid-row: 2/3;
   &__items {
+		max-width: max-content;
     &:not(:last-child){
       margin-right: 15px;
     }

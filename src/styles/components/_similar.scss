@@ -6,6 +6,13 @@
 	&__title{
 		@include title;
 	}
+	&__items{
+		display: flex;
+		flex-direction: column;
+	}
+	&__product-title--size{
+		max-width: 260px
+	}
 	&__btn-container{
 		@include btn-container;
 	}

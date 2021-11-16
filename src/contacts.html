@@ -10,8 +10,8 @@
 </head>
 <body>
 	<header class="header">
-		<div class="header__bg"></div>
 		<div class="container header__container grid">
+			<h1 class="main-title visually-hidden">Магазин мебели SitDownPls</h1>
 			<div class="header__region-container">
 					<span class="header__region-text">Ваш регион:</span>
 					<select class="header__town-selects choices-select-town" name="select">
@@ -41,9 +41,12 @@
 						<a href="#" class="information-list__hrefs hrefs hrefs--link">Дизайн-решение</a>
 					</li>
 				</ul>
-				<svg class="header__logo">
-						<use xlink:href="img/svg/sprite.svg#logo"></use>
-				</svg>
+				<a href="index.html" class="header__logo-hrefs">
+					<svg class="header__logo-img">
+					<use xlink:href="img/svg/sprite.svg#logo">
+					</use>
+			</svg>
+					</a>
 				<nav class="header__nav">
 					<ul class="header__menu menu-header list-reset">
 						<li class="menu-header__items hrefs hrefs--second">
@@ -117,7 +120,7 @@
 		</ul>
 		<h2 class="contacts__title title-reset">Контакты</h2>
 		<form  class="contacts__form">
-			<input type="text" class="contacts__input" placeholder="Поиск магазина">
+			<input type="text" class="contacts__input input-effect" placeholder="Поиск магазина">
 			<button class="contacts__btn btn btn--first">Поиск</button>
 		</form>
 		<div class="contacts__map" id="map"></div>
