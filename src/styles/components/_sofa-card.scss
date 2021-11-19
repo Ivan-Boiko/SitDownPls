@@ -28,10 +28,10 @@
   }
 	&__hrefs{
 		color: var(--color-black);
-		transition: all 0.3s ease-in;
+		transition: color 0.3s ease-in;
 			&:hover{
 				color: var(--color-fiol);
-				transition: all 0.3s ease-in;
+				transition: color 0.3s ease-in;
 			}
 			:focus{
 				background-color: var(--color-fiol-pink);

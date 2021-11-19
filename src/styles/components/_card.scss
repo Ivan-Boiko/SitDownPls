@@ -43,11 +43,12 @@
 		max-height: 60px;
 		background-repeat: no-repeat;
 		background-size: cover;
-		transition: all 0.2s ease-in;
+		opacity: 1;
+		transition: opacity 0.2s ease-in;
 		&:hover{
 			cursor: pointer;
 			opacity: 0.8;
-			transition: all  0.2s ease-in;
+			transition: opacity  0.2s ease-in;
 		}
 	}
 	&__img-thumb-slide{

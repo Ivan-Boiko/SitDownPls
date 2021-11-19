@@ -80,7 +80,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 	&:hover {
 		cursor: pointer;
 		background-color:var(--color-md-grey);
-		transition: all 0.3s ease-in;
+		transition: background-color 0.3s ease-in;
 	}
 	&:focus {
 		border: 2px solid var(--color-fiol);
@@ -96,12 +96,12 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 .hrefs {
 	color: inherit;
-  transition: all 0.3s ease-in;
+  transition: color 0.3s ease-in;
 	&--link{
 		color: transparent;
 		&:hover{
 			color: var(--color-fiol);
-			transition: all 0.3s ease-in;
+			transition: color 0.3s ease-in;
 		}
 	}
 	&--first {
@@ -136,7 +136,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 			svg{
 				path:nth-child(1n){
 					fill: var(--color-fiol);
-					transition: all 0.3s ease-in;
+					transition: fill 0.3s ease-in;
 				}
 			}
 		}
@@ -145,7 +145,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 			svg{
 				path:nth-child(1n){
 					fill: var(--color-white);
-					transition: all 0.3s ease-in;
+					transition: fill 0.3s ease-in;
 				}
 			}
 		}
@@ -154,7 +154,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 			svg{
 				path:nth-child(1n){
 					fill: var(--color-fiol-dark);
-					transition: all 0.3s ease-in;
+					transition: fill 0.3s ease-in;
 				}
 			}
 		}
@@ -169,7 +169,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   background: transparent;
   cursor: pointer;
   overflow: none;
-  transition: all 0.3s ease-in-out;
+	opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 	&--disabled {
     cursor: auto;
     pointer-events: none;
@@ -177,7 +178,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       circle, path {
         stroke: var(--color-grey);
         opacity: 0.6;
-        transition: all 0.4s ease-in;
+        transition: opacity 0.4s ease-in;
       }
     }
   }
@@ -254,11 +255,11 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       svg{
         circle{
           fill: var(--color-fiol);
-          transition: all 0.4s ease-in-out;
+          transition: fill 0.4s ease-in-out;
         }
         path{
           stroke: var(--color-white);
-          transition: all 0.4s ease-in-out;
+          transition: fill 0.4s ease-in-out;
         }
       }
     }
@@ -266,11 +267,11 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       svg{
         circle{
           fill: var(--color-fiol-light);
-          transition: all 0.4s ease-in-out;
+          transition: fill 0.4s ease-in-out;
         }
         path{
           stroke: var(--color-white);
-          transition: all 0.4s ease-in-out;
+          transition: stroke 0.4s ease-in-out;
         }
       }
     }
@@ -293,22 +294,22 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     &:hover {
       svg{
         fill: var(--color-fiol-light);
-        transition: all 0.3s ease-in-out;
+        transition: fill 0.3s ease-in-out;
       }
     }
     &:focus {
       background-color: var(--color-fiol-light);
-      transition: all 0.4s ease-in-out;
+      transition: background-color 0.4s ease-in-out;
       svg{
         fill: var(--color-white);
-        transition: all 0.3s ease-in-out;
+        transition: fill 0.3s ease-in-out;
       }
     }
     &:active {
       background-color: inherit;
       svg{
         fill: var(--color-fiol-dark);
-        transition: all 0.3s ease-in-out;
+        transition: fill 0.3s ease-in-out;
       }
     }
 
@@ -317,10 +318,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 svg{
 	circle{
-		transition: all 0.2s ease-in-out;
+		transition: fill 0.2s ease-in-out;
 	}
 	path{
-		transition: all 0.2s ease-in-out;
+		transition: fill 0.2s ease-in-out;
 	}
 }
 
