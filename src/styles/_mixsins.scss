@@ -2,7 +2,7 @@
   font: var(--prehigh-high-book);
   color: var(--color-black);
   margin-bottom: 26px;
-	max-width: max-content;
+	max-width: 70%;
 }
 @mixin title-product {
   font: var(--prehigh-book);
@@ -15,7 +15,7 @@
 @mixin filter-content {
 	font: var(--middle-book);
   color: var(--color-grey-shade);
-	max-width: max-content;
+	max-width: 70%;
 }
 
 @mixin btn-container {

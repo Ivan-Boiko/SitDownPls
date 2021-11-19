@@ -96,6 +96,7 @@
 	font-size: 6px;
 	line-height: 12px;
 	cursor: pointer;
+	vertical-align: middle;
 }
 .feedback__tooltip-text{
 	transition: all 0.3s ease-in;
@@ -114,7 +115,6 @@
 	bottom: 150%;
 	left: 50%;
 	transform: translate(-50%, 0);
-
 }
 
 .feedback__tooltip .feedback__tooltip-text::after {

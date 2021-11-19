@@ -181,17 +181,24 @@
 		margin-bottom: 23px;
 		display: flex;
 		align-items: center;
-
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		align-content: space-around;
+		max-width: max-content;
 	}
 	&__title{
 		@include title-product;
 		margin-right: 18px;
+		margin-bottom: 13px;
+	}
+	&__title-container{
+		display: flex;
 	}
 	&__list{
 		grid-template-columns: repeat(9, 1fr);
 		max-width: 100%;
 	}
-	&__span{
+	&__modal{
 		display: flex;
 		align-items: center;
 		border: 1px solid transparent;
@@ -201,23 +208,27 @@
 		padding-right: 10px;
 		color: var(--color-grey-shade);
 	}
-	&__span:not(:last-child){
-		margin-right: 20px;
-
+	&__modal{
+		&:not(:last-child){
+			margin-right: 20px;
+		}
+		&:nth-child(n + 1){
+			margin-bottom: 10px;
+		}
 	}
-	&__btn-close{
+	&__modal-btn{
 		padding-left: 8px;
 	}
-	&__span--product{
+	&__modal--product{
 		background-color: var(--color-lime);
 	}
-	&__span--price{
+	&__modal--price{
 		background-color: var(--color-bone);
 	}
-	&__span--sale{
+	&__modal--sale{
 		background-color: var(--color-pink);
 	}
-	&__span--color{
+	&__modal--color{
 		background-color: var(--color-md-grey);
 	}
 	&__swiper{

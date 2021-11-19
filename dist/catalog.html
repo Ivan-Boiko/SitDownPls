@@ -127,7 +127,7 @@
 				<ul class="catalog__category list-reset">
 					<li class="catalog__category-items">
 						<label class="catalog__category-label checkbox-label" for="checkbox">
-								<input type="checkbox" class="catalog__category-checkbox  checkbox-label__input" id="checkbox" />
+								<input type="checkbox" class="catalog__category-checkbox" id="checkbox" />
 								<span class="catalog__span-accept checkbox-label__span checkbox-label__span">Диваны</span>
 							</label>
 					</li>
@@ -210,7 +210,7 @@
 							<li class="catalog__sale-items">
 								<label class="catalog__sale-label checkbox-label" for="checkbox_11">
 								<input type="checkbox" class="catalog__sale-checkbox  checkbox-label__input" id="checkbox_11" />
-								<span class="catalog__span-accept checkbox-label__span">Не важно</span>
+								<span class="catalog__span-accept checkbox-label__span">Без скидки</span>
 							</label>
 							</li>
 						</ul>
@@ -291,25 +291,27 @@
 					</div>
 			</div>
 			<div class="catalog__product-container">
-				<div class="catalog__modal-container">
+				<div class="catalog__title-container">
 					<h2 class="catalog__title title-reset">Каталог</h2>
-					<div class="catalog__span catalog__span--product">Диваны <button class ="catalog__btn-close btn">
-						<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<div class="catalog__modal-container">
+						<div class="catalog__modal catalog__modal--product"> <span class="catalog__modal-text">Диваны</span><button class ="catalog__modal-btn btn">
+							<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.3999 1.40002L8.5999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M8.5999 1.40002L1.3999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg></button></div>
+						<div class="catalog__modal catalog__modal--price"> <span class="catalog__modal-text">До 150 000</span><button class ="catalog__modal-btn btn"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M1.3999 1.40002L8.5999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
 							<path d="M8.5999 1.40002L1.3999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg></button></div>
-					<div class="catalog__span catalog__span--price">До 150 000 <button class ="catalog__btn-close btn"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.3999 1.40002L8.5999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
-						<path d="M8.5999 1.40002L1.3999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg></button></div>
-					<div class="catalog__span catalog__span--sale">Без скидки <button class ="catalog__btn-close btn"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.3999 1.40002L8.5999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
-						<path d="M8.5999 1.40002L1.3999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg></button></div>
-					<div class="catalog__span catalog__span--color">Орнажевый <button class ="catalog__btn-close btn"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.3999 1.40002L8.5999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
-						<path d="M8.5999 1.40002L1.3999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg></button></div>
+						<div class="catalog__modal catalog__modal--sale"> <span class="catalog__modal-text">Без скидки</span><button class ="catalog__modal-btn btn"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.3999 1.40002L8.5999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M8.5999 1.40002L1.3999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg></button></div>
+						<div class="catalog__modal catalog__modal--color"> <span class="catalog__modal-text">Оранжевый</span><button class ="catalog__modal-btn btn"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.3999 1.40002L8.5999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M8.5999 1.40002L1.3999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg></button></div>
+					</div>
 				</div>
 				<div class="catalog__swiper swiper">
 					<div class="catalog__swiper-wrapper swiper-wrapper">

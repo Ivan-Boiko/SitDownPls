@@ -120,6 +120,7 @@
 		color: var(--color-white);
 		font: var(-middle-bold);
 		font-size: 10px;
+		line-height: 1;
 	}
   &__login{
     margin-right: 37px;
@@ -141,13 +142,24 @@
     .choices__list{
       padding: 0;
     }
+		.choices__item{
+			transition: color 0.3s ease-in;
+			&:not(:last-child){
+				margin-bottom: 11px;
+			}
+				&:hover{
+					color: var(--color-fiol);
+					transition: color 0.3s ease-in;
+		}
+	}
     .choices__placeholder{
       opacity: 1;
     }
     .is-active{
       width: 85px;
       max-width: 85px;
-      padding: 16px;
+			max-height: 114px;
+      padding: 15px;
       top: 30px;
     }
     .choices__list--single {
@@ -204,9 +216,16 @@
     }
     .choices__item{
       max-width: 80px;
+			transition: color 0.3s ease-in;
       &:not(:last-child){
         margin-bottom: 11px;
       }
+			&:not(:first-child){
+				&:hover{
+					color: var(--color-fiol);
+					transition: color 0.3s ease-in;
+				}
+			}
     }
     .choices__list--single{
       padding: 0;
