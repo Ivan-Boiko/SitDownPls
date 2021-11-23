@@ -1,5 +1,5 @@
 .premium {
-  padding-bottom: var(--section-padding);
+  padding-bottom: 70px;
   &__title{
     @include title;
   }
@@ -11,24 +11,27 @@
 		position: relative;
 	}
   &__list{
-    margin-bottom: 30px;
-
+		position: relative;
   }
 	&__items{
+		animation: slideIn;
+ 		animation-duration: 2s;
+		grid-column: 3 span;
+	}
+	&__articles{
 		display: flex;
 		flex-direction: column;
 		position: relative;
 		animation: slideIn;
- 		animation-duration: 2s;
- 		height: 100%;
-
+		 animation-duration: 2s;
+		 height: 100%;
+		 max-width: max-content;
 	}
-	&__items--hidden{
+	&__articles--hidden{
 		display: none;
   	visibility: hidden;
   	opacity: 0;
 	}
-
   &__btn-more{
     padding: 22px 36px;
     max-width: 300px;

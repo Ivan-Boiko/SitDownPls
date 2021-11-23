@@ -121,6 +121,29 @@ document.addEventListener('DOMContentLoaded',  function(){
     }
   })
 
+	function showMore (){
+		const btn = document.querySelector('.premium__btn-more');
+		const ulitems = document.querySelectorAll('.premium__articles');
+		let arrList = Array.from(ulitems);
+		let listItems = 8;
+			for (let i = listItems; i < arrList.length; i++) {
+				const el = arrList[i];
+				el.classList.add('premium__articles--hidden')
+				btn.addEventListener('click', function(){
+				 el.classList.toggle('premium__articles--hidden')
+				 if(!el.classList.contains('premium__articles--hidden')){
+					 btn.setAttribute('disabled', 'disabled')
+					 setInterval(function(){
+						btn.classList.add('premium__btn-more--hidden')
+					 }, 500)
+				 }
+				})
+			}
+	}
+
+	showMore ();
+
+
 	var range = document.querySelector('#range');
 	if (range){
 
@@ -150,66 +173,72 @@ document.addEventListener('DOMContentLoaded',  function(){
 			setRange(index, e.currentTarget.value)
 		})
 	})
-	}
 
+	}
 	const targetContainer = document.querySelector('.catalog__modal-container');
 	const checkboxCatalog = document.querySelectorAll('.catalog__span-accept');
-	const span = document.querySelectorAll('.catalog__modal')
-	targetContainer.addEventListener('click' , function(er){
-		let item = er.target;
 
-		if(item.closest('.catalog__modal-btn')){
-			item.closest('.catalog__modal-btn').parentNode.style.display = "none"
-		}
-		// checkboxCatalog.forEach((c) =>{
-		// 	console.log(c.textContent)
-		// })
-
-	})
-	checkboxCatalog.forEach((c) => {
-		c.addEventListener('click' , function(e){
-			const target = e.currentTarget;
-			const parentClassCheckBox = target.parentNode.classList;
-			const textTarget = target.textContent;
-			let colorBg;
-
-
-			for (let c = 0; c < parentClassCheckBox.length; c++) {
-				const element = parentClassCheckBox[c];
-				if(element.includes('category')){
-					colorBg = `catalog__modal--product`
+	if (targetContainer && checkboxCatalog){
+		targetContainer.addEventListener('click' , function(er){
+			let item = er.target;
+			const span = item.previousElementSibling;
+			const spanText = span.textContent
+			checkboxCatalog.forEach((c) =>{
+				let checkboxText = c.previousElementSibling;
+				if(c.textContent == spanText){
+					checkboxText.checked = false
 				}
-				if(element.includes('sale')){
-					colorBg = `catalog__modal--sale`
-				}
-				if(element.includes('color')){
-					colorBg = `catalog__modal--color`
-				}
-			}	// в зависимости от родителя меняем цвет окна
-
-			const span = document.querySelectorAll('.catalog__modal')
-			span.forEach((e) => {
-				const text = e.firstElementChild.textContent;
-				if(text == textTarget){
-					e.remove()
-				}
-				// если есть собпадения с тексом, удаляется окно
 			})
-
-
-				if(!target.previousElementSibling.checked){
-					targetContainer.insertAdjacentHTML ('beforeend', `
-					<div class="catalog__modal `+` ${colorBg}"> <span class="catalog__modal-text">${textTarget}</span><button class ="catalog__modal-btn btn">
-							<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M1.3999 1.40002L8.5999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M8.5999 1.40002L1.3999 8.60002" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg></button></div>
-					`)
-					// если не checked , то добавляется новое окно
-				}
+			if(item.closest('.catalog__modal-btn')){
+				item.closest('.catalog__modal-btn').parentNode.style.display = "none"
+			}
 
 		})
-	})
+
+		checkboxCatalog.forEach((c) => {
+			c.addEventListener('click' , function(e){
+				const target = e.currentTarget;
+				const parentClassCheckBox = target.parentNode.classList;
+				const textTarget = target.textContent;
+				let colorBg;
+
+
+				for (let c = 0; c < parentClassCheckBox.length; c++) {
+					const element = parentClassCheckBox[c];
+					if(element.includes('category')){
+						colorBg = `catalog__modal--product`
+					}
+					if(element.includes('sale')){
+						colorBg = `catalog__modal--sale`
+					}
+					if(element.includes('color')){
+						colorBg = `catalog__modal--color`
+					}
+				}	// в зависимости от родителя меняем цвет окна
+
+				const span = document.querySelectorAll('.catalog__modal')
+				span.forEach((e) => {
+					const text = e.firstElementChild.textContent;
+					if(text == textTarget){
+						e.remove()
+					}
+					// если есть собпадения с тексом, удаляется окно
+				})
+
+					if(!target.previousElementSibling.checked){
+						targetContainer.insertAdjacentHTML ('beforeend', `
+						<div class="catalog__modal `+` ${colorBg}"> <span class="catalog__modal-text">${textTarget}</span>
+						<button class ="catalog__modal-btn btn">
+						</button>
+							</div>
+						`)
+						// если не checked , то добавляется новое окно
+					}
+			})
+		})
+	}
+
+
 
 
 	var selector = document.querySelector("input[type='tel']");
@@ -286,27 +315,7 @@ function checkboxOn () {
 
 checkboxOn();
 
-function showMore (){
-	const btn = document.querySelector('.premium__btn-more');
-	const ulitems = document.querySelectorAll('.premium__items');
-  let arrList = Array.from(ulitems);
-  let listItems = 8;
-    for (let i = listItems; i < arrList.length; i++) {
-      const el = arrList[i];
-      el.classList.add('premium__items--hidden')
-      btn.addEventListener('click', function(){
-       el.classList.toggle('premium__items--hidden')
-       if(!el.classList.contains('premium__items--hidden')){
-				 btn.setAttribute('disabled', 'disabled')
-				 setInterval(function(){
-					btn.classList.add('premium__btn-more--hidden')
-				 }, 500)
-       }
-      })
-    }
-}
 
-showMore ();
 
 });
 

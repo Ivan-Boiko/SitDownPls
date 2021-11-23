@@ -207,6 +207,8 @@
 		padding-left: 7px;
 		padding-right: 10px;
 		color: var(--color-grey-shade);
+		animation: anim;
+		animation-duration: 1s;
 	}
 	&__modal{
 		&:not(:last-child){
@@ -216,8 +218,8 @@
 			margin-bottom: 10px;
 		}
 	}
-	&__modal-btn{
-		padding-left: 8px;
+	&__modal-text{
+		margin-right: 8px;
 	}
 	&__modal--product{
 		background-color: var(--color-lime);
@@ -230,6 +232,14 @@
 	}
 	&__modal--color{
 		background-color: var(--color-md-grey);
+	}
+	&__modal-btn{
+		max-height: 10px;
+		background-image: url('../img/x.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 10px;
+		height: 10px;
 	}
 	&__swiper{
 		max-width: 100%;
@@ -252,13 +262,14 @@
 	&__btn{
 		padding: 6px 10px;
 		border-radius: 10px;
-		max-width: 100%
+		max-width: 100%;
+		transition: background-color 0.3s ease-in, color 0.3s ease-in, border-color 0.3s ease-in;
 	}
 	&__btn:not(:last-child){
 		margin-right: 10px;
 	}
 	&__btn--active{
-		transition: all 0.3s ease-in;
+		transition: background-color 0.3s ease-in, color 0.3s ease-in, border-color 0.3s ease-in;
 		background-color: var(--color-fiol-dark);
 		color: var(--color-white);
 		border-color: var(--color-fiol-dark);
@@ -303,3 +314,11 @@ background-color:var(--color-fiol);
 	display: none;
 }
 // fqwf
+@keyframes anim {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

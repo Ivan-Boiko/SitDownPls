@@ -1,5 +1,5 @@
 .feedback {
-  padding-bottom: var(--section-padding);
+  padding-bottom: 74px;
   &__title{
     @include title;
 		margin-bottom: 7px;
@@ -39,7 +39,9 @@
     background-color: var(--color-light-grey);
 		border: 2px solid transparent;
 		border-radius: 10px;
-		transition: all 0.3s ease-in;
+		transition-property: background-color, border-color, cursor;
+		transition-duration: 0.3s;
+		transition-timing-function: ease-in, ease-in, ease-in;
     &::placeholder{
       color: var(--color-grey);
       font: var(--middle-book);

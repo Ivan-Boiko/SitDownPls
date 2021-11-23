@@ -28,7 +28,7 @@
   }
 	&__hrefs{
 		color: var(--color-black);
-		transition: color 0.3s ease-in;
+		transition: color 0.3s ease-in, background-color 0.3s ease-in;
 			&:hover{
 				color: var(--color-fiol);
 				transition: color 0.3s ease-in;
@@ -36,12 +36,12 @@
 			:focus{
 				background-color: var(--color-fiol-pink);
 				color: var(--color-fiol-dark);
-				transition: all 0.3s ease-in;
+				transition: color 0.3s ease-in, background-color 0.3s ease-in;;
 			}
 			:active{
 				background-color: inherit;
 				color: var(--color-fiol-dark);
-				transition: all 0.3s ease-in;
+				transition: color 0.3s ease-in, background-color 0.3s ease-in;;
 			}
 	}
 	&__product-title--size{

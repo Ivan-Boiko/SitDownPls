@@ -15,8 +15,12 @@
   &__swiper-slide{
     background-color: var(--color-light-grey);
     min-height: 676px;
-    padding-bottom: 30px;
   }
+	&__articale{
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 30px;
+	}
   &__img{
     max-height: 426px;
     width: 100%;
@@ -26,13 +30,14 @@
     display: flex;
     flex-direction: column;
     padding-left: 30px;
-    min-height: 187px;
+    min-height: 191px;
   }
   &__subtitile{
     max-width: 570px;
     font: var(--prehigh-book);
     color: var(--color-black);
     margin-bottom: auto;
+		line-height: 34px;
   }
   &__btn{
     background-color: transparent;
