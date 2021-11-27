@@ -1,16 +1,28 @@
+.header{
+  &--card{
+    padding-bottom: 20px;
+  }
+}
 .card {
 	&__adress-container{
 		display: flex;
-		margin-bottom: var(--main-offset);
+		margin-bottom: 47px;
 	}
+  &__adress-items{
+    &:not(:last-child){
+      margin-right: 5px;
+    }
+  }
 	&__adress-hrefs{
 		color: var(--color-grey);
+    font: var(--small-book);
 	}
 	&__adress-hrefs-active{
 		color: var(--color-fiol-dark);
 	}
 	&__grid-container-top{
-		margin-bottom: var(--main-offset);
+		margin-bottom: 16px;
+    gap: 0 35px;
 	}
 	&__swiper{
 		grid-column: 1 / 7;
@@ -75,17 +87,17 @@
 	}
 	&__title{
 		@include title-product;
-		line-height: 32px;
+		line-height: 35px;
 	}
 	&__subtitile{
 		font: var(--small-book);
 		color: var(--color-grey);
-		margin-bottom: 21px;
+		margin-bottom: 28px;
 	}
 	&__price{
 		font: var(--prehigh-max-book);
 		color: var(--color-black);
-		margin-bottom: 21px;
+		margin-bottom: 26px;
 	}
 	&__btn-contaner{
 		display: flex;
@@ -93,7 +105,7 @@
 		align-items: center;
 	}
 	&__btn-buy{
-		padding: 19px 35px;
+		padding: 19px 32px;
 		max-width: 240px;
 		margin-bottom: 12px;
 	}
@@ -112,7 +124,7 @@
 		margin-bottom: auto;
 	}
 	&__mechanism-title{
-		margin-bottom: 8px;
+		margin-bottom: 5px;
 		font: var(--middle-book);
 		color: var(--color-black);
 		font-weight: bold;
@@ -123,7 +135,7 @@
 		line-height: 25px;
 	}
 	&__mechanism-descr--margin{
-		margin-bottom: 20px;
+		margin-bottom: 8px;
 	}
 	&__mechanism-img{
 		max-width: 247px;
@@ -133,19 +145,18 @@
 	}
 	&__specifications-container{
 		grid-column: 6 span;
-
+    padding-top: 4px;
 	}
 	&__specifications-list{
 		display: flex;
 		width: 100%;
 		max-width: 544px;
 		flex-direction: column;
-
 	}
 	&__specifications-items{
 		display: flex;
 		&:not(:last-child){
-			margin-bottom: 12px;
+			margin-bottom: 7px;
 		}
 	}
 	&__specifications-name{
@@ -162,3 +173,38 @@
 		}
 	}
 }
+
+.card-form{
+  width: 625px;
+  max-width: 625px;
+  position: relative;
+  padding: 30px;
+  background-color: var(--color-white);
+  transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+  &__subtitle{
+    max-width: 380px;
+  }
+  &--hidden{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+    display: none;
+  }
+  }
+
+.card-modal{
+  display: none;
+  width: max-content;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+  &--active{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+    display: block;
+  }
+}
+
+
+

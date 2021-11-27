@@ -1,5 +1,6 @@
 .footer {
   background-color: var(--color-md-grey);
+
   &__container{
     padding-top: 23px;
     padding-bottom: 19px;
@@ -39,7 +40,9 @@
   &__company{
 		padding-top: 6px;
     text-align: center;
+    font: var(--small-book);
     background-color: var(--color-white);
+    color: var(--color-grey);
   }
 
 &__list-content{

@@ -50,9 +50,10 @@ const clean = () => {
 }
 
 const defaultExport = () => {
-    return src(
-      'src/**.html'
-      )
+    return src([
+        'src/**.html',
+        'src/vendor/**/*'
+    ])
     .pipe(dest('dist'))
     .pipe(browserSync.stream())
 }

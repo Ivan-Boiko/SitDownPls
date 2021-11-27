@@ -4,7 +4,8 @@
 		position: relative;
 	}
 	&__title{
-		@include title;
+		@include title-product;
+    margin-bottom: 23px;
 	}
 	&__items{
 		display: flex;
@@ -20,6 +21,9 @@
 		margin-right: 10px;
 	}
 	&__img{
-		max-width: 230px;
+		max-width: 250px;
 	}
+  &__img--size{
+    max-width: 230px;
+  }
 }

@@ -76,6 +76,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   border: 2px #ff4019 solid !important; // stylelint-disable-line declaration-no-important
 }
 
+.disable-scroll {
+  overflow: hidden;
+}
+
 .input-effect {
 	transition: background-color 0.3s ease-in , border-color 0.3s ease-in;
 	&:hover {
@@ -410,65 +414,6 @@ input, textarea{
 	display: none;
 }
 
-// category-hover
-.category__hrefs{
-	transition: color 0.3s ease-in, opacity 0.3s ease-in, border-color 0.3s ease-in;
-	&:active{
-		color: var(--color-fiol-dark);
-		transition: all 0.3s ease-in;
-	}
-	&::after{
-		position: absolute;
-		content: "";
-		border-bottom: 2px solid var(--color-fiol);
-		bottom: -5px;
-		left: 0;
-		width: 100%;
-		opacity: 0;
-		transition: opacity 0.3s ease-in;
-	}
-	&:hover::after{
-		opacity: 1;
-		transition: opacity 0.3s ease-in;
-	}
-	&:focus::after{
-		opacity: 1;
-		transition: opacity 0.3s ease-in;
-	}
-	&:active::after{
-		opacity: 1;
-		border-color: var(--color-fiol-dark);
-		transition: opacity 0.3s ease-in, border-color 0.3s ease-in;
-	}
-}
-.category__hrefs:hover > svg{
-		circle{
-			fill: var(--color-fiol);
-			transition: fill 0.3s ease-in;
-		}
-		path{
-			stroke: var(--color-white);
-			transition: stroke 0.3s ease-in;
-		}
-}
-.category__hrefs:focus > svg{
-		circle{
-			fill: var(--color-fiol-light);
-			transition: fill 0.3s ease-in;
-		}
-		path{
-			stroke: var(--color-white);
-			transition: stroke 0.3s ease-in;
-		}
-
-}
-.category__hrefs:active > svg{
-		circle{
-			fill: var(--color-fiol-dark);
-			stroke: inherit;
-			transition: fill 0.3s ease-in, stroke 0.3s ease-in;
-		}
-}
 
 // select arrow
 .header__town-select{
@@ -544,13 +489,25 @@ input, textarea{
 	left: 25px;
 }
 
-#name + .js-validate-error-label{
+#user_name + .js-validate-error-label{
 	top: -18px;
 }
-#tel + .js-validate-error-label{
+#user_phone + .js-validate-error-label{
 	top: 62px;
 }
-#email + .js-validate-error-label{
+#user_mail + .js-validate-error-label{
 	top: 145px;
 }
 
+.btn-close-modal{
+  max-width: max-content;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in;
+  &:hover{
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in;
+  }
+}

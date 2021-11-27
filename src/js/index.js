@@ -1,127 +1,6 @@
 document.addEventListener('DOMContentLoaded',  function(){
 
-
-  const swiperHero = new Swiper('.hero__swiper', {
-    speed: 800,
-    loop: true,
-		effect: 'fade',
-    autoplay:{
-      delay: 5000,
-    },
-		pagination: {
-			el: '.swiper-pagination',
-			type: 'bullets',
-			bulletClass:"swiper-pagination-bullet hero__bulets",
-			clickable:true,
-			clickableClass:"hero__bullets-click"
-		},
-  });
-  const swiperSpecial = new Swiper('.special__swiper', {
-    speed: 800,
-    loop: false,
-    slidesPerView: "auto",
-		slidesPerGroup:3,
-		spaceBetween:32,
-    navigation: {
-      nextEl: '.special__btn-slide--next',
-      prevEl: '.special__btn-slide--prew',
-      disabledClass : 'btn--disabled',
-    },
-  });
-  const swiperUseful = new Swiper('.useful__swiper', {
-    speed: 800,
-    loop: false,
-    spaceBetween:32,
-    slidesPerView: 2,
-    navigation: {
-      nextEl: '.useful__btn-next',
-      prevEl: '.useful__btn-prev',
-      disabledClass : 'btn--disabled',
-    },
-  });
-
-	const swiperCatalog = new Swiper('.catalog__swiper', {
-    speed: 800,
-    loop: false,
-		slidesPerView: 3,
-		slidesPerGroup:3,
-		spaceBetween:32,
-		grid: {
-			fill: 'row',
-			rows: 3,
-		},
-    navigation: {
-      nextEl: '.catalog__btn--next',
-      prevEl: '.catalog__btn--prev',
-      disabledClass : 'btn--disabled , catalog__btn--active',
-    },
-  });
-	const swiperCard = new Swiper('.card__swiper', {
-    speed: 800,
-		loop: true,
-		loopedSlides: 4,
-		navigation: {
-			nextEl: '.card__swiper-thumb-btn--next',
-			prevEl: '.card__swiper-thumb-btn--prev',
-		},
-		thumbs: {
-			swiper: swiperThumb,
-		},
-		controller: {
-			control: swiperThumb,
-		},
-
-  });
-	const swiperThumb = new Swiper('.card__swiper-thumb ', {
-    speed: 400,
-		direction: 'horizontal',
-		freeMode : true,
-		spaceBetween:40,
-		loop: true,
-		loopedSlides: 4,
-		slidesPerView: 'auto',
-		slideToClickedSlide: true,
-		touchRatio: 0.2,
-		controller: {
-			control: swiperCard,
-		},
-		navigation: {
-			nextEl: '.card__swiper-thumb-btn--next',
-			prevEl: '.card__swiper-thumb-btn--prev',
-		},
-  });
-
-
-
-	const swiperSimilar = new Swiper(".similar__swiper",{
-		speed: 800,
-    loop: false,
-		slidesPerView: 4,
-		slidesPerGroup:4,
-		spaceBetween:32,
-    navigation: {
-      nextEl: '.similar__btn-slide--next',
-      prevEl: '.similar__btn-slide--prew',
-      disabledClass : 'btn--disabled',
-    },
-	})
-
-  const choicesTown = new Choices('.choices-select-town',{
-    searchEnabled: false,
-    itemSelectText: '',
-    classNames: {
-      containerOuter: 'choices header__town-select',
-    }
-  })
-  const choicesCatalog = new Choices('.catalog-select',{
-    searchEnabled: false,
-    itemSelectText: '',
-    classNames: {
-      containerOuter: 'choices header__catalog-select',
-    }
-  })
-
-	function showMore (){
+function showMore (){
 		const btn = document.querySelector('.premium__btn-more');
 		const ulitems = document.querySelectorAll('.premium__articles');
 		let arrList = Array.from(ulitems);
@@ -139,13 +18,22 @@ document.addEventListener('DOMContentLoaded',  function(){
 				 }
 				})
 			}
-	}
+}
+showMore ();
 
-	showMore ();
+function disableScroll () {
+  let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+  document.body.classList.add('disable-scroll')
+  document.body.style.paddingRight = paddingOffset
+}
 
+function enableScroll () {
+  document.body.style.paddingRight = '0px'
+  document.body.classList.remove('disable-scroll')
+}
 
-	var range = document.querySelector('#range');
-	if (range){
+var range = document.querySelector('#range');
+if (range){
 
 		noUiSlider.create(range, {
 		start: [2000, 150000],
@@ -174,78 +62,110 @@ document.addEventListener('DOMContentLoaded',  function(){
 		})
 	})
 
-	}
-	const targetContainer = document.querySelector('.catalog__modal-container');
-	const checkboxCatalog = document.querySelectorAll('.catalog__span-accept');
+}
 
-	if (targetContainer && checkboxCatalog){
-		targetContainer.addEventListener('click' , function(er){
-			let item = er.target;
-			const span = item.previousElementSibling;
-			const spanText = span.textContent
-			checkboxCatalog.forEach((c) =>{
-				let checkboxText = c.previousElementSibling;
-				if(c.textContent == spanText){
-					checkboxText.checked = false
-				}
-			})
-			if(item.closest('.catalog__modal-btn')){
-				item.closest('.catalog__modal-btn').parentNode.style.display = "none"
+
+function modalCatalog () {
+  const targetContainer = document.querySelector('.catalog__modal-container');
+  const checkboxCatalog = document.querySelectorAll('.catalog__span-accept');
+  if (targetContainer && checkboxCatalog){
+      targetContainer.addEventListener('click' , function(er){
+        let item = er.target;
+        const span = item.previousElementSibling;
+        const spanText = span.textContent
+        checkboxCatalog.forEach((c) =>{
+          let checkboxText = c.previousElementSibling;
+          if(c.textContent == spanText){
+            checkboxText.checked = false
+          }
+        })
+        if(item.closest('.catalog__modal-btn')){
+          item.closest('.catalog__modal-btn').parentNode.style.display = "none"
+        }
+
+      })
+
+      checkboxCatalog.forEach((c) => {
+        c.addEventListener('click' , function(e){
+          const target = e.currentTarget;
+          const parentClassCheckBox = target.parentNode.classList;
+          const textTarget = target.textContent;
+          let colorBg;
+
+
+          for (let c = 0; c < parentClassCheckBox.length; c++) {
+            const element = parentClassCheckBox[c];
+            if(element.includes('category')){
+              colorBg = `catalog__modal--product`
+            }
+            if(element.includes('sale')){
+              colorBg = `catalog__modal--sale`
+            }
+            if(element.includes('color')){
+              colorBg = `catalog__modal--color`
+            }
+          }	// в зависимости от родителя меняем цвет окна
+
+          const span = document.querySelectorAll('.catalog__modal')
+          span.forEach((e) => {
+            const text = e.firstElementChild.textContent;
+            if(text == textTarget){
+              e.remove()
+            }
+            // если есть собпадения с тексом, удаляется окно
+          })
+
+            if(!target.previousElementSibling.checked){
+              targetContainer.insertAdjacentHTML ('beforeend', `
+              <div class="catalog__modal `+` ${colorBg}"> <span class="catalog__modal-text">${textTarget}</span>
+              <button class ="catalog__modal-btn btn">
+              </button>
+                </div>
+              `)
+              // если не checked , то добавляется новое окно
+            }
+        })
+      })
+  }
+}
+
+modalCatalog ()
+
+function inputValid (){
+	const input = document.querySelectorAll('.form-site__input')
+	const btn = document.querySelector('.form-site__btn')
+	btn.addEventListener('click', function(){
+		input.forEach(function(i){
+			if(!i.classList.contains('js-validate-error-field')){
+				i.classList.add('js-validate-valid-label')
 			}
-
 		})
+	})
+}
 
-		checkboxCatalog.forEach((c) => {
-			c.addEventListener('click' , function(e){
-				const target = e.currentTarget;
-				const parentClassCheckBox = target.parentNode.classList;
-				const textTarget = target.textContent;
-				let colorBg;
+inputValid();
 
+function checkboxOn () {
+	const checkbox = document.querySelector('.form-site__checkbox');
+	const btn = document.querySelector('.form-site__btn');
+	btn.setAttribute("disabled", "disabled")
+	checkbox.addEventListener('click', function() {
+		if (checkbox.checked) {
+			btn.removeAttribute("disabled", "disabled");
+		}
+		else  {
+			btn.setAttribute("disabled", "disabled");
+		}
+	})
+};
 
-				for (let c = 0; c < parentClassCheckBox.length; c++) {
-					const element = parentClassCheckBox[c];
-					if(element.includes('category')){
-						colorBg = `catalog__modal--product`
-					}
-					if(element.includes('sale')){
-						colorBg = `catalog__modal--sale`
-					}
-					if(element.includes('color')){
-						colorBg = `catalog__modal--color`
-					}
-				}	// в зависимости от родителя меняем цвет окна
+checkboxOn();
 
-				const span = document.querySelectorAll('.catalog__modal')
-				span.forEach((e) => {
-					const text = e.firstElementChild.textContent;
-					if(text == textTarget){
-						e.remove()
-					}
-					// если есть собпадения с тексом, удаляется окно
-				})
+var selector = document.querySelector("input[type='tel']");
+var im = new Inputmask("+7(999)999-99-99")
+im.mask(selector);
 
-					if(!target.previousElementSibling.checked){
-						targetContainer.insertAdjacentHTML ('beforeend', `
-						<div class="catalog__modal `+` ${colorBg}"> <span class="catalog__modal-text">${textTarget}</span>
-						<button class ="catalog__modal-btn btn">
-						</button>
-							</div>
-						`)
-						// если не checked , то добавляется новое окно
-					}
-			})
-		})
-	}
-
-
-
-
-	var selector = document.querySelector("input[type='tel']");
-	var im = new Inputmask("+7(999)999-99-99")
-	im.mask(selector);
-
-	const validate =	new JustValidate('.feedback__form', {
+const validate = new JustValidate('.form-site__form', {
 		colorWrong: '#ff3300',
 		rules: {
 			name: {
@@ -274,6 +194,7 @@ document.addEventListener('DOMContentLoaded',  function(){
 				required: 'Недопустимый формат',
 				strength: 'Недопустимый формат',
 				minLength: 'Минимум 4 символа',
+        maxLength: 'Максимум 15 символов'
 			},
 			mail: {
 				required: 'Неведопустимый формат',
@@ -283,40 +204,75 @@ document.addEventListener('DOMContentLoaded',  function(){
 				required: 'Недопустимый формат',
 				function: 'Недопустимый формат',
 			}
-		}
+		},
+
+    submitHandler: function(form){
+      let formData = new FormData(form);
+
+      fetch("send.php", {
+        method:"POST",
+        body: formData
+      })
+      .then(function (data){
+        console.log(data);
+        modalForm();
+        form.reset();
+      })
+
+  }
 });
 
-function inputValid (){
-	const input = document.querySelectorAll('.feedback__input')
-	const btn = document.querySelector('.feedback__btn')
-	btn.addEventListener('click', function(){
-		input.forEach(function(i){
-			if(!i.classList.contains('js-validate-error-field')){
-				i.classList.add('js-validate-valid-label')
-			}
-		})
-	})
+function  modalForm (){
+  const input = document.querySelectorAll('.form-site__input');
+  const cardModal = document.querySelector('.card-modal')
+  const cardForm = document.querySelector('.card-form')
+  if(cardModal){
+    cardModal.classList.add('card-modal--active')
+    cardForm.classList.add('card-form--hidden')
+    input.forEach((e) => {
+      e.classList.remove('js-validate-valid-label')
+    })
+    const interval = setInterval(function(){
+      modal.classList.remove('modal-form__overlay--visible')
+      cardModal.classList.remove('card-modal--active')
+      clearInterval(interval)
+      }, 3000)
+      enableScroll ()
+  }
+  else {
+    input.forEach((e) => {
+      e.classList.remove('js-validate-valid-label')
+      })
+      setInterval(function(){
+      modal.classList.remove('modal-form__overlay--visible')
+      }, 3000)
+      enableScroll ()
+  }
+
 }
-inputValid();
 
-function checkboxOn () {
-	const checkbox = document.querySelector('.feedback__checkbox');
-	const btn = document.querySelector('.feedback__btn');
-	btn.setAttribute("disabled", "disabled")
-	checkbox.addEventListener('click', function() {
-		if (checkbox.checked) {
-			btn.removeAttribute("disabled", "disabled");
-		}
-		else  {
-			btn.setAttribute("disabled", "disabled");
-		}
-	})
-};
+function modalClose (){
+  document.querySelector('.btn-close-modal').addEventListener('click', function(){
+    document.querySelector('.modal-form__overlay').classList.remove('modal-form__overlay--visible')
+    enableScroll ()
+  })
+}
 
-checkboxOn();
+modalClose()
 
-
-
+function  modalOpen (){
+  const btn = document.querySelector('.card__btn-buy')
+  const overlay = document.querySelector('.modal-form__overlay');
+  const cardForm = document.querySelector('.card-form')
+  if(btn){
+    btn.addEventListener('click' , function (){
+      overlay.classList.toggle('modal-form__overlay--visible');
+      cardForm.classList.remove('card-form--hidden');
+      disableScroll()
+    })
+  }
+}
+modalOpen();
 });
 
 

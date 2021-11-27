@@ -1,8 +1,8 @@
 @import "components/checkbox";
 .header{
-	&__container--catalog-padding{
-		padding-bottom: 20px;
-	}
+  &--catalog{
+    padding-bottom: 20px;
+  }
 }
 .catalog{
 	margin-bottom: 70px;
@@ -36,7 +36,7 @@
 		margin-bottom: 10px;
 
 	}
-	&__category-list{
+	&__category{
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 10px;
@@ -129,7 +129,7 @@
 		@include title-filter;
 		margin-bottom: 10px;
 	}
-	&__color-list{
+	&__color{
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 12px
@@ -178,7 +178,7 @@
 		flex-direction: column;
 	}
 	&__modal-container{
-		margin-bottom: 23px;
+    margin-bottom: 16px;
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
@@ -203,8 +203,8 @@
 		align-items: center;
 		border: 1px solid transparent;
 		border-radius: 5px;
-		padding: 6px 0;
-		padding-left: 7px;
+		padding: 4px 0;
+		padding-left: 6px;
 		padding-right: 10px;
 		color: var(--color-grey-shade);
 		animation: anim;

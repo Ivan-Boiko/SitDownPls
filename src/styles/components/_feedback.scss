@@ -1,80 +1,23 @@
 .feedback {
   padding-bottom: 74px;
-  &__title{
-    @include title;
-		margin-bottom: 7px;
-  }
   &__container{
     display: flex;
 		justify-content: space-between;
 		align-items: center;
+    position: relative;
   }
   &__content-container{
-		width: 625px;
-		max-width: 625px;
+    width: 625px;
+    max-width: 625px;
+    position: relative;
   }
   &__subtitile{
-    font: var(--small-book);
-    line-height: 19px;
-    color: var(--color-grey-shade);
     max-width: 600px;
-    margin-bottom: 20px;
   }
   &__tooltip{
     svg{
       vertical-align: middle;
     }
-  }
-  &__form{
-		position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-  &__input{
-    width: 100%;
-    max-width: 644px;
-    min-height: 54px;
-    padding-left: 18px;
-    color: var(--color-grey);
-    background-color: var(--color-light-grey);
-		border: 2px solid transparent;
-		border-radius: 10px;
-		transition-property: background-color, border-color, cursor;
-		transition-duration: 0.3s;
-		transition-timing-function: ease-in, ease-in, ease-in;
-    &::placeholder{
-      color: var(--color-grey);
-      font: var(--middle-book);
-    }
-    &:not(:last-child){
-      margin-bottom: 30px;
-    }
-  }
-  &__btn{
-    padding:19px 35px;
-    max-width: 159px;
-    margin-bottom: 15px;
-		&:disabled{
-			background-color: grey;
-			pointer-events: none;
-			opacity: 0.3;
-		}
-  }
-  &__checbox{
-    display: inline-block;
-  }
-  &__label{
-    max-width: 315px;
-    font: var(--small-book);
-    color: var(--color-black);
-    position: relative;
-    cursor: pointer;
-		@import "components/checkbox";
-  }
-  &__deal-hrefs{
-    text-decoration:underline;
-    color: var(--color-fiol);
-    margin-left: 5px;
   }
   &__img{
     background-image: url('../img/feedback-img.png');
@@ -88,9 +31,7 @@
 
   }
 }
-.js-validate-valid-label{
-	border: 2px solid #B8EC64;
-}
+
 .feedback__tooltip {
 	position: relative;
 	display: inline-block;

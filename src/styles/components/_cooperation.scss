@@ -1,3 +1,8 @@
+.header{
+  &--padding{
+    padding-bottom: 22px;
+  }
+}
 .cooperation{
 
 	&__adress-page{
@@ -24,7 +29,7 @@
 		max-width: 840px;
 		margin-bottom: var(--main-offset);
 		font: var(--middle-book);
-		line-height: 28px;
+		line-height: 30px;
 		color: var(--color-grey-shade);
 	}
 	&__timing{
@@ -41,6 +46,7 @@
 		font: var(--prehigh-book);
 		color: var(--color-black);
 		max-width: 515px;
+
 	}
 }
 .list-get{
@@ -64,6 +70,7 @@ margin-bottom: var(--main-offset);
 		padding-left: 36px;
 		font: var(--middle-book);
 		color: var(--color-grey-shade);
+    line-height: 24px;
 	}
 }
 .list-cooperation{
@@ -77,20 +84,19 @@ margin-bottom: var(--main-offset);
 	&__title{
 		font: var(--prehigh-regular);
 		color: var(--color-orange);
-		margin-bottom: 12px;
+		margin-bottom: 19px;
 	}
 	&__information{
 		font: var(--middle-book);
 		color: var(--color-grey-shade);
-		line-height: 28px;
+		line-height: 29px;
 		max-width: 850px;
 	}
 }
 .list-guarantee{
 	margin-bottom: var(--main-offset);
-
 	&__items{
-		max-width: 815px;
+		max-width: 836px;
 		position: relative;
 		&:not(:last-child){
 			margin-bottom: 12px;
@@ -99,7 +105,7 @@ margin-bottom: var(--main-offset);
 	&__text{
 		font: var(--middle-book);
 		color: var(--color-grey-shade);
-		line-height: 28px;
+		line-height: 29px;
 		padding-left: 26px;
 	}
 	&__number{
