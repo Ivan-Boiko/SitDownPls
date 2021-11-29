@@ -39,7 +39,6 @@
 	&__category{
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 10px;
 	}
 	&__category-items{
 		@include filter-content;
@@ -47,6 +46,11 @@
 			margin-bottom: 12px;
 		}
 	}
+  &__category-items--hidden{
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
 	&__span-accept {
 		font: var(--middle-book);
 		line-height: 16px;
@@ -66,7 +70,15 @@
 	&__category-btn{
 		@include filter-content;
 		color: var(--color-fiol);
+    opacity: 1;
+
 	}
+  &__category-btn--hidden{
+		height: 0;
+    width: 0;
+		opacity: 0;
+		visibility: hidden;
+  }
 	&__price-container{
 		margin-bottom: 38px;
 	}
@@ -132,7 +144,6 @@
 	&__color{
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 12px
 	}
 	&__color-items{
 		@include filter-content;
@@ -140,7 +151,18 @@
 			margin-bottom: 12px;
 		}
 	}
+  &__color-items--hidden{
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
 
+  &__color-btn--hidden{
+    height: 0;
+    width: 0;
+		opacity: 0;
+		visibility: hidden;
+  }
 	&__baner-container{
 		background-color: var(--color-black);
 		border-radius: 10px;
@@ -220,7 +242,15 @@
 	}
 	&__modal-text{
 		margin-right: 8px;
+    font: var(--small-book);
+    line-height: 18px;
 	}
+  &__modal-text--money{
+    background-color: var(--color-yellow);
+    max-width: 55px;
+    font: var(--small-book);
+    color: var(--color-grey-shade);
+  }
 	&__modal--product{
 		background-color: var(--color-lime);
 	}

@@ -46,3 +46,26 @@
 		color: var(--color-grey);
 }
 }
+@mixin overlay-style {
+  position: fixed;
+  left:0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.3s ease-in;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+}
+@mixin overlay-style-visible{
+  opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+}

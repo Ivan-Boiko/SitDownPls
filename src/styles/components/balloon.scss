@@ -1,0 +1,68 @@
+[class*="balloon_layout_normal"]{
+  border-radius: 20px;
+  box-shadow: none !important;
+}
+[class*="balloon__layout"]{
+  border-radius: 20px;
+}
+[class*="balloon__content"]{
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 20px;
+}
+[class*="balloon__close-button"]{
+  padding-right: 15px;
+}
+.balloon {
+  font: var(--small-book);
+  padding: 30px;
+  &__container{
+    display: flex;
+    flex-direction: column;
+  }
+}
+.main{
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--color-light-grey);
+  margin-bottom: 12px;
+  &__title{
+    font: var(--prehigh-regular);
+    color: var(--color-black);
+    margin-bottom: 7px;
+  }
+  &__address{
+    line-height: 25px;
+    color: var(--color-black);
+    margin-bottom: 7px;
+  }
+  &__tel{
+    color: var(--color-orange);
+		font: var(--small-book);
+		vertical-align: middle;
+  }
+  &__svg{
+    vertical-align: middle;
+		margin-right: -4px;
+		display: inline-block;
+  }
+}
+.time-jobs{
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--color-light-grey);
+  &__title{
+    color: var(--color-grey);
+  }
+  &__time{
+    color: var(--color-black);
+  }
+}
+.what-this{
+  &__title{
+    color: var(--color-grey);
+    max-width: 300px;
+  }
+  &__text{
+    color: var(--color-black);
+    line-height: 30px;
+  }
+}

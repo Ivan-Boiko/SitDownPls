@@ -89,8 +89,6 @@ document.addEventListener('DOMContentLoaded', function(){
 		},
   });
 
-
-
 	const swiperSimilar = new Swiper(".similar__swiper",{
 		speed: 800,
     loop: false,
@@ -103,4 +101,39 @@ document.addEventListener('DOMContentLoaded', function(){
       disabledClass : 'btn--disabled',
     },
 	})
+
+  const swiperModal = new Swiper('.modal-swiper__swiper', {
+    speed: 400,
+		loop: true,
+		loopedSlides: 4,
+		navigation: {
+			nextEl: '.modal-swiper__swiper-thumb-btn--next',
+			prevEl: '.modal-swiper__swiper-thumb-btn--prev',
+		},
+		thumbs: {
+			swiper: swiperModalThumb,
+		},
+		controller: {
+			control: swiperModalThumb,
+		},
+
+  });
+	const swiperModalThumb = new Swiper('.modal-swiper__swiper-thumb ', {
+    speed: 400,
+		direction: 'horizontal',
+		freeMode : true,
+		spaceBetween:89,
+		loop: true,
+		loopedSlides: 4,
+		slidesPerView: 'auto',
+		slideToClickedSlide: true,
+		touchRatio: 0.2,
+		controller: {
+			control: swiperModal,
+		},
+		navigation: {
+			nextEl: '.modal-swiper__swiper-thumb-btn--next',
+			prevEl: '.modal-swiper__swiper-thumb-btn--prev',
+		},
+  });
 })

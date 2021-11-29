@@ -1,25 +1,30 @@
 document.addEventListener('DOMContentLoaded',  function(){
+  const premiumBtn = document.querySelector('.premium__btn-more');
+  const premiumItems = document.querySelectorAll('.premium__articles');
+  const premiunBtnClassHidden = 'premium__btn-more--hidden';
+  const premiunItemClassHidden = 'premium__articles--hidden';
 
-function showMore (){
-		const btn = document.querySelector('.premium__btn-more');
-		const ulitems = document.querySelectorAll('.premium__articles');
-		let arrList = Array.from(ulitems);
-		let listItems = 8;
-			for (let i = listItems; i < arrList.length; i++) {
+function showMore (button, items, classItemsHidden , classBtnsHidden, itemNumbers){
+		const btn = button;
+		const item = items;
+		let arrList = Array.from(item);
+		let itemNumber = itemNumbers;
+			for (let i = itemNumber; i < arrList.length; i++) {
 				const el = arrList[i];
-				el.classList.add('premium__articles--hidden')
+				el.classList.add(classItemsHidden)
 				btn.addEventListener('click', function(){
-				 el.classList.toggle('premium__articles--hidden')
-				 if(!el.classList.contains('premium__articles--hidden')){
+				 el.classList.toggle(classItemsHidden)
+				 if(!el.classList.contains(classItemsHidden)){
 					 btn.setAttribute('disabled', 'disabled')
 					 setInterval(function(){
-						btn.classList.add('premium__btn-more--hidden')
+						btn.classList.add(classBtnsHidden)
 					 }, 500)
 				 }
 				})
 			}
 }
-showMore ();
+
+showMore (premiumBtn, premiumItems, premiunItemClassHidden , premiunBtnClassHidden, 8);
 
 function disableScroll () {
   let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
@@ -50,6 +55,12 @@ if (range){
 	range.noUiSlider.on ('update', function (values, handle){
 		inputs[handle].value = Math.round(values[handle]);
 	})
+  range.noUiSlider.on ('update', function (){
+    let input = document.querySelector('.catalog__modal-text--money')
+    input.value = inputMax.value
+    input.parentNode.style.display = "block"
+	})
+
 	const setRange = (i, value) => {
 		let arr =[null , null];
 		arr[i] = value;
@@ -128,19 +139,20 @@ function modalCatalog () {
       })
   }
 }
-
 modalCatalog ()
 
 function inputValid (){
-	const input = document.querySelectorAll('.form-site__input')
-	const btn = document.querySelector('.form-site__btn')
-	btn.addEventListener('click', function(){
-		input.forEach(function(i){
-			if(!i.classList.contains('js-validate-error-field')){
-				i.classList.add('js-validate-valid-label')
-			}
-		})
-	})
+  const input = document.querySelectorAll('.form-site__input')
+  const btn = document.querySelector('.form-site__btn')
+  if(input && btn){
+    btn.addEventListener('click', function(){
+      input.forEach(function(i){
+        if(!i.classList.contains('js-validate-error-field')){
+          i.classList.add('js-validate-valid-label')
+        }
+      })
+    })
+  }
 }
 
 inputValid();
@@ -148,79 +160,88 @@ inputValid();
 function checkboxOn () {
 	const checkbox = document.querySelector('.form-site__checkbox');
 	const btn = document.querySelector('.form-site__btn');
-	btn.setAttribute("disabled", "disabled")
-	checkbox.addEventListener('click', function() {
-		if (checkbox.checked) {
-			btn.removeAttribute("disabled", "disabled");
-		}
-		else  {
-			btn.setAttribute("disabled", "disabled");
-		}
-	})
+  if(checkbox && btn){
+    btn.setAttribute("disabled", "disabled")
+    checkbox.addEventListener('click', function() {
+      if (checkbox.checked) {
+        btn.removeAttribute("disabled", "disabled");
+      }
+      else  {
+        btn.setAttribute("disabled", "disabled");
+      }
+    })
+  }
 };
 
 checkboxOn();
 
 var selector = document.querySelector("input[type='tel']");
-var im = new Inputmask("+7(999)999-99-99")
-im.mask(selector);
+if(selector){
+  var im = new Inputmask("+7(999)999-99-99")
+  im.mask(selector);
 
-const validate = new JustValidate('.form-site__form', {
-		colorWrong: '#ff3300',
-		rules: {
-			name: {
-				required: true,
-				strength: {
-					custom:'^[a-zA-Zа-яёА-ЯЁ]',
-				},
-				minLength:4,
-				maxLength:15,
+}
 
-			},
-			mail: {
-				required: true,
-				email: true,
-			},
-			tel: {
-					required:true,
-					function: (name, value) => {
-						const phone = selector.inputmask.unmaskedvalue()
-						return Number(phone) && phone.length === 10
-					}
-			},
-		},
-		messages: {
-			name: {
-				required: 'Недопустимый формат',
-				strength: 'Недопустимый формат',
-				minLength: 'Минимум 4 символа',
-        maxLength: 'Максимум 15 символов'
-			},
-			mail: {
-				required: 'Неведопустимый формат',
-				email : 'Введите корректный адресс электронной почты'
-			},
-			tel: {
-				required: 'Недопустимый формат',
-				function: 'Недопустимый формат',
-			}
-		},
+const form = document.querySelector('.form-site__form')
 
-    submitHandler: function(form){
-      let formData = new FormData(form);
+if (form){
+  const validate = new JustValidate('.form-site__form', {
+      colorWrong: '#ff3300',
+      rules: {
+        name: {
+          required: true,
+          strength: {
+            custom:'^[a-zA-Zа-яёА-ЯЁ]',
+          },
+          minLength:4,
+          maxLength:15,
 
-      fetch("send.php", {
-        method:"POST",
-        body: formData
-      })
-      .then(function (data){
-        console.log(data);
-        modalForm();
-        form.reset();
-      })
+        },
+        mail: {
+          required: true,
+          email: true,
+        },
+        tel: {
+            required:true,
+            function: (name, value) => {
+              const phone = selector.inputmask.unmaskedvalue()
+              return Number(phone) && phone.length === 10
+            }
+        },
+      },
+      messages: {
+        name: {
+          required: 'Недопустимый формат',
+          strength: 'Недопустимый формат',
+          minLength: 'Минимум 4 символа',
+          maxLength: 'Максимум 15 символов'
+        },
+        mail: {
+          required: 'Неведопустимый формат',
+          email : 'Введите корректный адресс электронной почты'
+        },
+        tel: {
+          required: 'Недопустимый формат',
+          function: 'Недопустимый формат',
+        }
+      },
 
-  }
-});
+      submitHandler: function(form){
+        let formData = new FormData(form);
+
+        fetch("send.php", {
+          method:"POST",
+          body: formData
+        })
+        .then(function (data){
+          console.log(data);
+          modalForm();
+          form.reset();
+        })
+
+    }
+  });
+}
 
 function  modalForm (){
   const input = document.querySelectorAll('.form-site__input');
@@ -252,12 +273,14 @@ function  modalForm (){
 }
 
 function modalClose (){
-  document.querySelector('.btn-close-modal').addEventListener('click', function(){
-    document.querySelector('.modal-form__overlay').classList.remove('modal-form__overlay--visible')
-    enableScroll ()
-  })
+  const btn = document.querySelector('.btn-close-modal')
+  if(btn){
+    btn.addEventListener('click', function(){
+      document.querySelector('.modal-form__overlay').classList.remove('modal-form__overlay--visible')
+      enableScroll ()
+    })
+  }
 }
-
 modalClose()
 
 function  modalOpen (){
@@ -273,6 +296,45 @@ function  modalOpen (){
   }
 }
 modalOpen();
+
+function modalSwiperOpen(){
+  const swiper = document.querySelector('.card__swiper')
+  const overlay = document.querySelector('.modal-swiper__overlay')
+  if(swiper){
+    swiper.addEventListener('click', function(){
+      overlay.classList.add('modal-swiper__overlay--visible');
+
+    })
+    disableScroll()
+
+  }
+}
+modalSwiperOpen()
+
+function modalSwiperClose(){
+  const btnClose = document.querySelector('.modal-swiper__btn-close')
+  const overlay = document.querySelector('.modal-swiper__overlay')
+
+  if(btnClose){
+    btnClose.addEventListener('click',  function(){
+      overlay.classList.remove('modal-swiper__overlay--visible')
+    })
+    enableScroll ()
+  }
+}
+modalSwiperClose()
+
+  const categoryBtn = document.querySelector('.catalog__category-btn');
+  const categoryItems = document.querySelectorAll('.catalog__category-items');
+  const categoryItemClassHidden = 'catalog__category-items--hidden';
+  const categoryBtnClassHidden = 'catalog__category-btn--hidden';
+  showMore (categoryBtn, categoryItems , categoryItemClassHidden , categoryBtnClassHidden, 9)
+
+  const colorBtn = document.querySelector('.catalog__color-btn');
+  const colorItems = document.querySelectorAll('.catalog__color-items');
+  const colorItemClassHidden = 'catalog__color-items--hidden';
+  const colorBtnClassHidden = 'catalog__color-btn--hidden';
+  showMore (colorBtn, colorItems , colorItemClassHidden , colorBtnClassHidden, 9)
 });
 
 
