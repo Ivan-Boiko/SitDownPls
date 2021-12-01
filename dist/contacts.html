@@ -240,6 +240,7 @@
             type="text"
             class="contacts__input input-effect"
             placeholder="Поиск магазина"
+            id = "suggest"
           />
           <button class="contacts__btn btn btn--first">Поиск</button>
         </form>
@@ -402,49 +403,14 @@
         let myMap = new ymaps.Map("map", {
           center: center,
           zoom: 14,
+          controls:[],
         });
         let placemark1 = new ymaps.Placemark(coordinates1, {
           balloonContent: `
           <div class = "balloon">
               <div class = "balloon__container">
                 <div class = "main">
-                  <h2 class = "main__title title-reset">SitDownPls на Солянке</h2>
-                  <div class = "main_address">м. Китай-город, ул. Солянка, д.24</div>
-                  <a href="tel:+74958854547" aria-label="Связаться с нами по телефону" class="main__tel tel">
-                    <svg
-                      class="main__svg"
-                      width="22"
-                      height="22"
-                      viewBox="0 0 22 22"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18.3425 14.0983C17.215 14.0983 16.1242 13.915 15.1067 13.585C14.7858 13.475 14.4283 13.5575 14.1808 13.805L12.7417 15.6108C10.1475 14.3733 7.71833 12.0358 6.42583 9.35L8.21333 7.82833C8.46083 7.57167 8.53417 7.21417 8.43333 6.89333C8.09417 5.87583 7.92 4.785 7.92 3.6575C7.92 3.1625 7.5075 2.75 7.0125 2.75H3.84083C3.34583 2.75 2.75 2.97 2.75 3.6575C2.75 12.1733 9.83583 19.25 18.3425 19.25C18.9933 19.25 19.25 18.6725 19.25 18.1683V15.0058C19.25 14.5108 18.8375 14.0983 18.3425 14.0983Z"/>
-                    </svg>
-                    +7 (495) 885-45-47
-                  </a>
-                </div>
-                <div class = "time-jobs">
-                  <div class = "time-jobs__title">Часы работы<span class ="time-jobs__time">: с 10:00 до 21:00</span>
-                </div>
-                <div class = "what-this">
-                  <div class = "what-this__title">Что здесь:<span class ="what-this__text"> шоурум, пункт отгрузки, пункт выдачи, пункт обмена-возврата, сервисный центр</span>
-                </div>
-              </div>
-          </div>
-          `
-        }, {
-          iconLayout:'default#image',
-          iconImageHref: 'img/elephant.svg',
-          iconImageSize : [32, 22],
-          iconImageOffset : [-30, -5],
-          hideIconOnBalloonOpen:false,
-        })
-        let placemark2 = new ymaps.Placemark(coordinates2, {
-          balloonContent: `
-          <div class = "balloon">
-              <div class = "balloon__container">
-                <div class = "main">
-                  <h2 class = "main__title title-reset">SitDownPls на Солянке</h2>
+                  <h2 class = "main__title title-reset">SitDownPls на Петровке</h2>
                   <div class = "main__address">м. Китай-город, ул. Солянка, д.24</div>
                   <a href="tel:+74958854547" aria-label="Связаться с нами по телефону" class="main__tel tel">
                     <svg
@@ -464,7 +430,41 @@
               </div>
               <div class = "what-this">
                   <div class = "what-this__title">Что здесь:<span class ="what-this__text"> шоурум, пункт отгрузки, пункт выдачи, пункт обмена-возврата, сервисный центр</span></div>
-
+                </div>
+          </div>
+          `
+        }, {
+          iconLayout:'default#image',
+          iconImageHref: 'img/elephant.svg',
+          iconImageSize : [32, 22],
+          iconImageOffset : [-30, -5],
+          hideIconOnBalloonOpen:false,
+        })
+        let placemark2 = new ymaps.Placemark(coordinates2, {
+          balloonContent: `
+          <div class = "balloon">
+              <div class = "balloon__container">
+                <div class = "main">
+                  <h2 class = "main__title title-reset">SitDownPls на Петровке</h2>
+                  <div class = "main__address">м. Китай-город, ул. Солянка, д.24</div>
+                  <a href="tel:+74958854547" aria-label="Связаться с нами по телефону" class="main__tel tel">
+                    <svg
+                      class="main__svg"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 22 22"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.3425 14.0983C17.215 14.0983 16.1242 13.915 15.1067 13.585C14.7858 13.475 14.4283 13.5575 14.1808 13.805L12.7417 15.6108C10.1475 14.3733 7.71833 12.0358 6.42583 9.35L8.21333 7.82833C8.46083 7.57167 8.53417 7.21417 8.43333 6.89333C8.09417 5.87583 7.92 4.785 7.92 3.6575C7.92 3.1625 7.5075 2.75 7.0125 2.75H3.84083C3.34583 2.75 2.75 2.97 2.75 3.6575C2.75 12.1733 9.83583 19.25 18.3425 19.25C18.9933 19.25 19.25 18.6725 19.25 18.1683V15.0058C19.25 14.5108 18.8375 14.0983 18.3425 14.0983Z"/>
+                    </svg>
+                    +7 (495) 885-45-47
+                  </a>
+                </div>
+                <div class = "time-jobs">
+                  <div class = "time-jobs__title">Часы работы<span class ="time-jobs__time">: с 10:00 до 21:00</span></div>
+              </div>
+              <div class = "what-this">
+                  <div class = "what-this__title">Что здесь:<span class ="what-this__text"> шоурум, пункт отгрузки, пункт выдачи, пункт обмена-возврата, сервисный центр</span></div>
                 </div>
           </div>
           `
@@ -477,6 +477,30 @@
         })
         myMap.geoObjects.add(placemark1)
         myMap.geoObjects.add(placemark2)
+
+        var arr = [
+        "SitDownPls на Петровке",
+        "SitDownPls на Солянке",
+        ];
+
+        var find = function (arr, find) {
+        return arr.filter(function (value) {
+            return (value + "").toLowerCase().indexOf(find.toLowerCase()) != -1;
+        });
+    };
+    var myProvider = {
+    suggest: function (request, options) {
+        var res = find(arr, request),
+            arrayResult = [],
+            results = Math.min(options.results, res.length);
+        for (var i = 0; i < results; i++) {
+            arrayResult.push({displayName: res[i], value: res[i]})
+        }
+        return ymaps.vow.resolve(arrayResult);
+    }
+  }
+        var suggestView = new ymaps.SuggestView('suggest', {provider: myProvider, results: 3,});
+
       }
       ymaps.ready(init);
     </script>
