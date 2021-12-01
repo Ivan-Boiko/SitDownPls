@@ -9,6 +9,7 @@
 	&__adress-container{
 		display: flex;
 		grid-column: 12 span;
+    font: var(--small-book)
 	}
 	&__adress-items:not(:last-child){
 		margin-right: 6px;

@@ -38,9 +38,10 @@
     margin: 0 auto;
   }
 	&__btn-more--hidden{
-		transform: translateY(100px);
+		transform: translateX(100px);
 		padding: 0;
 		opacity: 0;
+    margin-top: 40px;
 		visibility: hidden;
 		transition: all 0.3s ease-in;
 	}

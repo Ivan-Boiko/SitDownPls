@@ -247,26 +247,42 @@ function  modalForm (){
   const input = document.querySelectorAll('.form-site__input');
   const cardModal = document.querySelector('.card-modal')
   const cardForm = document.querySelector('.card-form')
+  const overlayModal = document.querySelector('.modal-form__overlay')
+  
   if(cardModal){
     cardModal.classList.add('card-modal--active')
     cardForm.classList.add('card-form--hidden')
+
     input.forEach((e) => {
-      e.classList.remove('js-validate-valid-label')
+      e.classList.add('js-validate-valid-label')
     })
+
     const interval = setInterval(function(){
-      modal.classList.remove('modal-form__overlay--visible')
+      overlayModal.classList.remove('modal-form__overlay--visible')
       cardModal.classList.remove('card-modal--active')
       clearInterval(interval)
+      input.forEach((e) => {
+        e.classList.remove('js-validate-valid-label')
+      })
       }, 3000)
+
       enableScroll ()
   }
   else {
+    overlayModal.classList.add('modal-form__overlay--visible')
+
     input.forEach((e) => {
+      e.classList.add('js-validate-valid-label')
+    })
+
+    let timer = setInterval(function(){
+      overlayModal.classList.remove('modal-form__overlay--visible')
+      clearInterval(timer)
+      input.forEach((e) => {
       e.classList.remove('js-validate-valid-label')
-      })
-      setInterval(function(){
-      modal.classList.remove('modal-form__overlay--visible')
+        })
       }, 3000)
+
       enableScroll ()
   }
 
@@ -274,9 +290,16 @@ function  modalForm (){
 
 function modalClose (){
   const btn = document.querySelector('.btn-close-modal')
+  let modalOverlay = document.querySelector('.modal-form__overlay');
   if(btn){
     btn.addEventListener('click', function(){
-      document.querySelector('.modal-form__overlay').classList.remove('modal-form__overlay--visible')
+      modalOverlay.classList.remove('modal-form__overlay--visible')
+      enableScroll ()
+    })
+  }
+  if(modalOverlay){
+    modalOverlay.addEventListener('click', function(){
+      modalOverlay.classList.remove('modal-form__overlay--visible')
       enableScroll ()
     })
   }
