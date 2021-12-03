@@ -43,12 +43,16 @@
 	}
 	&__category-items{
 		@include filter-content;
+    opacity: 1;
+
+    visibility: visible;
 		&:not(:last-child){
 			margin-bottom: 12px;
 		}
 	}
   &__category-items--hidden{
     opacity: 0;
+    transition: opacity  0.3s ease-in , visibility  0.3s ease-in;
     visibility: hidden;
     display: none;
   }

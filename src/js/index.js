@@ -1,28 +1,34 @@
 document.addEventListener('DOMContentLoaded',  function(){
-  const premiumBtn = document.querySelector('.premium__btn-more');
-  const premiumItems = document.querySelectorAll('.premium__articles');
-  const premiunBtnClassHidden = 'premium__btn-more--hidden';
-  const premiunItemClassHidden = 'premium__articles--hidden';
+  function showMore (button, items, classItemsHidden , classBtnsHidden, itemNumbers){
+      let arrList = Array.from(items);
+      let arrLength = Number(arrList.length)
+        for (let i = itemNumbers; i < arrList.length; i++) {
+          let bottonNumber = String(arrLength - itemNumbers);
+          button.textContent = `+ еще ${bottonNumber}`;
 
-function showMore (button, items, classItemsHidden , classBtnsHidden, itemNumbers){
-		const btn = button;
-		const item = items;
-		let arrList = Array.from(item);
-		let itemNumber = itemNumbers;
-			for (let i = itemNumber; i < arrList.length; i++) {
-				const el = arrList[i];
-				el.classList.add(classItemsHidden)
-				btn.addEventListener('click', function(){
-				 el.classList.toggle(classItemsHidden)
-				 if(!el.classList.contains(classItemsHidden)){
-					 btn.setAttribute('disabled', 'disabled')
-					 setInterval(function(){
-						btn.classList.add(classBtnsHidden)
-					 }, 500)
-				 }
-				})
-			}
-}
+          const el = arrList[i];
+          el.classList.add(classItemsHidden)
+
+          button.addEventListener('click', function(){
+           el.classList.toggle(classItemsHidden)
+           if(!el.classList.contains(classItemsHidden)){
+              button.classList.add(classBtnsHidden)
+           }
+          })
+
+         let indexBtn = document.querySelector('.premium__btn-more')
+         if(indexBtn){
+          indexBtn.textContent = "Показать больше товаров"
+         }
+         
+        }
+  }
+
+const premiumBtn = document.querySelector('.premium__btn-more');
+const premiumItems = document.querySelectorAll('.premium__articles');
+const premiunBtnClassHidden = 'premium__btn-more--hidden';
+const premiunItemClassHidden = 'premium__articles--hidden';
+
 
 showMore (premiumBtn, premiumItems, premiunItemClassHidden , premiunBtnClassHidden, 8);
 
@@ -248,7 +254,7 @@ function  modalForm (){
   const cardModal = document.querySelector('.card-modal')
   const cardForm = document.querySelector('.card-form')
   const overlayModal = document.querySelector('.modal-form__overlay')
-  
+
   if(cardModal){
     cardModal.classList.add('card-modal--active')
     cardForm.classList.add('card-form--hidden')
@@ -339,7 +345,7 @@ function modalSwiperClose(){
   const overlay = document.querySelector('.modal-swiper__overlay')
 
   if(btnClose){
-    btnClose.addEventListener('click',  function(){
+    overlay.addEventListener('click',  function(){
       overlay.classList.remove('modal-swiper__overlay--visible')
     })
     enableScroll ()

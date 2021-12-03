@@ -36,14 +36,14 @@
     padding: 22px 36px;
     max-width: 300px;
     margin: 0 auto;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 5s ease-in, visibility 2s ease-in;
   }
 	&__btn-more--hidden{
-		transform: translateX(100px);
-		padding: 0;
+    transition: opacity 5s ease-in, visibility 2s ease-in;
 		opacity: 0;
-    margin-top: 40px;
 		visibility: hidden;
-		transition: all 0.3s ease-in;
 	}
 }
 @import "components/sofa-card";

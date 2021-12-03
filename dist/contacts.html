@@ -243,6 +243,34 @@
             id = "suggest"
           />
           <button class="contacts__btn btn btn--first">Поиск</button>
+          <div class="adress-list">
+            <button class="adress-list__btn-close btn">
+              <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M2.3812 0.397739L11.2581 9.03977C11.8029 9.57009 11.8029 10.4299 11.2581 10.9602L2.3812 19.6023C1.83647 20.1326 0.953281 20.1326 0.408549 19.6023C-0.136183 19.0719 -0.136183 18.2121 0.408549 17.6818L8.29915 10L0.40855 2.31819C-0.136182 1.78787 -0.136181 0.928057 0.408551 0.397739C0.953283 -0.13258 1.83647 -0.13258 2.3812 0.397739Z"
+                fill="#999999"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17.6188 0.397739L8.74188 9.03977C8.19715 9.57009 8.19715 10.4299 8.74188 10.9602L17.6188 19.6023C18.1635 20.1326 19.0467 20.1326 19.5915 19.6023C20.1362 19.0719 20.1362 18.2121 19.5915 17.6818L11.7009 10L19.5914 2.31819C20.1362 1.78787 20.1362 0.928057 19.5914 0.397739C19.0467 -0.13258 18.1635 -0.13258 17.6188 0.397739Z"
+                fill="#999999"
+              />
+            </svg>
+            </button>
+            <ul class="adress-list__list list-reset" id = "adress-list">
+              <li class="adress-list__items">SitDownPls на Солянке</li>
+              <li class="adress-list__items">SitDownPls на Петровке</li>
+            </ul>
+          </div>
         </form>
         <div class="contacts__map" id="map"></div>
       </div>
@@ -396,113 +424,7 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU">
     </script>
     <script>
-      function init() {
-        let center = [55.75682095508686,37.62241529106783];
-        let coordinates1 = [55.763281891551586,37.65434430718113];
-        let coordinates2 = [55.751334536744665,37.64250461450141];
-        let myMap = new ymaps.Map("map", {
-          center: center,
-          zoom: 14,
-          controls:[],
-        });
-        let placemark1 = new ymaps.Placemark(coordinates1, {
-          balloonContent: `
-          <div class = "balloon">
-              <div class = "balloon__container">
-                <div class = "main">
-                  <h2 class = "main__title title-reset">SitDownPls на Петровке</h2>
-                  <div class = "main__address">м. Китай-город, ул. Солянка, д.24</div>
-                  <a href="tel:+74958854547" aria-label="Связаться с нами по телефону" class="main__tel tel">
-                    <svg
-                      class="main__svg"
-                      width="22"
-                      height="22"
-                      viewBox="0 0 22 22"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18.3425 14.0983C17.215 14.0983 16.1242 13.915 15.1067 13.585C14.7858 13.475 14.4283 13.5575 14.1808 13.805L12.7417 15.6108C10.1475 14.3733 7.71833 12.0358 6.42583 9.35L8.21333 7.82833C8.46083 7.57167 8.53417 7.21417 8.43333 6.89333C8.09417 5.87583 7.92 4.785 7.92 3.6575C7.92 3.1625 7.5075 2.75 7.0125 2.75H3.84083C3.34583 2.75 2.75 2.97 2.75 3.6575C2.75 12.1733 9.83583 19.25 18.3425 19.25C18.9933 19.25 19.25 18.6725 19.25 18.1683V15.0058C19.25 14.5108 18.8375 14.0983 18.3425 14.0983Z"/>
-                    </svg>
-                    +7 (495) 885-45-47
-                  </a>
-                </div>
-                <div class = "time-jobs">
-                  <div class = "time-jobs__title">Часы работы<span class ="time-jobs__time">: с 10:00 до 21:00</span></div>
-              </div>
-              <div class = "what-this">
-                  <div class = "what-this__title">Что здесь:<span class ="what-this__text"> шоурум, пункт отгрузки, пункт выдачи, пункт обмена-возврата, сервисный центр</span></div>
-                </div>
-          </div>
-          `
-        }, {
-          iconLayout:'default#image',
-          iconImageHref: 'img/elephant.svg',
-          iconImageSize : [32, 22],
-          iconImageOffset : [-30, -5],
-          hideIconOnBalloonOpen:false,
-        })
-        let placemark2 = new ymaps.Placemark(coordinates2, {
-          balloonContent: `
-          <div class = "balloon">
-              <div class = "balloon__container">
-                <div class = "main">
-                  <h2 class = "main__title title-reset">SitDownPls на Петровке</h2>
-                  <div class = "main__address">м. Китай-город, ул. Солянка, д.24</div>
-                  <a href="tel:+74958854547" aria-label="Связаться с нами по телефону" class="main__tel tel">
-                    <svg
-                      class="main__svg"
-                      width="22"
-                      height="22"
-                      viewBox="0 0 22 22"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18.3425 14.0983C17.215 14.0983 16.1242 13.915 15.1067 13.585C14.7858 13.475 14.4283 13.5575 14.1808 13.805L12.7417 15.6108C10.1475 14.3733 7.71833 12.0358 6.42583 9.35L8.21333 7.82833C8.46083 7.57167 8.53417 7.21417 8.43333 6.89333C8.09417 5.87583 7.92 4.785 7.92 3.6575C7.92 3.1625 7.5075 2.75 7.0125 2.75H3.84083C3.34583 2.75 2.75 2.97 2.75 3.6575C2.75 12.1733 9.83583 19.25 18.3425 19.25C18.9933 19.25 19.25 18.6725 19.25 18.1683V15.0058C19.25 14.5108 18.8375 14.0983 18.3425 14.0983Z"/>
-                    </svg>
-                    +7 (495) 885-45-47
-                  </a>
-                </div>
-                <div class = "time-jobs">
-                  <div class = "time-jobs__title">Часы работы<span class ="time-jobs__time">: с 10:00 до 21:00</span></div>
-              </div>
-              <div class = "what-this">
-                  <div class = "what-this__title">Что здесь:<span class ="what-this__text"> шоурум, пункт отгрузки, пункт выдачи, пункт обмена-возврата, сервисный центр</span></div>
-                </div>
-          </div>
-          `
-        },{
-          iconLayout:'default#image',
-          iconImageHref: 'img/elephant.svg',
-          iconImageSize : [32, 22],
-          iconImageOffset : [-15, -15],
-          hideIconOnBalloonOpen:false,
-        })
-        myMap.geoObjects.add(placemark1)
-        myMap.geoObjects.add(placemark2)
-
-        var arr = [
-        "SitDownPls на Петровке",
-        "SitDownPls на Солянке",
-        ];
-
-        var find = function (arr, find) {
-        return arr.filter(function (value) {
-            return (value + "").toLowerCase().indexOf(find.toLowerCase()) != -1;
-        });
-    };
-    var myProvider = {
-    suggest: function (request, options) {
-        var res = find(arr, request),
-            arrayResult = [],
-            results = Math.min(options.results, res.length);
-        for (var i = 0; i < results; i++) {
-            arrayResult.push({displayName: res[i], value: res[i]})
-        }
-        return ymaps.vow.resolve(arrayResult);
-    }
-  }
-        var suggestView = new ymaps.SuggestView('suggest', {provider: myProvider, results: 3,});
-
-      }
-      ymaps.ready(init);
+      
     </script>
   </body>
 </html>
