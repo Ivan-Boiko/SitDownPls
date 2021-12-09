@@ -10,6 +10,7 @@
   </head>
   <body>
     <header class="header">
+      <div class="header__bg"></div>
       <div class="container header__container grid">
         <h1 class="main-title visually-hidden">Магазин мебели SitDownPls</h1>
         <div class="header__region-container">
@@ -67,6 +68,13 @@
             </li>
           </ul>
         </nav>
+        <button class="header__burger-btn btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="3" rx="1.5" fill="#A65CF0"/>
+          <rect y="21" width="24" height="3" rx="1.5" fill="#A65CF0"/>
+          <rect y="11" width="24" height="3" rx="1.5" fill="#A65CF0"/>
+          </svg>
+          </button>
         <a href="index.html" class="header__logo-hrefs" aria-label="На Главную">
           <svg class="header__logo-img">
             <use xlink:href="img/svg/sprite.svg#logo"></use>
@@ -211,6 +219,24 @@
             <span class="header__basket-counter">0</span>
           </button>
         </div>
+        <div class="burger-menu">
+            <div class="burger-menu__container">
+              <button class="burger-menu__btn-close btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="4.5752" y="2.9541" width="24" height="3" rx="1.5" transform="rotate(45 4.5752 2.9541)" fill="#A65CF0"/>
+                  <rect x="21.5459" y="5.0752" width="24" height="3" rx="1.5" transform="rotate(135 21.5459 5.0752)" fill="#A65CF0"/>
+                  </svg>
+              </button>
+              <ul class="burger-menu__list list-reset">
+                <li class="burger-menu__items"><a href="#" class="burger-menu__hrefs hrefs hrefs--link">Каталог</a></li>
+                <li class="burger-menu__items"><a href="#" class="burger-menu__hrefs hrefs hrefs--link">Магазины</a></li>
+                <li class="burger-menu__items"><a href="#" class="burger-menu__hrefs hrefs hrefs--link">Шоу-рум</a></li>
+                <li class="burger-menu__items"><a href="#" class="burger-menu__hrefs hrefs hrefs--link">Доставка и оплата</a></li>
+                <li class="burger-menu__items"><a href="#" class="burger-menu__hrefs hrefs hrefs--link">Дисконт</a></li>
+                <li class="burger-menu__items"><a href="#" class="burger-menu__hrefs hrefs hrefs--link">Контакты</a></li>
+              </ul>
+            </div>
+        </div>
       </div>
     </header>
     <main class="main">
@@ -258,6 +284,9 @@
             class="hero__swiper-pagination swiper-pagination"
             aria-hidden="true"
           ></div>
+        </div>
+        <div class="container hero__btn-container">
+          <button class="hero__btn-mobile btn btn--first">Получить</button>
         </div>
       </section>
       <section class="special">
@@ -427,7 +456,7 @@
                     <img
                       src="img/special-img4.png"
                       alt="Мини-скульптура Oh my deer"
-                      class="product__img product__img--card_3"
+                      class="product__img product__img--card_4"
                     />
                     <div class="product__content-container">
                       <h3 class="product__item title-reset">
@@ -496,7 +525,7 @@
                     <img
                       src="img/special-img6.png"
                       alt="Термометр + гидрометр H-18"
-                      class="product__img product__img--card_3"
+                      class="product__img product__img--card_6"
                     />
                     <div class="product__content-container">
                       <h3 class="product__item title-reset">
@@ -526,7 +555,7 @@
           <ul class="premium__list grid list-reset">
             <li class="premium__items">
               <article class="premium__articles sofa">
-                <div class="premium__rating sofa__rating">
+                <div class="premium__rating sofa__rating sofa__rating--card1">
                   <svg
                     class="premium__star-svg sofa__star-svg"
                     width="16"
@@ -561,9 +590,9 @@
             </li>
             <li class="premium__items">
               <article class="premium__articles sofa">
-                <div class="premium__rating sofa__rating">
+                <div class="premium__rating sofa__rating sofa__rating--card2">
                   <svg
-                    class="premium__star-svg sofa__star-svg"
+                    class="premium__star-svg sofa__star-svg "
                     width="16"
                     height="15"
                     viewBox="0 0 16 15"
@@ -605,7 +634,7 @@
             </li>
             <li class="premium__items">
               <article class="premium__articles sofa">
-                <div class="premium__rating sofa__rating">
+                <div class="premium__rating sofa__rating sofa__rating--card3">
                   <svg
                     class="premium__star-svg sofa__star-svg"
                     width="16"
@@ -640,7 +669,7 @@
             </li>
             <li class="premium__items">
               <article class="premium__articles sofa">
-                <div class="premium__rating sofa__rating">
+                <div class="premium__rating sofa__rating sofa__rating--card4">
                   <svg
                     class="premium__star-svg sofa__star-svg"
                     width="16"
@@ -673,9 +702,9 @@
             </li>
             <li class="premium__items">
               <article class="premium__articles sofa">
-                <div class="premium__rating sofa__rating">
+                <div class="premium__rating sofa__rating sofa__rating--card5">
                   <svg
-                    class="premium__star-svg sofa__star-svg"
+                    class="premium__star-svg sofa__star-svg "
                     width="16"
                     height="15"
                     viewBox="0 0 16 15"
@@ -694,7 +723,7 @@
                   class="premium__img sofa__img"
                 />
                 <div class="premium__content-container sofa__content-container">
-                  <h3 class="premium__product sofa__product-title title-reset">
+                  <h3 class="premium__product sofa__product-title sofa__product-title--size title-reset">
                     <a href="#" class="sofa__hrefs">Диван из шинила “W-95”</a>
                   </h3>
                   <div class="premium__price sofa__price">22 990 руб</div>
@@ -706,9 +735,9 @@
             </li>
             <li class="premium__items">
               <article class="premium__articles sofa">
-                <div class="premium__rating sofa__rating">
+                <div class="premium__rating sofa__rating sofa__rating--card6">
                   <svg
-                    class="premium__star-svg sofa__star-svg"
+                    class="premium__star-svg sofa__star-svg "
                     width="16"
                     height="15"
                     viewBox="0 0 16 15"
@@ -744,9 +773,9 @@
             </li>
             <li class="premium__items">
               <article class="premium__articles sofa">
-                <div class="premium__rating sofa__rating">
+                <div class="premium__rating sofa__rating sofa__rating--card7">
                   <svg
-                    class="premium__star-svg sofa__star-svg"
+                    class="premium__star-svg sofa__star-svg "
                     width="16"
                     height="15"
                     viewBox="0 0 16 15"
@@ -778,9 +807,9 @@
             </li>
             <li class="premium__items">
               <article class="premium__articles sofa">
-                <div class="premium__rating sofa__rating">
+                <div class="premium__rating sofa__rating sofa__rating--card8">
                   <svg
-                    class="premium__star-svg sofa__star-svg"
+                    class="premium__star-svg sofa__star-svg "
                     width="16"
                     height="15"
                     viewBox="0 0 16 15"
@@ -814,9 +843,9 @@
             </li>
             <li class="premium__items">
               <article class="premium__articles sofa">
-                <div class="premium__rating sofa__rating">
+                <div class="premium__rating sofa__rating sofa__rating--card9">
                   <svg
-                    class="premium__star-svg sofa__star-svg"
+                    class="premium__star-svg sofa__star-svg "
                     width="16"
                     height="15"
                     viewBox="0 0 16 15"
@@ -969,6 +998,7 @@
             <p class="banner__subtitile">Новая коллекция изысканных кресел</p>
             <button class="banner__btn btn btn--first">Ознакомиться</button>
           </div>
+          <button class="banner__btn-mobile btn btn--first">Ознакомиться</button>
         </div>
       </section>
       <section class="category">
@@ -978,16 +1008,40 @@
             <ul class="category__list grid list-reset">
               <li class="category__items">
                 <div class="category__content-container">
-                  <div class="category__sort-container">
-                    <span class="category__sort">Прямые</span>
-                    <span class="category__sort">Угловые</span>
-                    <span class="category__sort">Модульные</span>
+                  <div class="category__sort-container category__sort-container--display">
+                    <span class="category__sort category__sort--size">Прямые</span>
+                    <span class="category__sort category__sort--size">Угловые</span>
+                    <span class="category__sort category__sort--size">Модульные</span>
                   </div>
-                  <h3 class="category__subtitle title-reset">Диваны</h3>
+                  <h3 class="category__subtitle category__subtitle--size title-reset">Диваны
+                    <a href="#" class="category__hrefs category__hrefs--mobile btn btn--svg">
+                      <svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="11"
+                          cy="11"
+                          r="10"
+                          stroke="#A65CF0"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M9.625 7.5625L13.0625 11L9.625 14.4375"
+                          stroke="#A65CF0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a></h3>
                   <img
                     src="img/category-img1.png"
                     alt="Диваны"
-                    class="category__img category__img--big"
+                    class="category__img category__img--big category__img--img1"
                   />
                   <div class="category__hrefs-container">
                     <a href="#" class="category__hrefs btn btn--svg">
@@ -1024,11 +1078,36 @@
                     <span class="category__sort">Мягкие</span>
                     <span class="category__sort">Кресла-кровати</span>
                   </div>
-                  <h3 class="category__subtitle title-reset">Кресла</h3>
+                  <h3 class="category__subtitle title-reset">Кресла
+                    <a href="#" class="category__hrefs category__hrefs--mobile btn btn--svg">
+                      <svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="11"
+                          cy="11"
+                          r="10"
+                          stroke="#A65CF0"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M9.625 7.5625L13.0625 11L9.625 14.4375"
+                          stroke="#A65CF0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </h3>
                   <img
                     src="img/category-img2.png"
                     alt="Кресла"
-                    class="category__img category__img--big"
+                    class="category__img category__img--big category__img--img2"
                   />
                   <div class="category__hrefs-container">
                     <a href="#" class="category__hrefs btn btn--svg">
@@ -1065,13 +1144,36 @@
                     <span class="category__sort">Односпальные</span>
                     <span class="category__sort">Двуспальные</span>
                   </div>
-                  <h3 class="category__subtitle title-reset">Кровати</h3>
+                  <h3 class="category__subtitle title-reset">Кровати
+                    <a href="#" class="category__hrefs category__hrefs--mobile btn btn--svg">
+                      <svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="11"
+                          cy="11"
+                          r="10"
+                          stroke="#A65CF0"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M9.625 7.5625L13.0625 11L9.625 14.4375"
+                          stroke="#A65CF0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </h3>
                   <img
                     src="img/category-img3.png"
                     alt="Кровати"
-                    class="
-                      category__img category__img--small category__img--sofa
-                    "
+                    class="category__img category__img--img3 category__img--small  category__img--sofa"
                   />
                   <div class="category__hrefs-container">
                     <a href="#" class="category__hrefs btn btn--svg">
@@ -1108,13 +1210,37 @@
                     <span class="category__sort">Тумбы</span>
                     <span class="category__sort">Комоды</span>
                   </div>
-                  <h3 class="category__subtitle title-reset">Тумбы и комоды</h3>
+                  <h3 class="category__subtitle title-reset">Тумбы и комоды
+                    <a href="#" class="category__hrefs category__hrefs--mobile btn btn--svg">
+                      <svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="11"
+                          cy="11"
+                          r="10"
+                          stroke="#A65CF0"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M9.625 7.5625L13.0625 11L9.625 14.4375"
+                          stroke="#A65CF0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </h3>
                   <img
                     src="img/category-img4.png"
                     alt="Тумбы и комоды"
-                    class="
-                      category__img category__img--small category__img--commode
-                    "
+                    class="category__img category__img--img4 category__img--small category__img--commode"
+
                   />
                   <div class="category__hrefs-container">
                     <a href="#" class="category__hrefs btn btn--svg">
@@ -1151,12 +1277,37 @@
                     <span class="category__sort">Деревянные</span>
                     <span class="category__sort">Металлокаркас</span>
                   </div>
-                  <h3 class="category__subtitle title-reset">Стулья</h3>
+                  <h3 class="category__subtitle title-reset">Стулья
+                    <a href="#" class="category__hrefs category__hrefs--mobile btn btn--svg">
+                      <svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="11"
+                          cy="11"
+                          r="10"
+                          stroke="#A65CF0"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M9.625 7.5625L13.0625 11L9.625 14.4375"
+                          stroke="#A65CF0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </h3>
                   <img
                     src="img/category-img5.png"
                     alt="Стулья"
                     class="
-                      category__img category__img--small category__img--chair
+                      category__img category__img--img5 category__img--small category__img--chair
                     "
                   />
                   <div class="category__hrefs-container">
@@ -1342,7 +1493,7 @@
             <p class="feedback__subtitile form-site__subtitile">
               Безусловно, новая модель организационной деятельности в
               значительной степени обусловливает важность распределения
-              внутренних резервов и ресурсов.
+              внутренних резервов и&nbsp;ресурсов.
               <span class="feedback__tooltip tooltip">
                 <svg
                   class="feedback__tooltip-svg"

@@ -65,3 +65,38 @@
 .js-validate-valid-label{
 	border: 2px solid #B8EC64;
 }
+@media (max-width: 1250px){
+  .form-site{
+    padding-bottom: 46px;
+    &__content-container{
+      width: 406px;
+      max-width: 100%;
+    }
+    &__title{
+      @include title;
+      max-width: 90%;
+      margin-bottom: 9px;
+    }
+  }
+}
+@media (max-width: 340px){
+  .form-site{
+    &__subtitile{
+      margin-bottom: 15px;
+    }
+    &__input{
+      &:not(:last-child){
+        margin-bottom: 31px;
+      }
+    }
+    &__btn{
+      margin-bottom: 14px;
+    }
+    &__span-accept{
+      font-size: 12px;
+    }
+    &__deal-hrefs{
+      margin-left: 2px;
+    }
+  }
+}

@@ -3,6 +3,10 @@
   color: var(--color-black);
   margin-bottom: 26px;
 	max-width: 70%;
+  @media (max-width: 550px) {
+    font: var(--prehigh-book);
+    line-height: 24px;
+  }
 }
 @mixin title-product {
   font: var(--prehigh-book);

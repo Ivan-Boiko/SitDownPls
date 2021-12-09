@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function(){
   const swiperSpecial = new Swiper('.special__swiper', {
     speed: 800,
     loop: false,
-    slidesPerView: "auto",
+
 		slidesPerGroup:3,
 		spaceBetween:32,
     navigation: {
@@ -25,17 +25,47 @@ document.addEventListener('DOMContentLoaded', function(){
       prevEl: '.special__btn-slide--prew',
       disabledClass : 'btn--disabled',
     },
+    breakpoints: {
+      1350: {
+        slidesPerView: "auto"
+      },
+      920: {
+        slidesPerView: 3
+      },
+      550: {
+        slidesPerView: 2,
+        slidesPerGroup:2,
+      },
+      320: {
+        slidesPerView: 1,
+        slidesPerGroup:1,
+      }
+    }
+
   });
   const swiperUseful = new Swiper('.useful__swiper', {
     speed: 800,
     loop: false,
     spaceBetween:32,
-    slidesPerView: 2,
     navigation: {
       nextEl: '.useful__btn-next',
       prevEl: '.useful__btn-prev',
       disabledClass : 'btn--disabled',
     },
+    breakpoints: {
+      1300: {
+        slidesPerView: 2,
+      },
+      850: {
+        slidesPerView: 3,
+      },
+      500: {
+        slidesPerView: 2,
+      },
+      320: {
+        slidesPerView: 1,
+      },
+    }
   });
 
 	const swiperCatalog = new Swiper('.catalog__swiper', {

@@ -68,4 +68,67 @@
 	&__bullets-click{
 		max-width: max-content;
 	}
+  &__btn-mobile{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    padding: 22px 0;
+  }
+  &__btn-container{
+    position: absolute;
+    bottom: 0;
+    width: 96%;
+    display: none;
+  }
 }
+@media (max-width: 780px){
+  .hero{
+    &__content-container{
+      top: 21%;
+      left: 73px;
+    }
+  }
+}
+@media (max-width: 560px){
+  .hero{
+
+    &__title{
+      font-size: 30px;
+      line-height: 37px;
+    }
+  }
+}
+@media (max-width: 450px){
+  .hero{
+    padding-bottom: 0;
+    min-height: 320px;
+    &__title{
+      font-size: 20px;
+      line-height: 27px;
+      max-width: 210px;
+    }
+    &__content-container{
+      top: 14%;
+      left: 29px;
+    }
+    &__swiper{
+      height: 210px;
+    }
+    &__btn{
+      display: none;
+    }
+    &__btn-container{
+      display: block;
+      width: 93%;
+    }
+    &__swiper-slide{
+      background-size: cover;
+    }
+    &__swiper-slide--slide1{
+      background-image: url('../img/hero-img1-mobile.jpg');
+      background-size: cover;
+    }
+
+  }
+}
+

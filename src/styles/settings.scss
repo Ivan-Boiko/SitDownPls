@@ -15,6 +15,21 @@ body {
   max-width: 1310px;
 }
 
+@media (max-width:1200px) {
+  .container{
+    padding: 0 35px;
+  }
+}
+@media (max-width:801px) {
+  .container{
+    padding: 0 70px;
+  }
+}
+@media (max-width:650px) {
+  .container{
+    padding: 0 12px;
+  }
+}
 img {
   width: 100%;
 }
@@ -445,6 +460,20 @@ input, textarea{
 		transform: rotate(0deg);
 		transition: transform 0.3s ease-in;
 	}
+}
+@media (max-width:780px){
+  .header__catalog-select{
+    &::before{
+      right: 17%;
+    }
+  }
+}
+@media (max-width:650px){
+  .header__catalog-select{
+    &::before{
+      right: 11%;
+    }
+  }
 }
 .header__catalog-select.is-open{
 	&::before{

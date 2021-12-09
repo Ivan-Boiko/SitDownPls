@@ -54,14 +54,14 @@
 		margin-bottom: 70px;
 	}
 }
-.adress-list{
+.adress-list {
   position: absolute;
   top: 55px;
   left: 2px;
   z-index: 10;
   max-height: max-content;
   width: 100%;
-  max-width: 565px;
+  max-width: 617px;
   min-height: 50px;
   border: 1px solid var(--color-grey);
   border-top: none;
@@ -71,25 +71,42 @@
   background-color: var(--color-light-grey);
   opacity: 0;
   visibility: hidden;
-  animation-name: aimClose;
-  animation-duration: 0.8s;
 
-  &__list{
-    display: flex;
-    flex-direction: column;
+  &__button {
+    display: block;
+    max-width: max-content;
+    padding: 5px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: var(--color-fiol-light);
+    color: var(--color-white);
+    opacity: 1;
+    transition: filter 0.3s ease-in, border 0.3s ease-in, background-color 0.3s ease-in;
+    &:hover{
+      filter: opacity(0.8);
+      transition: filter 0.3s ease-in;
+    }
+    &:focus{
+      border: 2px solid var(--color-fiol-dark);
+      transition: border 0.3s ease-in;
+    }
+    &:active{
+      background-color: var(--color-fiol-dark);
+      transition:  background-color 0.3s ease-in;
+    }
+  }
+
+  &__list {
     min-height: 100%;
     padding: 15px;
     border-radius: 5px;
   }
 
   &__items{
-    display: block;
-    color: var(--color-black);
-    background-color: var(--color-fiol-light);
-    color: var(--color-white);
-    padding: 5px;
-    border-radius: 5px;
-    max-width: max-content;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: max-content;
     &:not(:last-child){
       margin-bottom: 5px;
     }
@@ -102,7 +119,7 @@
   &__btn-close{
     position: absolute;
     right: 10px;
-    top:10px;
+    top: 15px;
     max-width: max-content;
     svg{
       width: 15px;
@@ -131,16 +148,7 @@
     visibility: visible;
   }
 }
-@keyframes aimClose {
-  from{
-    visibility: visible;
-    opacity: 1;
-  }
 
-  to{
-    opacity: 0;
-    visibility: hidden;
-  }
-}
+
 
 

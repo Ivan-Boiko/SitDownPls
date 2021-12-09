@@ -58,3 +58,40 @@
     visibility: visible;
   }
 }
+@media(max-width:1350px){
+  .premium {
+    padding-bottom: 68px;
+    &__items{
+      grid-column: 4 span;
+    }
+    &__list{
+      margin-bottom: -30px;
+    }
+  }
+}
+@media(max-width:970px){
+  .premium {
+    &__items{
+      grid-column: 6 span;
+    }
+    &__list{
+      margin-bottom: -64px;
+    }
+  }
+}
+@media(max-width:550px){
+  .premium {
+    &__list{
+      grid-template-columns: repeat(6, 1fr);
+      gap: 18px 16px;
+    }
+    padding-top: 120px;
+    &__items{
+      grid-column: 3 span;
+    }
+    &__list{
+      margin-bottom: -32px;
+    }
+  }
+}
+

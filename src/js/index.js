@@ -1,18 +1,27 @@
 document.addEventListener('DOMContentLoaded',  function(){
-  function showMore (button, items, classItemsHidden , classBtnsHidden, itemNumbers){
-      let arrList = Array.from(items);
+  //универсальная функция show more для нескольких страниц
+function showMoreMain (){
+        const premiumBtn = document.querySelector('.premium__btn-more');
+        const premiumItems = document.querySelectorAll('.premium__articles');
+        const premiunItemClassHidden = 'premium__articles--hidden';
+        const premiunBtnClassHidden = 'premium__btn-more--hidden';
+         let amountOfElements = 8;
+         if(window.screen.width <= 1350){
+          amountOfElements = 6;
+         }
+      let arrList = Array.from(premiumItems);
       let arrLength = Number(arrList.length)
-        for (let i = itemNumbers; i < arrList.length; i++) {
-          let bottonNumber = String(arrLength - itemNumbers);
-          button.textContent = `+ еще ${bottonNumber}`;
+        for (let i = amountOfElements; i < arrList.length; i++) {
+          let bottonNumber = String(arrLength - amountOfElements);
+          premiumBtn.textContent = `+ еще ${bottonNumber}`;
 
           const el = arrList[i];
-          el.classList.add(classItemsHidden)
+          el.classList.add(premiunItemClassHidden)
 
-          button.addEventListener('click', function(){
-           el.classList.toggle(classItemsHidden)
-           if(!el.classList.contains(classItemsHidden)){
-              button.classList.add(classBtnsHidden)
+          premiumBtn.addEventListener('click', function(){
+           el.classList.toggle(premiunItemClassHidden)
+           if(!el.classList.contains(premiunItemClassHidden)){
+            premiumBtn.classList.add(premiunBtnClassHidden)
            }
           })
 
@@ -20,18 +29,12 @@ document.addEventListener('DOMContentLoaded',  function(){
          if(indexBtn){
           indexBtn.textContent = "Показать больше товаров"
          }
-         
+
         }
-  }
+}
+showMoreMain()
 
-const premiumBtn = document.querySelector('.premium__btn-more');
-const premiumItems = document.querySelectorAll('.premium__articles');
-const premiunBtnClassHidden = 'premium__btn-more--hidden';
-const premiunItemClassHidden = 'premium__articles--hidden';
-
-
-showMore (premiumBtn, premiumItems, premiunItemClassHidden , premiunBtnClassHidden, 8);
-
+//включение и отключение скрола
 function disableScroll () {
   let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
   document.body.classList.add('disable-scroll')
@@ -43,6 +46,9 @@ function enableScroll () {
   document.body.classList.remove('disable-scroll')
 }
 
+
+
+// изменение значения инпута во вкладке "Каталог"
 var range = document.querySelector('#range');
 if (range){
 
@@ -81,7 +87,7 @@ if (range){
 
 }
 
-
+//функция создающая всплывающие подсказки во вкладке "Каталог"
 function modalCatalog () {
   const targetContainer = document.querySelector('.catalog__modal-container');
   const checkboxCatalog = document.querySelectorAll('.catalog__span-accept');
@@ -145,8 +151,12 @@ function modalCatalog () {
       })
   }
 }
+
+
 modalCatalog ()
 
+
+//функция добавляющаяя зеленый боред в случает успешного заполнения инпутов во вкладке "Главная"
 function inputValid (){
   const input = document.querySelectorAll('.form-site__input')
   const btn = document.querySelector('.form-site__btn')
@@ -160,9 +170,9 @@ function inputValid (){
     })
   }
 }
-
 inputValid();
 
+//Обработка checkbox во вкладке "Главная"
 function checkboxOn () {
 	const checkbox = document.querySelector('.form-site__checkbox');
 	const btn = document.querySelector('.form-site__btn');
@@ -178,16 +188,20 @@ function checkboxOn () {
     })
   }
 };
-
 checkboxOn();
 
+
+//Маска для телефона во вкладке "Главная"
 var selector = document.querySelector("input[type='tel']");
+
 if(selector){
   var im = new Inputmask("+7(999)999-99-99")
   im.mask(selector);
 
 }
 
+
+//Валидация во вкладке "Главная"
 const form = document.querySelector('.form-site__form')
 
 if (form){
@@ -249,7 +263,8 @@ if (form){
   });
 }
 
-function  modalForm (){
+//Модальное окно в случае успешной отправки сообщения из формы вкладке "Главная" и "Каталог"
+function  modalForm () {
   const input = document.querySelectorAll('.form-site__input');
   const cardModal = document.querySelector('.card-modal')
   const cardForm = document.querySelector('.card-form')
@@ -294,7 +309,8 @@ function  modalForm (){
 
 }
 
-function modalClose (){
+//Закрытие модального окна
+function modalClose () {
   const btn = document.querySelector('.btn-close-modal')
   let modalOverlay = document.querySelector('.modal-form__overlay');
   if(btn){
@@ -310,9 +326,11 @@ function modalClose (){
     })
   }
 }
+
 modalClose()
 
-function  modalOpen (){
+//Модальное окно "Купить в один клик" во вкладке "Каталог"
+function  modalOpen () {
   const btn = document.querySelector('.card__btn-buy')
   const overlay = document.querySelector('.modal-form__overlay');
   const cardForm = document.querySelector('.card-form')
@@ -326,7 +344,8 @@ function  modalOpen (){
 }
 modalOpen();
 
-function modalSwiperOpen(){
+//Модальное окно свайпера  во вкладке "Каталог"
+function modalSwiperOpen() {
   const swiper = document.querySelector('.card__swiper')
   const overlay = document.querySelector('.modal-swiper__overlay')
   if(swiper){
@@ -338,9 +357,11 @@ function modalSwiperOpen(){
 
   }
 }
+
 modalSwiperOpen()
 
-function modalSwiperClose(){
+//Зкарытие Модального окна свайпера  во вкладке "Каталог"
+function modalSwiperClose() {
   const btnClose = document.querySelector('.modal-swiper__btn-close')
   const overlay = document.querySelector('.modal-swiper__overlay')
 
@@ -351,19 +372,99 @@ function modalSwiperClose(){
     enableScroll ()
   }
 }
+
 modalSwiperClose()
 
-  const categoryBtn = document.querySelector('.catalog__category-btn');
-  const categoryItems = document.querySelectorAll('.catalog__category-items');
-  const categoryItemClassHidden = 'catalog__category-items--hidden';
-  const categoryBtnClassHidden = 'catalog__category-btn--hidden';
-  showMore (categoryBtn, categoryItems , categoryItemClassHidden , categoryBtnClassHidden, 9)
+
+function showMoreCategory (){
+
+        const categoryBtn = document.querySelector('.catalog__category-btn');
+        const categoryItems = document.querySelectorAll('.catalog__category-items');
+        const categoryItemClassHidden = 'catalog__category-items--hidden';
+        const categoryBtnClassHidden = 'catalog__category-btn--hidden';
+
+         let amountOfElements = 9;
+         if(window.screen.width <= 1350){
+          console.log(amountOfElements)
+         }
+      let arrList = Array.from(categoryItems);
+      let arrLength = Number(arrList.length)
+        for (let i = amountOfElements; i < arrList.length; i++) {
+          let bottonNumber = String(arrLength - amountOfElements);
+          categoryBtn.textContent = `+ еще ${bottonNumber}`;
+
+          const el = arrList[i];
+          el.classList.add(categoryItemClassHidden)
+
+          categoryBtn.addEventListener('click', function(){
+           el.classList.toggle(categoryItemClassHidden)
+           if(!el.classList.contains(categoryItemClassHidden)){
+            categoryBtn.classList.add(categoryBtnClassHidden)
+           }
+          })
+
+         let indexBtn = document.querySelector('.premium__btn-more')
+         if(indexBtn){
+          indexBtn.textContent = "Показать больше товаров"
+         }
+
+        }
+}
+
+showMoreCategory ()
+
+
+function showMoreColor (){
 
   const colorBtn = document.querySelector('.catalog__color-btn');
   const colorItems = document.querySelectorAll('.catalog__color-items');
   const colorItemClassHidden = 'catalog__color-items--hidden';
   const colorBtnClassHidden = 'catalog__color-btn--hidden';
-  showMore (colorBtn, colorItems , colorItemClassHidden , colorBtnClassHidden, 9)
+
+   let amountOfElements = 9;
+   if(window.screen.width <= 1350){
+    console.log(amountOfElements)
+   }
+let arrList = Array.from(colorItems);
+let arrLength = Number(arrList.length)
+  for (let i = amountOfElements; i < arrList.length; i++) {
+    let bottonNumber = String(arrLength - amountOfElements);
+    colorBtn.textContent = `+ еще ${bottonNumber}`;
+
+    const el = arrList[i];
+    el.classList.add(colorItemClassHidden)
+
+    colorBtn.addEventListener('click', function(){
+     el.classList.toggle(colorItemClassHidden)
+     if(!el.classList.contains(colorItemClassHidden)){
+      colorBtn.classList.add(colorBtnClassHidden)
+     }
+    })
+
+   let indexBtn = document.querySelector('.premium__btn-more')
+   if(indexBtn){
+    indexBtn.textContent = "Показать больше товаров"
+   }
+
+  }
+}
+showMoreColor()
+
+
+function burgerMenu(){
+  let btnOpen = document.querySelector('.header__burger-btn')
+  let menuList = document.querySelector(".burger-menu")
+  let btnClose = document.querySelector('.burger-menu__btn-close')
+
+  btnOpen.addEventListener('click', function () {
+    menuList.classList.add('burger-menu--active')
+  })
+  btnClose.addEventListener('click', function () {
+    menuList.classList.remove('burger-menu--active')
+  })
+}
+
+burgerMenu()
 });
 
 

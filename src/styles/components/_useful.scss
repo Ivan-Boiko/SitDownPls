@@ -31,6 +31,7 @@
     flex-direction: column;
     padding-left: 30px;
     min-height: 191px;
+    padding-right: 10px;
   }
   &__subtitile{
     max-width: 570px;
@@ -43,3 +44,33 @@
     background-color: transparent;
   }
 }
+@media(max-width:1300px){
+.useful{
+  &__swiper-slide{
+    min-height: 455px;
+  }
+  &__subtitile{
+    font-size: 16px;
+    line-height: 21px;
+    max-width: 230px;
+  }
+  &__btn-container{
+    right: 70px;
+  }
+}
+}
+@media(max-width:340px){
+  .useful{
+    padding-bottom: 117px;
+    &__img{
+      margin-bottom: 34px;
+    }
+    &__btn-container{
+      right: 0;
+      max-height: max-content;
+      left: 59%;
+      top: 524px;
+      transform: translate(-50% , 0);
+    }
+  }
+  }
