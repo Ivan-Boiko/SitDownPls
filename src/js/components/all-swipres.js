@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function(){
 			type: 'bullets',
 			bulletClass:"swiper-pagination-bullet hero__bulets",
 			clickable:true,
-			clickableClass:"hero__bullets-click"
+			clickableClass:"hero__bullets-click",
+      dynamicBullets:true,
 		},
   });
   const swiperSpecial = new Swiper('.special__swiper', {
@@ -72,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function(){
     speed: 800,
     loop: false,
 		slidesPerView: 3,
-		slidesPerGroup:3,
+		slidesPerGroup: 3,
 		spaceBetween:32,
 		grid: {
 			fill: 'row',
@@ -84,86 +85,102 @@ document.addEventListener('DOMContentLoaded', function(){
       disabledClass : 'btn--disabled , catalog__btn--active',
     },
   });
+
 	const swiperCard = new Swiper('.card__swiper', {
     speed: 800,
-		loop: true,
-		loopedSlides: 4,
+    slidesPerView: 1,
 		navigation: {
 			nextEl: '.card__swiper-thumb-btn--next',
 			prevEl: '.card__swiper-thumb-btn--prev',
 		},
 		thumbs: {
-			swiper: swiperThumb,
-		},
-		controller: {
-			control: swiperThumb,
+			swiper:{
+        el:'.card__swiper-thumb',
+        spaceBetween:40,
+        speed: 400,
+        breakpoints: {
+          1000: {
+            slidesPerView: 4,
+            direction: 'horizontal',
+          },
+          550:{
+            spaceBetween:20,
+            slidesPerView: 4,
+            direction: 'vertical',
+          },
+          320:{
+            spaceBetween:80,
+            slidesPerView: 2,
+            direction: 'horizontal',
+          }
+        }
+      }
 		},
 
   });
-	const swiperThumb = new Swiper('.card__swiper-thumb ', {
-    speed: 400,
-		direction: 'horizontal',
-		freeMode : true,
-		spaceBetween:40,
-		loop: true,
-		loopedSlides: 4,
-		slidesPerView: 'auto',
-		slideToClickedSlide: true,
-		touchRatio: 0.2,
-		controller: {
-			control: swiperCard,
-		},
-		navigation: {
-			nextEl: '.card__swiper-thumb-btn--next',
-			prevEl: '.card__swiper-thumb-btn--prev',
-		},
-  });
+
 
 	const swiperSimilar = new Swiper(".similar__swiper",{
 		speed: 800,
     loop: false,
-		slidesPerView: 4,
-		slidesPerGroup:4,
 		spaceBetween:32,
     navigation: {
       nextEl: '.similar__btn-slide--next',
       prevEl: '.similar__btn-slide--prew',
       disabledClass : 'btn--disabled',
     },
+    breakpoints: {
+      1250:{
+        slidesPerView: 4,
+        slidesPerGroup:4,
+      },
+      900:{
+        slidesPerView: 3,
+        slidesPerGroup:3,
+      },
+      500:{
+        slidesPerView: 2,
+        slidesPerGroup:2,
+      },
+      200:{
+        slidesPerView: 1,
+        slidesPerGroup:1,
+      }
+    },
 	})
 
   const swiperModal = new Swiper('.modal-swiper__swiper', {
     speed: 400,
-		loop: true,
-		loopedSlides: 4,
+    slidesPerView: "auto",
+    spaceBetween:89,
 		navigation: {
 			nextEl: '.modal-swiper__swiper-thumb-btn--next',
 			prevEl: '.modal-swiper__swiper-thumb-btn--prev',
-		},
-		thumbs: {
-			swiper: swiperModalThumb,
-		},
-		controller: {
-			control: swiperModalThumb,
 		},
 
-  });
-	const swiperModalThumb = new Swiper('.modal-swiper__swiper-thumb ', {
-    speed: 400,
-		direction: 'horizontal',
-		freeMode : true,
-		spaceBetween:89,
-		loop: true,
-		loopedSlides: 4,
-		slidesPerView: 'auto',
-		slideToClickedSlide: true,
-		touchRatio: 0.2,
-		controller: {
-			control: swiperModal,
+    thumbs: {
+			swiper:{
+        el:'.modal-swiper__swiper-thumb',
+        direction: 'horizontal',
+        speed: 400,
+          breakpoints : {
+          1920: {
+            slidesPerView: 4,
+            spaceBetween:89,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween:89,
+          },
+          1000 :{
+            slidesPerView: "auto",
+          },
+          650:{
+            spaceBetween:120,
+            slidesPerView: 1,
+          },
+      }
 		},
-		navigation: {
-			nextEl: '.modal-swiper__swiper-thumb-btn--next',
-			prevEl: '.modal-swiper__swiper-thumb-btn--prev',
-		},
+    }
   });
 })

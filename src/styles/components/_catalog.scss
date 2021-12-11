@@ -6,20 +6,6 @@
 }
 .catalog{
 	margin-bottom: 70px;
-	&__adress-container{
-		display: flex;
-		grid-column: 12 span;
-    font: var(--small-book)
-	}
-	&__adress-items:not(:last-child){
-		margin-right: 6px;
-	}
-	&__adress-hrefs{
-		color: var(--color-grey);
-	}
-	&__adress-hrefs--color{
-		color: var(--color-fiol-dark);
-	}
 	&__filter-container{
 		grid-column: 1 / 4;
 	}

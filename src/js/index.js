@@ -366,11 +366,16 @@ function modalSwiperClose() {
   const overlay = document.querySelector('.modal-swiper__overlay')
 
   if(btnClose){
-    overlay.addEventListener('click',  function(){
+    btnClose.addEventListener('click',  function(){
       overlay.classList.remove('modal-swiper__overlay--visible')
     })
-    enableScroll ()
   }
+  overlay.addEventListener( 'click', (e) => {
+    if(e.target == overlay){
+      overlay.classList.remove('modal-swiper__overlay--visible')
+    }
+  })
+  enableScroll ()
 }
 
 modalSwiperClose()

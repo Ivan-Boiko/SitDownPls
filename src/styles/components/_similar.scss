@@ -27,3 +27,14 @@
     max-width: 230px;
   }
 }
+
+@media(max-width: 750px){
+  .similar{
+      &__img--size{
+        max-width: 190px;
+      }
+      &__content-container{
+        padding-bottom: 20px;
+      }
+  }
+}

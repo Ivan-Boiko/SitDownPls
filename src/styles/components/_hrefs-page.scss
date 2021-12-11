@@ -1,0 +1,15 @@
+.hrefs-page{
+  display: flex;
+		margin-bottom: var(--main-offset);
+		grid-column: 12 span;
+    &__href{
+      color: var(--color-grey);
+      font: var(--small-book);
+    }
+    &__href--color{
+      color: var(--color-fiol-dark);
+    }
+    &__items:not(:last-child){
+      margin-right: 5px;
+    }
+}

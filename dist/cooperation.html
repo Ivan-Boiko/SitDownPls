@@ -10,6 +10,7 @@
   </head>
   <body>
     <header class="header header--padding">
+      <div class="header__bg"></div>
       <div class="container header__container grid">
         <h1 class="main-title visually-hidden">Магазин мебели SitDownPls</h1>
         <div class="header__region-container">
@@ -67,6 +68,13 @@
             </li>
           </ul>
         </nav>
+        <button class="header__burger-btn btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="3" rx="1.5" fill="#A65CF0"/>
+          <rect y="21" width="24" height="3" rx="1.5" fill="#A65CF0"/>
+          <rect y="11" width="24" height="3" rx="1.5" fill="#A65CF0"/>
+          </svg>
+        </button>
         <a href="index.html" class="header__logo-hrefs" aria-label="На Главную">
           <svg class="header__logo-img">
             <use xlink:href="img/svg/sprite.svg#logo"></use>
@@ -211,32 +219,104 @@
             <span class="header__basket-counter">0</span>
           </button>
         </div>
+        <div class="burger-menu">
+            <div class="burger-menu__container">
+              <button class="burger-menu__btn-close btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="4.5752" y="2.9541" width="24" height="3" rx="1.5" transform="rotate(45 4.5752 2.9541)" fill="#A65CF0"/>
+                  <rect x="21.5459" y="5.0752" width="24" height="3" rx="1.5" transform="rotate(135 21.5459 5.0752)" fill="#A65CF0"/>
+                  </svg>
+              </button>
+              <ul class="header__menu menu-header list-reset">
+                <li class="menu-header__items hrefs hrefs--second">
+                  <a
+                    href="catalog.html"
+                    class="menu-header__hrefs hrefs hrefs--link"
+                    >Каталог</a
+                  >
+                </li>
+                <li class="menu-header__items hrefs hrefs--second">
+                  <a href="#" class="menu-header__hrefs hrefs hrefs--link"
+                    >Магазины</a
+                  >
+                </li>
+                <li class="menu-header__items hrefs hrefs--second">
+                  <a href="#" class="menu-header__hrefs hrefs hrefs--link"
+                    >Шоу-рум</a
+                  >
+                </li>
+                <li class="menu-header__items hrefs hrefs--second">
+                  <a href="#" class="menu-header__hrefs hrefs hrefs--link"
+                    >Доставка и оплата</a
+                  >
+                </li>
+                <li class="menu-header__items hrefs hrefs--second">
+                  <a href="#" class="menu-header__hrefs hrefs hrefs--link"
+                    >Дисконт</a
+                  >
+                </li>
+                <li class="menu-header__items hrefs hrefs--second">
+                  <a
+                    href="contacts.html"
+                    class="menu-header__hrefs hrefs hrefs--link"
+                    >Контакты</a
+                  >
+                </li>
+              </ul>
+              <ul class="header__list-information information-list list-reset">
+                <li class="information-list__items hrefs hrefs--first">
+                  <a href="#" class="information-list__hrefs hrefs hrefs--link"
+                    >О компании</a
+                  >
+                </li>
+                <li class="information-list__items hrefs hrefs--first">
+                  <a href="#" class="information-list__hrefs hrefs hrefs--link"
+                    >Гарантия и возврат</a
+                  >
+                </li>
+                <li class="information-list__items hrefs hrefs--first">
+                  <a href="#" class="information-list__hrefs hrefs hrefs--link"
+                    >Корпоротивным клиентам</a
+                  >
+                </li>
+                <li class="information-list__items hrefs hrefs--first">
+                  <a href="#" class="information-list__hrefs hrefs hrefs--link"
+                    >Дизайн-решение</a
+                  >
+                </li>
+              </ul>
+            </div>
+        </div>
       </div>
     </header>
     <main class="main">
       <section class="cooperation">
         <div class="container cooperation__container">
-          <div class="cooperation__container-hrefs">
-            <a
-            href="index.html"
-            class="cooperation__adress-page hrefs hrefs--link"
-            >Главная /</a
-          >
-          <span class="cooperation__adress-page cooperation__adress-page--color"
-            >Сотрудничество</span
-          >
-          </div>
+          <ul class="hrefs-page list-reset">
+            <li class="hrefs-page__items">
+              <a
+              href="index.html"
+              class="hrefs-page__href hrefs hrefs--link"
+              >Главная /</a
+            >
+            </li>
+            <li class="hrefs-page__items">
+              <a class="hrefs-page__href hrefs-page__href--color">
+              Сотрудничество
+              </a>
+            </li>
+          </ul>
           <div class="page-content">
             <h1>Сотрудничество</h1>
             <h2>Поставщикам</h2>
             <p>
               При планировании обстановки торгового помещения важно обустроить его
-              с&nbsp;комфортом для покупателей: грамотно зонировать, обеспечить
+              с комфортом для покупателей: грамотно зонировать, обеспечить
               эффективную демонстрацию и&nbsp;хранение товаров в&nbsp;зале. Если
               вам необходимо комплексное оснащение, организация зоны отдыха или
               отдельные предметы меблировки для поддержания эффективной торговой
               деятельности, мы&nbsp;поможем выбрать продукцию с&nbsp;учетом
-              нагрузки от&nbsp;поступающего трафика.
+              нагрузки от поступающего трафика.
             </p>
             <h2 >Что вы получаете?</h2>
             <ul>
@@ -278,18 +358,18 @@
               <dl>
                 <dt><h3>Возможность 1:</h3></dt>
                 <dd><p>Создавайте незабываемые впечатления. Красиво меблированная
-                  фотостудия не&nbsp;оставит клиентов равнодушными,
-                  а&nbsp;созданная интерьером атмосфера будет надолго запечатлена
+                  фотостудия не оставит клиентов равнодушными,
+                  а созданная интерьером атмосфера будет надолго запечатлена
                   на&nbsp;их&nbsp;снимках. Стильная и&nbsp;разноплановая
                   обстановка творческого пространства&nbsp;&mdash; ключевая
                   составляющая его успешной деятельности. Позаботьтесь
-                  о&nbsp;людях в&nbsp;кадре, а&nbsp;мы&nbsp;поможем правильно
+                  о людях в кадре, а&nbsp;мы&nbsp;поможем правильно
                   выбрать мебель.</p>
                 </dd>
                 <dt><h3>Возможность 2:</h3></dt>
                 <dd><p>Мы&nbsp;предлагаем застройщикам, работающим
                   на&nbsp;территории&nbsp;РФ, участие наших специалистов
-                  от&nbsp;этапа проектирования обстановки квартир и&nbsp;подбора
+                  от&nbsp;этапа проектирования обстановки квартир и подбора
                   комплексных интерьерных решений до&nbsp;оптовых поставок мебели.
                   Поможем организовать демонстрационный зал с&nbsp;образцами
                   изделий и&nbsp;материалов на&nbsp;площади нового здания, чтобы
@@ -309,13 +389,13 @@
               </li>
               <li>
                 <p>
-                  На товары, сборка которых производилась покупателем
+                  На&nbsp;товары, сборка которых производилась покупателем
                   самостоятельно (не специалистами Продавца), гарантийные
                   обязательства Продавца не распространяются. Также гарантия не
-                  распространяется на повреждения товара, полученные в ходе
-                  самостоятельной доставки и подъема товара. Покупатель не вправе
+                  распространяется на&nbsp;повреждения товара, полученные в&nbsp;ходе
+                  самостоятельной доставки и&nbsp;подъема товара. Покупатель не&nbsp;вправе
                   отказаться от товара надлежащего качества, имеющего
-                  индивидуально-определенные свойства, т.е. если товар может быть
+                  индивидуально определенные свойства, т.е. если товар может быть
                   использован исключительно приобретающим его потребителем.
                 </p>
               </li>
@@ -323,8 +403,8 @@
                 <p>
                   Возврат или обмен товара возможен при условии, что сохранена
                   упаковка, товарный вид и потребительские свойства товара,
-                  а&nbsp;также товарный и&nbsp;кассовый чеки. В&nbsp;этом случае
-                  мы&nbsp;гарантируем вам возврат полной стоимости товара
+                  а&nbsp;также товарный и кассовый чеки. В&nbsp;этом случае
+                  мы гарантируем вам возврат полной стоимости товара
                   (за&nbsp;вычетом стоимости доставки). В&nbsp;случае отказа
                   от&nbsp;товара при доставке, клиент оплачивает услуги доставки.
                 </p>

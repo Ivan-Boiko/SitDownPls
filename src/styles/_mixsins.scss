@@ -67,6 +67,7 @@
   opacity: 0;
   visibility: hidden;
   cursor: pointer;
+  z-index: 10;
 }
 @mixin overlay-style-visible{
   opacity: 1;

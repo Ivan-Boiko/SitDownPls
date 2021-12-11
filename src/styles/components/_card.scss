@@ -4,22 +4,6 @@
   }
 }
 .card {
-	&__adress-container{
-		display: flex;
-		margin-bottom: 47px;
-	}
-  &__adress-items{
-    &:not(:last-child){
-      margin-right: 5px;
-    }
-  }
-	&__adress-hrefs{
-		color: var(--color-grey);
-    font: var(--small-book);
-	}
-	&__adress-hrefs-active{
-		color: var(--color-fiol-dark);
-	}
 	&__grid-container-top{
 		margin-bottom: 16px;
     gap: 0 35px;
@@ -67,6 +51,7 @@
 		max-width: 134px;
 		max-height: 61px;
 		object-fit: contain;
+    height: 100%;
 	}
 	&__descr{
 		width: 100%;
@@ -219,7 +204,7 @@
     @include overlay-style-visible;
   }
   &__container{
-    position: relative;
+    position: absolute;
     max-width: 1310px;
     min-height: 684px;
     padding: 0 51px;
@@ -227,6 +212,7 @@
     padding-bottom: 20px;
     background-color: var(--color-white);
     cursor: default;
+    z-index: 100;
   }
   &__swiper{
     height: 518px;
@@ -250,6 +236,7 @@
   &__swiper-thumb-slide{
     max-width: max-content;
     max-height: 100%;
+    height: 100%;
   }
   &__img-thumb-slide{
     max-width: 253px;
@@ -260,3 +247,108 @@
 }
 
 
+@media (max-width:1200px){
+  .card{
+    &__mechanism-img{
+      max-width: 200px;
+    }
+    &__mechanism-container{
+      grid-column: 12 span;
+    }
+    &__mechanism-content{
+      max-width: 540px;
+    }
+    &__specifications-container{
+      grid-column: 12 span;
+    }
+  }
+
+}
+@media (max-width:1000px){
+  .card{
+    &__swiper{
+      grid-column: 12 span;
+    }
+    &__swiper-thumb{
+      grid-column: 1/ 4;
+      max-height: 280px;
+    }
+    &__descr{
+      grid-column: 5 / 13;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+}
+
+@media (max-width:549px){
+  .card{
+    &__grid-container-top{
+      grid-template-columns: repeat(6, 1fr);
+    }
+    &__swiper{
+      grid-column: 6 span;
+    }
+    &__swiper-thumb{
+      grid-column: 6 span;
+      max-height: 280px;
+    }
+    &__descr{
+      grid-column: 6 span;
+      align-self: center;
+      justify-self: center;
+    }
+    &__grid-container-bottom{
+      grid-template-columns: repeat(6, 1fr);
+    }
+    &__mechanism-container{
+      grid-column: 6 span;
+    }
+    &__specifications-container{
+      grid-column: 6 span;
+    }
+  }
+
+}
+@media (max-width:490px){
+.card{
+  .hrefs-page{
+    display: none;
+  }
+  &__btn-contaner{
+    width: 100%;
+  }
+  &__btn-buy{
+    width: 100%;
+    max-width: 100%;
+  }
+  &__specifications-items{
+    display: flex;
+    flex-direction: column;
+    max-width: max-content;
+  }
+  &__mechanism-img{
+    max-width: 130px;
+  }
+  &__subtitile{
+    max-width: 230px;
+  }
+  &__specifications-name{
+    width: 100%;
+    max-width: max-content;
+    font-size: 10px;
+
+    &::after{
+      display: none;
+    }
+  }
+  &__specifications{
+    display: flex;
+    flex-direction: column;
+  }
+  &__img-thumb-slide{
+    max-width: 100%;
+  }
+}
+
+}
