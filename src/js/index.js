@@ -49,7 +49,7 @@ function enableScroll () {
 
 
 // изменение значения инпута во вкладке "Каталог"
-var range = document.querySelector('#range');
+let range = document.querySelector('#range');
 if (range){
 
 		noUiSlider.create(range, {
@@ -365,16 +365,17 @@ function modalSwiperClose() {
   const btnClose = document.querySelector('.modal-swiper__btn-close')
   const overlay = document.querySelector('.modal-swiper__overlay')
 
-  if(btnClose){
+  if(btnClose || overlay){
     btnClose.addEventListener('click',  function(){
       overlay.classList.remove('modal-swiper__overlay--visible')
     })
-  }
+
   overlay.addEventListener( 'click', (e) => {
     if(e.target == overlay){
       overlay.classList.remove('modal-swiper__overlay--visible')
     }
   })
+}
   enableScroll ()
 }
 
@@ -387,13 +388,9 @@ function showMoreCategory (){
         const categoryItems = document.querySelectorAll('.catalog__category-items');
         const categoryItemClassHidden = 'catalog__category-items--hidden';
         const categoryBtnClassHidden = 'catalog__category-btn--hidden';
-
-         let amountOfElements = 9;
-         if(window.screen.width <= 1350){
-          console.log(amountOfElements)
-         }
-      let arrList = Array.from(categoryItems);
-      let arrLength = Number(arrList.length)
+        let amountOfElements = 9;
+        let arrList = Array.from(categoryItems);
+        let arrLength = Number(arrList.length)
         for (let i = amountOfElements; i < arrList.length; i++) {
           let bottonNumber = String(arrLength - amountOfElements);
           categoryBtn.textContent = `+ еще ${bottonNumber}`;
@@ -425,11 +422,8 @@ function showMoreColor (){
   const colorItems = document.querySelectorAll('.catalog__color-items');
   const colorItemClassHidden = 'catalog__color-items--hidden';
   const colorBtnClassHidden = 'catalog__color-btn--hidden';
+  let amountOfElements = 9;
 
-   let amountOfElements = 9;
-   if(window.screen.width <= 1350){
-    console.log(amountOfElements)
-   }
 let arrList = Array.from(colorItems);
 let arrLength = Number(arrList.length)
   for (let i = amountOfElements; i < arrList.length; i++) {
@@ -445,11 +439,6 @@ let arrLength = Number(arrList.length)
       colorBtn.classList.add(colorBtnClassHidden)
      }
     })
-
-   let indexBtn = document.querySelector('.premium__btn-more')
-   if(indexBtn){
-    indexBtn.textContent = "Показать больше товаров"
-   }
 
   }
 }
@@ -472,4 +461,22 @@ function burgerMenu(){
 burgerMenu()
 });
 
+function showFilterList() {
+      const title = document.querySelectorAll('.catalog__category-title--mobile')
+      let list = document.querySelectorAll('.catalog__general-content-container')
+      if(title && list){
+        title.forEach((e) => {
+          e.addEventListener('click' , function (c) {
+            let path = c.currentTarget.dataset.path;
+            list.forEach((b) => {
+              b.classList.remove('catalog__general-content-container--active')
+            })
+            document.querySelector(`[data-target="${path}"]`).classList.add('catalog__general-content-container--active')
+          })
+        })
+      }
+    }
+
+
+showFilterList();
 

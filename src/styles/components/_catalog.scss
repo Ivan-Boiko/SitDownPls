@@ -6,14 +6,22 @@
 }
 .catalog{
 	margin-bottom: 70px;
+  &__container{
+    grid-template-rows: 1% 35px;
+    gap: 32px 32px;
+  }
 	&__filter-container{
 		grid-column: 1 / 4;
+    grid-row: 2 / 4;
 	}
 	&__filter-title{
 		font: var(--prehigh-middle-book);
 		margin-bottom: 20px;
 		font-weight: bold;
 	}
+  &__general-list{
+    position: relative;
+  }
 	&__category-container{
 		margin-bottom: 24px;
 	}
@@ -23,6 +31,7 @@
 		margin-bottom: 10px;
 
 	}
+
 	&__category{
 		display: flex;
 		flex-direction: column;
@@ -187,11 +196,11 @@
 	}
 	&__product-container{
 		grid-column: 4 / 13;
+    grid-row: 3 / 4;
 		display: flex;
 		flex-direction: column;
 	}
 	&__modal-container{
-    margin-bottom: 16px;
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
@@ -202,10 +211,12 @@
 	&__title{
 		@include title-product;
 		margin-right: 18px;
-		margin-bottom: 13px;
 	}
 	&__title-container{
 		display: flex;
+    grid-column: 4 / 13;
+    grid-row: 2 / 3;
+    max-height: 60px;
 	}
 	&__list{
 		grid-template-columns: repeat(9, 1fr);
@@ -227,8 +238,8 @@
 		&:not(:last-child){
 			margin-right: 20px;
 		}
-		&:nth-child(n + 1){
-			margin-bottom: 10px;
+		&:nth-child(n + 8){
+			margin-top: 10px;
 		}
 	}
 	&__modal-text{
@@ -295,6 +306,9 @@
 		color: var(--color-white);
 		border-color: var(--color-fiol-dark);
 	}
+  &__swiper-pagination{
+    display: none;
+  }
 }
 
 .catalog__progress-bar{
@@ -342,4 +356,255 @@ background-color:var(--color-fiol);
 	to {
 		opacity: 1;
 	}
+}
+
+@media(max-width:1250px) {
+  .header{
+    &--catalog{
+      padding-bottom: 20px;
+    }
+  }
+  .catalog{
+    position: relative;
+    z-index: 1;
+    .hrefs-page{
+      margin-bottom: 0;
+      grid-row: 1 / 2;
+    }
+
+    &__product-container{
+      grid-column: 12 span;
+      grid-row: 4 / 5;
+
+    }
+    &__title-container{
+      grid-row: 2 / 3;
+      grid-column: 12 span;
+      max-height: 35px;
+      display: flex;
+    }
+    &__filter-container{
+      grid-row: 3 / 4;
+      display: flex;
+      grid-column: 12 span;
+      max-width: 100%;
+      align-items: center;
+    }
+    &__modal{
+      &:not(:last-child){
+        margin-right: 30px;
+      }
+    }
+    &__filter-content{
+      position: relative;
+      z-index: 2;
+    }
+    &__general-list{
+      margin-bottom: 0;
+      position: relative;
+      &:not(:nth-child(4)){
+        margin-right: 20px;
+      }
+      width: 100%;
+    }
+    &__filter-content{
+      display: flex;
+      width: 100%;
+    }
+    &__filter-title{
+      margin-bottom: 0;
+      margin-right: 43px;
+      font: var(--small-book);
+    }
+    &__general-content-container{
+      top: 40px;
+      display: none;
+      position: absolute;
+      z-index: 200;
+      border: 1px solid var(--color-md-grey);
+      border-top: none;
+      background-color: var(--color-white);
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 10px;
+
+    }
+    &__general-content-container--active{
+      display: block;
+      animation-name: opac;
+      animation-duration: 0.5s;
+    }
+    &__baner-container{
+      display: none;
+    }
+    &__category-title--mobile{
+      position: relative;
+      padding: 10px 30px 10px 15px;
+      margin-bottom: 0;
+      background-color: var(--color-light-grey);
+      color: var(--color-black);
+      border: 1px solid var(--color-light-grey);
+      border-radius: 10px;
+      font: var(--middle-book);
+      &::after{
+        position: absolute;
+        content: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.65674 5.80521L10.5593 0.902607L11.3136 1.65685L5.65674 7.31371L-0.000115871 1.65685L0.754131 0.902607L5.65674 5.80521Z' fill='%23A65CF0'/%3E%3C/svg%3E");
+        right: 20px;
+      }
+    }
+    &__progress-bar{
+      display: none;
+    }
+    &__price-input-container{
+      flex-wrap: wrap;
+      max-width: 120px;
+      align-items: center;
+      justify-content: center;
+    }
+    &__price-input--min{
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    &__category-items{
+      max-width: 100%;
+    }
+    &__color-items{
+      max-width: 100%;
+    }
+    &__sale-items{
+      max-width: 100%;
+    }
+  }
+}
+
+@media(max-width:950px) {
+  .catalog{
+    .hrefs-page{
+      grid-column: 6 span;
+    }
+    &__container{
+      grid-template-columns: repeat(6 , 1fr);
+    }
+    &__title-container{
+      grid-column: 6 span;
+    }
+    &__filter-container{
+      grid-column: 6 span;
+    }
+    &__product-container{
+      grid-column: 6 span;
+      position: relative;
+    }
+    &__product-title{
+      max-width: 120px;
+    }
+
+  }
+
+}
+
+@media(max-width:800px) {
+  .catalog{
+    .catalog__swiper-pagination{
+      max-width: 100%;
+      display: block;
+      bottom: -30px;
+    }
+    &__container{
+      grid-template-rows: 2% 65px;
+    }
+    &__btn-contaner{
+      display: none;
+    }
+    &__title{
+      max-width: max-content;
+      margin-bottom: 10px;
+    }
+    &__title-container{
+      max-height: 100%;
+      flex-direction: column;
+    }
+    &__filter-container{
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    &__filter-content{
+      flex-wrap: wrap;
+      max-width: 580px;
+    }
+    &__general-list{
+      width: 100%;
+      max-width: 187px;
+
+      &:nth-child(even){
+        margin-right: 0;
+      }
+      &:nth-child(-n + 2){
+        margin-bottom: 10px;
+      }
+    }
+    &__filter-title{
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+@media(max-width:550px){
+  .catalog{
+    &__container{
+      grid-template-rows: 0% 112px;
+    }
+    &__modal-container{
+      height: 100%;
+    }
+    &__general-content-container{
+      padding-left: 2px;
+
+    }
+
+  }
+}
+
+@media(max-width:460px) {
+  .catalog{
+    .hrefs-page{
+      display: none;
+    }
+    &__swiper-slide{
+      height: 300px;
+    }
+    &__items{
+      min-height: 300px;
+    }
+    &__content-container{
+      padding-bottom: 20px;
+    }
+    &__img{
+      margin-bottom: auto;
+    }
+    &__product-title{
+      max-width: 90px;
+    }
+    &__general-list{
+      max-width: 138px;
+    }
+    &__category-title--mobile{
+      &::after{
+        right: 10px;
+      }
+    }
+  }
+}
+
+@keyframes opac {
+  from{
+    opacity: 0;
+    visibility: hidden;
+  }
+  to{
+    opacity: 1;
+    visibility: visible;
+  }
 }

@@ -22,7 +22,7 @@
 		margin-right: 32px;
     max-width: 624px;
     font: var(--middle-book);
-    z-index: 1;
+    z-index: 100;
 		::placeholder{
 			color: wheat;
 		}
@@ -68,6 +68,7 @@
     background-color: var(--color-fiol-light);
     color: var(--color-white);
     opacity: 1;
+    font: var(--small-book);
     transition: filter 0.3s ease-in, border 0.3s ease-in, background-color 0.3s ease-in;
     &:hover{
       filter: opacity(0.8);

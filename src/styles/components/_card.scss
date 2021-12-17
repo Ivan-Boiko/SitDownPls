@@ -293,6 +293,11 @@
       grid-column: 6 span;
       max-height: 280px;
     }
+    &__swiper-thumb-slide{
+      max-width: 180px;
+      display: flex;
+      justify-content: center;
+    }
     &__descr{
       grid-column: 6 span;
       align-self: center;

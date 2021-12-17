@@ -84,6 +84,28 @@ document.addEventListener('DOMContentLoaded', function(){
       prevEl: '.catalog__btn--prev',
       disabledClass : 'btn--disabled , catalog__btn--active',
     },
+    pagination: {
+      el: '.catalog__swiper-pagination',
+      bulletElement : "button",
+      type: 'bullets',
+      bulletActiveClass: "catalog__btn--active",
+      bulletClass:'catalog__btn',
+      clickable: true,
+        renderBullet: function (index, className) {
+          return '<button class="catalog__btn catalog__btn--next btn btn--second ' + className + ' ">' + (index + 1) * 1  + '</button>';
+        },
+    },
+    breakpoints: {
+      780:{
+        slidesPerView: 3,
+		    slidesPerGroup: 3,
+      },
+      320:{
+        slidesPerView: 2,
+		    slidesPerGroup: 2,
+        spaceBetween:16,
+      }
+    }
   });
 
 	const swiperCard = new Swiper('.card__swiper', {
@@ -96,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		thumbs: {
 			swiper:{
         el:'.card__swiper-thumb',
-        spaceBetween:40,
+        spaceBetween:45,
         speed: 400,
         breakpoints: {
           1000: {
@@ -109,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function(){
             direction: 'vertical',
           },
           320:{
-            spaceBetween:80,
+            spaceBetween:50,
             slidesPerView: 2,
             direction: 'horizontal',
           }
