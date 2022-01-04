@@ -166,12 +166,15 @@
 }
 
 .card-form{
-  width: 625px;
+  width: 100%;
   max-width: 625px;
-  position: relative;
+  position: absolute;
+  z-index: 2000;
   padding: 30px;
   background-color: var(--color-white);
   transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+  animation-name: aim;
+  animation-duration: 1s;
   &__subtitle{
     max-width: 380px;
   }
@@ -196,15 +199,27 @@
     display: block;
   }
 }
+
 .modal-swiper{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  &--visible{
+    display: flex
+  }
   &__overlay{
     @include overlay-style;
   }
-  &__overlay--visible{
-    @include overlay-style-visible;
-  }
   &__container{
     position: absolute;
+    z-index: 2000;
+    width: 100%;
     max-width: 1310px;
     min-height: 684px;
     padding: 0 51px;
@@ -212,7 +227,8 @@
     padding-bottom: 20px;
     background-color: var(--color-white);
     cursor: default;
-    z-index: 100;
+    animation-name: aim;
+  animation-duration: 1s;
   }
   &__swiper{
     height: 518px;
@@ -356,4 +372,14 @@
   }
 }
 
+}
+@keyframes aim {
+  from{
+    opacity: 0;
+    visibility: hidden;
+  }
+  to{
+    opacity: 1;
+    visibility: visible;
+  }
 }

@@ -1,19 +1,28 @@
 .modal-form{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  &--visible{
+    display: flex
+  }
   &__overlay{
     @include overlay-style;
   }
-  &__overlay--visible{
-    @include overlay-style-visible;
-  }
-
 }
 
 .modal{
-  position: relative;
-  z-index: 1000;
+  position: absolute;
+  z-index: 2000;
   cursor: default;
+  width: 100%;
+  max-width: 624px;
   &__container{
-    width: 624px;
     height: 421px;
     position: relative;
     background-color: var(--color-white);
@@ -32,6 +41,7 @@
     margin-bottom: var(--main-offset);
   }
 }
+
 @media (max-width:1350px){
   .modal-swiper{
     &__container{
@@ -40,6 +50,7 @@
 
   }
 }
+
 @media (max-width:1200px){
   .modal-swiper{
     &__container{
@@ -57,6 +68,7 @@
     }
   }
 }
+
 @media (max-width:650px){
   .modal-swiper{
     &__container{
@@ -65,8 +77,9 @@
     }
   }
 
-  }
-  @media (max-width:549px){
+}
+
+@media (max-width:549px){
     .modal-swiper{
       &__img-slide{
         width: 100%;
@@ -82,8 +95,9 @@
         border-radius: 15px;
       }
     }
-  }
-  @media (max-width:490px){
+}
+
+@media (max-width:490px){
     .modal-swiper{
       &__swiper{
         height: 320px;
@@ -93,5 +107,5 @@
         height: 490px;
       }
     }
-  }
+}
 

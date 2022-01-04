@@ -15,7 +15,7 @@ $mail = new PHPMailer;
 $mail->CharSet = 'UTF-8';
 
 $c = true;
-$message = '';
+$message = 'Hello';
 foreach ( $_POST as $key => $value ) {
 	if ( $value != ""  && $key != "admin_email" && $key != "form_subject" ) {
 		if (is_array($value)) {

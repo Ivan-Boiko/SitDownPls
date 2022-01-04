@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',  function(){
   //универсальная функция show more для нескольких страниц
-function showMoreMain (){
+function showMoreMain () {
         const premiumBtn = document.querySelector('.premium__btn-more');
         const premiumItems = document.querySelectorAll('.premium__articles');
         const premiunItemClassHidden = 'premium__articles--hidden';
@@ -34,15 +34,22 @@ function showMoreMain (){
 }
 showMoreMain()
 
+ let fixBlock = document.querySelectorAll('.fix-block')
 //включение и отключение скрола
 function disableScroll () {
   let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+  fixBlock.forEach((e) => {
+    e.style.paddingRight = paddingOffset
+  })
   document.body.classList.add('disable-scroll')
   document.body.style.paddingRight = paddingOffset
 }
 
 function enableScroll () {
-  document.body.style.paddingRight = '0px'
+  fixBlock.forEach((e) => {
+    e.style.paddingRight = 0
+  })
+  document.body.style.paddingRight = 0
   document.body.classList.remove('disable-scroll')
 }
 
@@ -268,7 +275,7 @@ function  modalForm () {
   const input = document.querySelectorAll('.form-site__input');
   const cardModal = document.querySelector('.card-modal')
   const cardForm = document.querySelector('.card-form')
-  const overlayModal = document.querySelector('.modal-form__overlay')
+  const modalForm = document.querySelector('.modal-form')
 
   if(cardModal){
     cardModal.classList.add('card-modal--active')
@@ -279,64 +286,46 @@ function  modalForm () {
     })
 
     const interval = setInterval(function(){
-      overlayModal.classList.remove('modal-form__overlay--visible')
+      modalForm.classList.remove('modal-form--visible')
       cardModal.classList.remove('card-modal--active')
       clearInterval(interval)
       input.forEach((e) => {
         e.classList.remove('js-validate-valid-label')
+        enableScroll ()
       })
       }, 3000)
 
-      enableScroll ()
+
   }
   else {
-    overlayModal.classList.add('modal-form__overlay--visible')
+    modalForm.classList.add('modal-form--visible')
 
     input.forEach((e) => {
       e.classList.add('js-validate-valid-label')
     })
 
     let timer = setInterval(function(){
-      overlayModal.classList.remove('modal-form__overlay--visible')
+      modalForm.classList.remove('modal-form--visible')
       clearInterval(timer)
       input.forEach((e) => {
       e.classList.remove('js-validate-valid-label')
-        })
+      enableScroll ()
+      })
       }, 3000)
 
-      enableScroll ()
   }
 
 }
-
-//Закрытие модального окна
-function modalClose () {
-  const btn = document.querySelector('.btn-close-modal')
-  let modalOverlay = document.querySelector('.modal-form__overlay');
-  if(btn){
-    btn.addEventListener('click', function(){
-      modalOverlay.classList.remove('modal-form__overlay--visible')
-      enableScroll ()
-    })
-  }
-  if(modalOverlay){
-    modalOverlay.addEventListener('click', function(){
-      modalOverlay.classList.remove('modal-form__overlay--visible')
-      enableScroll ()
-    })
-  }
-}
-
-modalClose()
 
 //Модальное окно "Купить в один клик" во вкладке "Каталог"
 function  modalOpen () {
   const btn = document.querySelector('.card__btn-buy')
-  const overlay = document.querySelector('.modal-form__overlay');
+  const modal = document.querySelector('.modal-form');
   const cardForm = document.querySelector('.card-form')
+
   if(btn){
     btn.addEventListener('click' , function (){
-      overlay.classList.toggle('modal-form__overlay--visible');
+      modal.classList.toggle('modal-form--visible');
       cardForm.classList.remove('card-form--hidden');
       disableScroll()
     })
@@ -344,17 +333,39 @@ function  modalOpen () {
 }
 modalOpen();
 
+//Закрытие модального окна
+function modalClose () {
+  let btn = document.querySelector('.btn-close-modal')
+  let modal = document.querySelector('.modal-form');
+  let overlay = document.querySelector('.modal-form__overlay')
+  if(btn){
+    btn.addEventListener('click', function(){
+      modal.classList.remove('modal-form--visible')
+      enableScroll()
+    })
+  }
+  if(overlay){
+    overlay.addEventListener('click', (e) => {
+      if(e.target === overlay){
+        modal.classList.remove('modal-form--visible')
+        enableScroll()
+      }
+    })
+  }
+}
+
+modalClose()
+
+
 //Модальное окно свайпера  во вкладке "Каталог"
 function modalSwiperOpen() {
   const swiper = document.querySelector('.card__swiper')
-  const overlay = document.querySelector('.modal-swiper__overlay')
+  const swiperModal = document.querySelector('.modal-swiper')
   if(swiper){
     swiper.addEventListener('click', function(){
-      overlay.classList.add('modal-swiper__overlay--visible');
-
+      swiperModal.classList.add('modal-swiper--visible');
+      disableScroll()
     })
-    disableScroll()
-
   }
 }
 
@@ -364,19 +375,20 @@ modalSwiperOpen()
 function modalSwiperClose() {
   const btnClose = document.querySelector('.modal-swiper__btn-close')
   const overlay = document.querySelector('.modal-swiper__overlay')
-
+  const swiperModal = document.querySelector('.modal-swiper')
   if(btnClose || overlay){
     btnClose.addEventListener('click',  function(){
-      overlay.classList.remove('modal-swiper__overlay--visible')
+      swiperModal.classList.remove('modal-swiper--visible')
+      enableScroll()
     })
-
-  overlay.addEventListener( 'click', (e) => {
-    if(e.target == overlay){
-      overlay.classList.remove('modal-swiper__overlay--visible')
+  overlay.addEventListener('click', (e) => {
+    if(e.target === overlay){
+      swiperModal.classList.remove('modal-swiper--visible')
+      enableScroll()
     }
   })
 }
-  enableScroll ()
+
 }
 
 modalSwiperClose()
@@ -475,7 +487,7 @@ function showFilterList() {
           })
         })
       }
-    }
+}
 
 
 showFilterList();
